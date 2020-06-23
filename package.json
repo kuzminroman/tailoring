@@ -1,0 +1,53 @@
+{
+  "name": "yii-application",
+  "version": "1.0.0",
+  "description": "<p align=\"center\">     <a href=\"https://github.com/yiisoft\" target=\"_blank\">         <img src=\"https://avatars0.githubusercontent.com/u/993323\" height=\"100px\">     </a>     <h1 align=\"center\">Yii 2 Advanced Project Template</h1>     <br> </p>",
+  "main": "src/app.js",
+  "dependencies": {
+    "gulp-autoprefixer": "^7.0.1",
+    "gulp-clean-css": "^4.2.0",
+    "gulp-cli": "^2.2.0",
+    "gulp-combine-mq": "^0.4.0",
+    "gulp-notify": "^3.2.0",
+    "gulp-rename": "^2.0.0",
+    "gulp-sass": "^4.0.2",
+    "gulp.spritesmith": "^6.11.0",
+    "npm": "^6.14.1"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.8.4",
+    "@babel/core": "^7.8.7",
+    "@babel/node": "^7.8.7",
+    "@babel/preset-env": "^7.8.7",
+    "autoprefixer": "^9.7.4",
+    "babel-loader": "^8.0.6",
+    "css-loader": "^3.6.0",
+    "css-mqpacker": "^7.0.0",
+    "cssnano": "^4.1.10",
+    "extract-text-webpack-plugin": "^4.0.0-beta.0",
+    "gulp": "^4.0.2",
+    "gulp-clean": "^0.4.0",
+    "html-webpack-plugin": "^3.2.0",
+    "mini-css-extract-plugin": "^0.9.0",
+    "mqpacker": "^7.0.0",
+    "node-sass": "^4.14.1",
+    "path": "^0.12.7",
+    "postcss-loader": "^3.0.0",
+    "sass-loader": "^8.0.2",
+    "style-loader": "^1.2.1",
+    "webpack": "^4.43.0",
+    "webpack-cli": "^3.3.11",
+    "webpack-dev-server": "^3.10.3",
+    "webpack-merge": "^4.2.2"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 3 version"
+  ],
+  "scripts": {
+    "build": "webpack",
+    "start": "webpack --watch"
+  },
+  "author": "",
+  "license": "ISC"
+}
