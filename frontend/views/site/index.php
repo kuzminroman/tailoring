@@ -3,6 +3,7 @@
 /* @var $this yii\web\View */
 
 $this->title = 'Tailoring';
+
 ?>
 <div class="site-index">
 
