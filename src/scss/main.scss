@@ -1,3 +1,19 @@
+@charset 'UTF-8';
+
+@import
+'vars/_fonts',
+'vars/_colors';
+
+@import
+'abstract/mixins';
+
+/*
+@import
+'style/callout',
+'style/base',
+'style/media';*/
+
+
 .test-new {
   &__clear {
     float: left;
@@ -27,4 +43,12 @@
 
 .lead {
   font-size: 41px !important;
+}
+
+.navbar-inverse {
+  background-color: $lineMenu;
+  border-color: $lineMenuBorder;
+  a {
+    color: $colorLink!important;
+  }
 }

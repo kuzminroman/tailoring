@@ -1,6 +1,8 @@
 <?php
 namespace frontend\controllers;
 
+use common\models\TypeWork;
+use common\modules\subject\models\Subject;
 use frontend\models\ResendVerificationEmailForm;
 use frontend\models\VerifyEmailForm;
 use Yii;
@@ -74,7 +76,9 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
-        return $this->render('index');
+        $model = new Subject();
+        $typeWork = new TypeWork();
+        return $this->render('index', ['model' => $model, 'typeWork' => $typeWork]);
     }
 
     /**
@@ -256,5 +260,10 @@ class SiteController extends Controller
         return $this->render('resendVerificationEmail', [
             'model' => $model
         ]);
+    }
+
+    public function actionReact()
+    {
+       return $this->render('react');
     }
 }
