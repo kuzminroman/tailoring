@@ -10,13 +10,23 @@ use yii\widgets\ActiveForm;
 $this->title = 'Tailoring';
 
 ?>
-<br/>
-<br/>
-<br/>
+<div class="filter-container">
 <?php
 $form = ActiveForm::begin();
-$works = \common\models\TypeWork::find()->all();
-$items = ArrayHelper::map($works,'id','name');
+
+$works = $typeWork::find()->all();
+$model = $model::find()->all();
+
+$items = ArrayHelper::map($works, 'id', 'name');
 ?>
-<?= $form->field($model, 'name')->dropDownList($items)->label(false);?>
+<?= $form->field($typeWork, 'name')->dropDownList($items)->label(false);?>
+
+<?php foreach ($model as $subject) : ?>
+
+    <?= $form->field($subject, 'title')->checkbox([
+        'label' => $subject['title'],
+    ]);?>
+<?php endforeach;?>
+
 <?php ActiveForm::end(); ?>
+</div>

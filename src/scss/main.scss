@@ -13,42 +13,80 @@
 'style/base',
 'style/media';*/
 
-
-.test-new {
-  &__clear {
-    float: left;
-  }
-}
-
-.jumbotron {
-  background-color: red !important;
-  h1 {
-    font-size: 178px!important;
-  }
-}
-
-.test {
-  display: flex;
-}
-
-.new-tag {
-  border-radius: 42px;
-  border: 4px red solid;
-}
-
-.open-tag {
-  border-radius: 42px;
-  border: 4px red solid;
-}
-
-.lead {
-  font-size: 41px !important;
-}
-
 .navbar-inverse {
   background-color: $lineMenu;
   border-color: $lineMenuBorder;
+
   a {
-    color: $colorLink!important;
+    color: $colorLink !important;
+  }
+
+  a:hover:not(.navbar-brand) {
+    color: $colorLinkHover !important;
+  }
+}
+
+.filter-container {
+  margin-top: 78px;
+  width: 105px;
+}
+
+.main-page {
+  margin-top: 100px;
+
+  .find-form {
+    .for-gender {
+      margin-top: 13px;
+      margin-bottom: 13px;
+      display: inline-flex;
+
+      .form-check {
+        padding-right: 12px;
+      }
+    }
+
+    select {
+      margin-top: 15px;
+    }
+
+    span {
+      font-size: 24px;
+    }
+
+    button {
+      margin-top: 17px;
+      float: right;
+    }
+  }
+
+  hr {
+    margin-top: 80px !important;
+  }
+
+  .card {
+    .image-of-object {
+      height: 270px;
+      width: 270px;
+      float: left;
+      margin-right: 24px;
+      border-radius: 3px;
+    }
+
+    .card-body {
+      width: 649px;
+    }
+  }
+}
+
+footer {
+  background-color: $lineMenu;
+  margin-top: 92px;
+  width: 100%;
+  padding-top: 33px;
+  margin-bottom: 40px;
+  height: 80px;
+  color: $colorLink;
+  a {
+    color: $colorLink;
   }
 }
