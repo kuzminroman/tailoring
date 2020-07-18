@@ -23,11 +23,6 @@
 */
 
 
-
-
-
-
-
 /*  Fonts  */
 @font-face {
   font-family: 'lato-bold';
@@ -38,6 +33,7 @@
   url('../fonts/lato-bold.svg#LatoBold') format('svg');
   font-weight: normal;
   font-style: normal;
+  unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
 }
 
 @font-face {
@@ -49,6 +45,7 @@
   url('../fonts/lato-regular.svg#LatRegular') format('svg');
   font-weight: normal;
   font-style: normal;
+  unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
 }
 
 @font-face {
@@ -60,16 +57,10 @@
   url('../fonts/p22_corinthia.svg#P22Corinthia') format('svg');
   font-weight: normal;
   font-style: normal;
+  unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+
+
 }
-
-
-
-
-
-
-
-
-
 
 
 /*  General CSS  */
@@ -78,7 +69,7 @@ body{
 }
 
 .wrapper{
-  width: 1100px;
+  width: 1500px;
   margin: 0 auto;
   position: relative;
 }
@@ -109,15 +100,6 @@ h5, h6          { font-weight: bolder }
 .clearfix {
   *zoom: 1;
 }
-
-
-
-
-
-
-
-
-
 
 
 /*  header Section  */
@@ -186,22 +168,13 @@ header nav .login_btn:hover{
   color: #1c3655;
 }
 
-
-
-
-
-
-
-
-
-
 /*  Hero Section  */
 
 .hero{
   width: 100%;
   height: 800px;
   position: relative;
-  background: url('../img/hero.jpg') no-repeat bottom center;
+  background: url('../img/tailoring.jpg') no-repeat bottom center;
   background-size: cover;
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -458,7 +431,7 @@ header nav .login_btn:hover{
 
 .listings ul.properties_list li{
   display: block;
-  width: 340px;
+  width: 466px;
   height: auto;
   position: relative;
   float: left;

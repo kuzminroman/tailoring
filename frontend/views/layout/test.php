@@ -6,9 +6,9 @@ use yii\helpers\Html;?>
     @import url("../../web/source/dist/test3.css");
 </style>
 <section class="hero">
-    <header>
+<!--    <header>
         <div class="wrapper">
-            <a href="#"><img src="img/logo.png" class="logo" alt="" titl=""/></a>
+            <a href="#"><img src="/images/other/logo.png" class="logo" alt="" titl=""/></a>
             <a href="#" class="hamburger"></a>
             <nav>
                 <ul>
@@ -21,10 +21,10 @@ use yii\helpers\Html;?>
                 <a href="#" class="login_btn">Login</a>
             </nav>
         </div>
-    </header><!--  end header section  -->
+    </header>  end header section  -->
 
     <section class="caption">
-        <h2 class="caption">Find You Dream Home</h2>
+        <h2 class="caption">Find Dream Home</h2>
         <h3 class="properties">Appartements - Houses - Mansions</h3>
     </section>
 </section><!--  end hero section  -->
@@ -68,7 +68,7 @@ use yii\helpers\Html;?>
         <ul class="properties_list">
             <li>
                 <a href="#">
-                    <img src="../../../src/img/property_1.jpg" alt="" title="" class="property_img"/>
+                    <img src="/images/preview/property_1.jpg" alt="" title="" class="property_img"/>
                 </a>
                 <span class="price">$2500</span>
                 <div class="property_details">
@@ -80,7 +80,7 @@ use yii\helpers\Html;?>
             </li>
             <li>
                 <a href="#">
-                    <img src="../../../src/img/property_2.jpg" alt="" title="" class="property_img"/>
+                    <img src="/images/preview/property_2.jpg" alt="" title="" class="property_img"/>
                 </a>
                 <span class="price">$1000</span>
                 <div class="property_details">
@@ -92,7 +92,7 @@ use yii\helpers\Html;?>
             </li>
             <li>
                 <a href="#">
-                    <img src="../../../src/img/property_3.jpg" alt="" title="" class="property_img"/>
+                    <img src="/images/preview/property_3.jpg" alt="" title="" class="property_img"/>
                 </a>
                 <span class="price">$500</span>
                 <div class="property_details">
@@ -104,7 +104,7 @@ use yii\helpers\Html;?>
             </li>
             <li>
                 <a href="#">
-                    <img src="../../../src/img/property_1.jpg" alt="" title="" class="property_img"/>
+                    <img src="/images/preview/property_1.jpg" alt="" title="" class="property_img"/>
                 </a>
                 <span class="price">$2500</span>
                 <div class="property_details">
@@ -116,7 +116,7 @@ use yii\helpers\Html;?>
             </li>
             <li>
                 <a href="#">
-                    <img src="../../../src/img/property_2.jpg" alt="" title="" class="property_img"/>
+                    <img src="/images/preview/property_2.jpg" alt="" title="" class="property_img"/>
                 </a>
                 <span class="price">$1000</span>
                 <div class="property_details">
@@ -128,7 +128,7 @@ use yii\helpers\Html;?>
             </li>
             <li>
                 <a href="#">
-                    <img src="../../../src/img/property_3.jpg" alt="" title="" class="property_img"/>
+                    <img src="/images/preview/property_3.jpg" alt="" title="" class="property_img"/>
                 </a>
                 <span class="price">$500</span>
                 <div class="property_details">
@@ -140,7 +140,7 @@ use yii\helpers\Html;?>
             </li>
             <li>
                 <a href="#">
-                    <img src="../../../src/img/property_1.jpg" alt="" title="" class="property_img"/>
+                    <img src="/images/preview/property_1.jpg" alt="" title="" class="property_img"/>
                 </a>
                 <span class="price">$2500</span>
                 <div class="property_details">
@@ -151,6 +151,9 @@ use yii\helpers\Html;?>
                 </div>
             </li>
             <li>
+                <a href="#">
+                    <img src="/images/preview/property_1.jpg" alt="" title="" class="property_img"/>
+                </a>
                 <span class="price">$1000</span>
                 <div class="property_details">
                     <h1>
@@ -161,7 +164,7 @@ use yii\helpers\Html;?>
             </li>
             <li>
                 <a href="#">
-                    <img src="/images/property_1.jpg" alt="" title="" class="property_img"/>
+                    <img src="/images/preview/property_1.jpg" alt="" title="" class="property_img"/>
                 </a>
                 <span class="price">$500</span>
                 <div class="property_details">
