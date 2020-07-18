@@ -29,19 +29,20 @@ AppAsset::register($this);
 <div class="wrap">
     <?php
     NavBar::begin([
-        'brandLabel' => 'Tailoring',
+        'brandLabel' => Html::img('/images/other/logo4.png'),
         'brandUrl' => Yii::$app->homeUrl,
         'options' => [
             'class' => 'navbar-inverse navbar-fixed-top',
         ],
     ]);
     $menuItems = [
-        ['label' => 'Home', 'url' => ['/site/index']],
-        ['label' => 'Objects', 'url' => ['/objects/index']],
+        ['label' => 'Катлог ателье', 'url' => ['/objects/index']],
+        ['label' => 'На карте', 'icon'=> 'cog', 'url' => ['/objects/index']],
+        ['label' => 'Санкт-Петербург', 'url' => ['/objects/index']],
     ];
     if (Yii::$app->user->isGuest) {
-        $menuItems[] = ['label' => 'Signup', 'url' => ['/site/signup']];
-        $menuItems[] = ['label' => 'Login', 'url' => ['/site/login']];
+        $menuItems[] = ['label' => 'Регистрация', 'url' => ['/site/signup']];
+        $menuItems[] = ['label' => 'Войти', 'url' => ['/site/login']];
     } else {
         $menuItems[] = '<li>'
             . Html::beginForm(['/site/logout'], 'post')
@@ -59,7 +60,7 @@ AppAsset::register($this);
     NavBar::end();
     ?>
 
-    <div class="container-fluid">
+    <div class="container page">
         <?= Breadcrumbs::widget([
             'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
         ]) ?>

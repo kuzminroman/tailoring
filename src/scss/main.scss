@@ -86,7 +86,39 @@ footer {
   margin-bottom: 40px;
   height: 80px;
   color: $colorLink;
+
   a {
     color: $colorLink;
+  }
+}
+
+.page {
+  width: 1600px !important;
+}
+
+.navbar-inverse {
+  height: 77px !important;
+}
+
+.navbar-header {
+  position: relative;
+  padding-top: 13px;
+
+  .navbar-brand {
+    position: absolute;
+    width: 306px;
+    top: -2px;
+    right: -82px;
+  }
+}
+
+.navbar-nav {
+  position: absolute;
+  top: 14px;
+  font-size: 18px;
+  right: 378px;
+
+  li {
+    padding-right: 80px;
   }
 }
