@@ -98,18 +98,22 @@ footer {
 
 .navbar-inverse {
   height: 77px !important;
+
+  .navbar-header {
+    position: relative;
+    padding-top: 13px;
+
+    .navbar-brand {
+      position: absolute;
+      width: 306px;
+      top: -2px;
+      right: -82px;
+    }
+  }
 }
 
-.navbar-header {
-  position: relative;
-  padding-top: 13px;
-
-  .navbar-brand {
-    position: absolute;
-    width: 306px;
-    top: -2px;
-    right: -82px;
-  }
+.search {
+  margin-top: 77px;
 }
 
 .navbar-nav {
@@ -120,5 +124,58 @@ footer {
 
   li {
     padding-right: 80px;
+  }
+
+  :nth-child(3) a {
+    text-decoration: underline;
+  }
+
+  :nth-child(3) a :hover {
+    text-decoration: none;
+  }
+
+  :nth-child(3) :before {
+    position: absolute;
+    width: 32px;
+    height: 100%;
+    left: -17px;
+    top: 1px;
+    content: '';
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 19px 26px;
+    background-image: url("../img/icons/pin2.svg");
+  }
+}
+
+.nav-main-search {
+  margin-top: 93px;
+  background-color: #808000;
+
+  .collapse {
+    padding: 18px;
+    form {
+      .btn {
+        padding: 8px 12px;
+        font-size: 16px;
+        width: 86px;
+      }
+      /* width: 100%; */
+      padding-right: 204px;
+      float: right;
+      /* position: absolute;*/
+      .main-search {
+        font-size: 14px;
+        font-family: "Roboto", Arial, "Helvetica Neue", Helvetica, sans-serif;
+        border-radius: 5px;
+        border: none;
+        box-sizing: border-box;
+        padding: 24px 76px 21px 25px;
+        /* width: 100%; */
+        /* padding-left: 24px; */
+        /* padding-top: 12px; */
+        width: 1028px !important;
+      }
+    }
   }
 }

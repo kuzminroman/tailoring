@@ -3,6 +3,25 @@
     @import url("../../web/source/dist/test2.css");
     @import url("../../web/source/dist/test3.css");
 </style>
+
+<nav class="navbar navbar-expand-lg navbar-dark blue lighten-2 mb-4 nav-main-search">
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+        <form class="form-inline mr-auto">
+            <input class="form-control main-search" type="text" placeholder="Поиск" aria-label="Search">
+            <button class="btn btn-mdb-color btn-rounded btn-sm my-0 ml-sm-2 btn btn-success" type="submit">Поиск</button>
+        </form>
+
+    </div>
+    <!-- Collapsible content -->
+
+    <!-- Navbar brand -->
+
+</nav>
+
+
 <section class="hero">
 <!--    <header>
         <div class="wrapper">
