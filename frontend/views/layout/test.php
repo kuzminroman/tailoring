@@ -25,7 +25,7 @@
     margin-right: 20%;
     /* left: 255px; */
     cursor: pointer;
-    margin-bottom: 9px;
+    margin-bottom: 3px;
 ">Расширенный поиск</span>
     <!-- Collapsible content -->
 
