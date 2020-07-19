@@ -15,6 +15,18 @@
         </form>
 
     </div>
+
+    <span style="
+    float: right;
+    color: white;
+    text-decoration: underline;
+    /* position: absolute; */
+    /* top: 73px; */
+    margin-right: 20%;
+    /* left: 255px; */
+    cursor: pointer;
+    margin-bottom: 9px;
+">Расширенный поиск</span>
     <!-- Collapsible content -->
 
     <!-- Navbar brand -->
