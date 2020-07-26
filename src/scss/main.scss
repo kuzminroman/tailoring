@@ -154,12 +154,28 @@ footer {
 
   .collapse {
     padding: 18px;
+
+    &:before {
+      position: absolute;
+      width: 47px;
+      height: 100%;
+      left: 177px;
+      top: 0px;
+      content: '';
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: 38px 30px;
+      background-image: url("../img/icons/filter.svg");
+      cursor: pointer;
+    }
+
     form {
       .btn {
         padding: 8px 12px;
         font-size: 16px;
         width: 86px;
       }
+
       /* width: 100%; */
       padding-right: 204px;
       float: right;
