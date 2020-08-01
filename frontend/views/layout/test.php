@@ -24,8 +24,8 @@ $this->title = 'Все ателье по пошиву и ремноту в Са�
 
 <section class="main-page-header-image">
     <section class="main-page-header-image__caption">
-        <h2 class="main-page-header-image__caption__main">Find Dream Home</h2>
-        <h3 class="main-page-header-image__caption__secondary">Appartements - Houses - Mansions</h3>
+        <h2 class="main-page-header-image__caption__main">Работа освобождает</h2>
+        <h3 class="main-page-header-image__caption__secondary">1933-1945</h3>
     </section>
 </section>
 
@@ -35,11 +35,12 @@ $this->title = 'Все ателье по пошиву и ремноту в Са�
         <ul class="studios__wrapper__list">
             <li class="studios__wrapper__list__item">
                 <a href="#">
-                <svg class="studios__wrapper__list__item__favorite" viewBox="0 0 95 95">
-                    <use xlink:href="/images/icons/favorite.svg#Icons"></use>
-                </svg>
-
-                <img src="/images/preview/2_1.jpg" class="studios__wrapper__list__item__preview"/>
+                    <div class="studios__wrapper__list__item__image">
+                        <svg class="studios__wrapper__list__item__image__favorite" viewBox="0 0 95 95">
+                            <use xlink:href="/images/icons/favorite.svg#Icons"></use>
+                        </svg>
+                        <img src="/images/preview/2_1.jpg" class="studios__wrapper__list__item__image__preview"/>
+                    </div>
 
                 <div class="studios__wrapper__list__item__details">
                     <div class="studios__wrapper__list__item__details__rating">
@@ -108,11 +109,12 @@ $this->title = 'Все ателье по пошиву и ремноту в Са�
             </li>
             <li class="studios__wrapper__list__item">
                 <a href="#">
-                    <svg class="studios__wrapper__list__item__favorite" viewBox="0 0 95 95">
-                        <use xlink:href="/images/icons/favorite.svg#Icons"></use>
-                    </svg>
-
-                    <img src="/images/preview/2_1.jpg" class="studios__wrapper__list__item__preview"/>
+                    <div class="studios__wrapper__list__item__image">
+                        <svg class="studios__wrapper__list__item__image__favorite" viewBox="0 0 95 95">
+                            <use xlink:href="/images/icons/favorite.svg#Icons"></use>
+                        </svg>
+                        <img src="/images/preview/2_1.jpg" class="studios__wrapper__list__item__image__preview"/>
+                    </div>
 
                     <div class="studios__wrapper__list__item__details">
                         <div class="studios__wrapper__list__item__details__rating">
@@ -181,231 +183,12 @@ $this->title = 'Все ателье по пошиву и ремноту в Са�
             </li>
             <li class="studios__wrapper__list__item">
                 <a href="#">
-                    <svg class="studios__wrapper__list__item__favorite" viewBox="0 0 95 95">
-                        <use xlink:href="/images/icons/favorite.svg#Icons"></use>
-                    </svg>
-
-                    <img src="/images/preview/2_1.jpg" class="studios__wrapper__list__item__preview"/>
-
-                    <div class="studios__wrapper__list__item__details">
-                        <div class="studios__wrapper__list__item__details__rating">
-                            <svg class="studios__wrapper__list__item__details__rating__icon" viewBox="0 0 95 95">
-                                <use xlink:href="/images/icons/new-star.svg#star_id"></use>
-                            </svg>
-                            <svg class="studios__wrapper__list__item__details__rating__icon" viewBox="0 0 95 95">
-                                <use xlink:href="/images/icons/new-star.svg#star_id"></use>
-                            </svg>
-
-                            <svg class="studios__wrapper__list__item__details__rating__icon" viewBox="0 0 95 95">
-                                <use xlink:href="/images/icons/new-star.svg#star_id"></use>
-                            </svg>
-
-                            <svg class="studios__wrapper__list__item__details__rating__icon" viewBox="0 0 95 95">
-                                <use xlink:href="/images/icons/new-star.svg#star_id"></use>
-                            </svg>
-
-                            <svg class="studios__wrapper__list__item__details__rating__icon" viewBox="0 0 95 95">
-                                <use xlink:href="/images/icons/new-star.svg#star_id"></use>
-                            </svg>
-                        </div>
-                        <h1>
-                            <span>Ателье &laquoИрина&raquo</span>
-                        </h1>
-                        <div class="studios__wrapper__list__item__details__metro">
-                            <svg class="studios__wrapper__list__item__details__metro__icon" viewBox="0 0 95 95">
-                                <use xlink:href="/images/icons/metro.svg#svg_1"></use>
-                            </svg>
-                            <span class="studios__wrapper__list__item__details__metro__title">Василеостровская</span>
-                            <span class="studios__wrapper__list__item__details__metro__time">(10 мин)</span>
-                        </div>
-                        <div class="studios__wrapper__list__item__details__statistic">
-                            <div class="studios__wrapper__list__item__details__statistic__favorites">
-                                <div class="studios__wrapper__list__item__details__statistic__favorites__wrapper">
-                                    <span class="studios__wrapper__list__item__details__statistic__favorites__wrapper__count">412</span>
-                                    <svg class="studios__wrapper__list__item__details__statistic__favorites__wrapper__icon"
-                                         viewBox="0 0 480 480">
-                                        <use xlink:href="/images/icons/heart_77931.svg#Layer_1"></use>
-                                    </svg>
-                                </div>
-                            </div>
-                            <div class="studios__wrapper__list__item__details__statistic__report">
-                                <div class="studios__wrapper__list__item__details__statistic__report__wrapper">
-                                    <span class="studios__wrapper__list__item__details__statistic__report__wrapper__count">123</span>
-                                    <svg class="studios__wrapper__list__item__details__statistic__report__wrapper__icon"
-                                         viewBox="0 0 480 480">
-                                        <use xlink:href="/images/icons/report.svg#Layer_x0020_1"></use>
-                                    </svg>
-                                </div>
-                            </div>
-                            <div class="studios__wrapper__list__item__details__statistic__views">
-                                <div class="studios__wrapper__list__item__details__statistic__views__wrapper">
-                                    <span class="studios__wrapper__list__item__details__statistic__views__wrapper__all">1674</span>
-                                    <span class="studios__wrapper__list__item__details__statistic__views__wrapper__today"
-                                          title="За сегодня">33</span>
-                                    <svg class="studios__wrapper__list__item__details__statistic__views__wrapper__icon"
-                                         viewBox="0 0 25 25">
-                                        <use xlink:href="/images/icons/views.svg#icon"></use>
-                                    </svg>
-                                </div>
-                            </div>
-                        </div>
+                    <div class="studios__wrapper__list__item__image">
+                        <svg class="studios__wrapper__list__item__image__favorite" viewBox="0 0 95 95">
+                            <use xlink:href="/images/icons/favorite.svg#Icons"></use>
+                        </svg>
+                        <img src="/images/preview/2_1.jpg" class="studios__wrapper__list__item__image__preview"/>
                     </div>
-                </a>
-            </li>
-
-            <li class="studios__wrapper__list__item">
-                <a href="#">
-                    <svg class="studios__wrapper__list__item__favorite" viewBox="0 0 95 95">
-                        <use xlink:href="/images/icons/favorite.svg#Icons"></use>
-                    </svg>
-
-                    <img src="/images/preview/2_1.jpg" class="studios__wrapper__list__item__preview"/>
-
-                    <div class="studios__wrapper__list__item__details">
-                        <div class="studios__wrapper__list__item__details__rating">
-                            <svg class="studios__wrapper__list__item__details__rating__icon" viewBox="0 0 95 95">
-                                <use xlink:href="/images/icons/new-star.svg#star_id"></use>
-                            </svg>
-                            <svg class="studios__wrapper__list__item__details__rating__icon" viewBox="0 0 95 95">
-                                <use xlink:href="/images/icons/new-star.svg#star_id"></use>
-                            </svg>
-
-                            <svg class="studios__wrapper__list__item__details__rating__icon" viewBox="0 0 95 95">
-                                <use xlink:href="/images/icons/new-star.svg#star_id"></use>
-                            </svg>
-
-                            <svg class="studios__wrapper__list__item__details__rating__icon" viewBox="0 0 95 95">
-                                <use xlink:href="/images/icons/new-star.svg#star_id"></use>
-                            </svg>
-
-                            <svg class="studios__wrapper__list__item__details__rating__icon" viewBox="0 0 95 95">
-                                <use xlink:href="/images/icons/new-star.svg#star_id"></use>
-                            </svg>
-                        </div>
-                        <h1>
-                            <span>Ателье &laquoИрина&raquo</span>
-                        </h1>
-                        <div class="studios__wrapper__list__item__details__metro">
-                            <svg class="studios__wrapper__list__item__details__metro__icon" viewBox="0 0 95 95">
-                                <use xlink:href="/images/icons/metro.svg#svg_1"></use>
-                            </svg>
-                            <span class="studios__wrapper__list__item__details__metro__title">Василеостровская</span>
-                            <span class="studios__wrapper__list__item__details__metro__time">(10 мин)</span>
-                        </div>
-                        <div class="studios__wrapper__list__item__details__statistic">
-                            <div class="studios__wrapper__list__item__details__statistic__favorites">
-                                <div class="studios__wrapper__list__item__details__statistic__favorites__wrapper">
-                                    <span class="studios__wrapper__list__item__details__statistic__favorites__wrapper__count">412</span>
-                                    <svg class="studios__wrapper__list__item__details__statistic__favorites__wrapper__icon"
-                                         viewBox="0 0 480 480">
-                                        <use xlink:href="/images/icons/heart_77931.svg#Layer_1"></use>
-                                    </svg>
-                                </div>
-                            </div>
-                            <div class="studios__wrapper__list__item__details__statistic__report">
-                                <div class="studios__wrapper__list__item__details__statistic__report__wrapper">
-                                    <span class="studios__wrapper__list__item__details__statistic__report__wrapper__count">123</span>
-                                    <svg class="studios__wrapper__list__item__details__statistic__report__wrapper__icon"
-                                         viewBox="0 0 480 480">
-                                        <use xlink:href="/images/icons/report.svg#Layer_x0020_1"></use>
-                                    </svg>
-                                </div>
-                            </div>
-                            <div class="studios__wrapper__list__item__details__statistic__views">
-                                <div class="studios__wrapper__list__item__details__statistic__views__wrapper">
-                                    <span class="studios__wrapper__list__item__details__statistic__views__wrapper__all">1674</span>
-                                    <span class="studios__wrapper__list__item__details__statistic__views__wrapper__today"
-                                          title="За сегодня">33</span>
-                                    <svg class="studios__wrapper__list__item__details__statistic__views__wrapper__icon"
-                                         viewBox="0 0 25 25">
-                                        <use xlink:href="/images/icons/views.svg#icon"></use>
-                                    </svg>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </a>
-            </li>
-            <li class="studios__wrapper__list__item">
-                <a href="#">
-                    <svg class="studios__wrapper__list__item__favorite" viewBox="0 0 95 95">
-                        <use xlink:href="/images/icons/favorite.svg#Icons"></use>
-                    </svg>
-
-                    <img src="/images/preview/2_1.jpg" class="studios__wrapper__list__item__preview"/>
-
-                    <div class="studios__wrapper__list__item__details">
-                        <div class="studios__wrapper__list__item__details__rating">
-                            <svg class="studios__wrapper__list__item__details__rating__icon" viewBox="0 0 95 95">
-                                <use xlink:href="/images/icons/new-star.svg#star_id"></use>
-                            </svg>
-                            <svg class="studios__wrapper__list__item__details__rating__icon" viewBox="0 0 95 95">
-                                <use xlink:href="/images/icons/new-star.svg#star_id"></use>
-                            </svg>
-
-                            <svg class="studios__wrapper__list__item__details__rating__icon" viewBox="0 0 95 95">
-                                <use xlink:href="/images/icons/new-star.svg#star_id"></use>
-                            </svg>
-
-                            <svg class="studios__wrapper__list__item__details__rating__icon" viewBox="0 0 95 95">
-                                <use xlink:href="/images/icons/new-star.svg#star_id"></use>
-                            </svg>
-
-                            <svg class="studios__wrapper__list__item__details__rating__icon" viewBox="0 0 95 95">
-                                <use xlink:href="/images/icons/new-star.svg#star_id"></use>
-                            </svg>
-                        </div>
-                        <h1>
-                            <span>Ателье &laquoИрина&raquo</span>
-                        </h1>
-                        <div class="studios__wrapper__list__item__details__metro">
-                            <svg class="studios__wrapper__list__item__details__metro__icon" viewBox="0 0 95 95">
-                                <use xlink:href="/images/icons/metro.svg#svg_1"></use>
-                            </svg>
-                            <span class="studios__wrapper__list__item__details__metro__title">Василеостровская</span>
-                            <span class="studios__wrapper__list__item__details__metro__time">(10 мин)</span>
-                        </div>
-                        <div class="studios__wrapper__list__item__details__statistic">
-                            <div class="studios__wrapper__list__item__details__statistic__favorites">
-                                <div class="studios__wrapper__list__item__details__statistic__favorites__wrapper">
-                                    <span class="studios__wrapper__list__item__details__statistic__favorites__wrapper__count">412</span>
-                                    <svg class="studios__wrapper__list__item__details__statistic__favorites__wrapper__icon"
-                                         viewBox="0 0 480 480">
-                                        <use xlink:href="/images/icons/heart_77931.svg#Layer_1"></use>
-                                    </svg>
-                                </div>
-                            </div>
-                            <div class="studios__wrapper__list__item__details__statistic__report">
-                                <div class="studios__wrapper__list__item__details__statistic__report__wrapper">
-                                    <span class="studios__wrapper__list__item__details__statistic__report__wrapper__count">123</span>
-                                    <svg class="studios__wrapper__list__item__details__statistic__report__wrapper__icon"
-                                         viewBox="0 0 480 480">
-                                        <use xlink:href="/images/icons/report.svg#Layer_x0020_1"></use>
-                                    </svg>
-                                </div>
-                            </div>
-                            <div class="studios__wrapper__list__item__details__statistic__views">
-                                <div class="studios__wrapper__list__item__details__statistic__views__wrapper">
-                                    <span class="studios__wrapper__list__item__details__statistic__views__wrapper__all">1674</span>
-                                    <span class="studios__wrapper__list__item__details__statistic__views__wrapper__today"
-                                          title="За сегодня">33</span>
-                                    <svg class="studios__wrapper__list__item__details__statistic__views__wrapper__icon"
-                                         viewBox="0 0 25 25">
-                                        <use xlink:href="/images/icons/views.svg#icon"></use>
-                                    </svg>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </a>
-            </li>
-            <li class="studios__wrapper__list__item">
-                <a href="#">
-                    <svg class="studios__wrapper__list__item__favorite" viewBox="0 0 95 95">
-                        <use xlink:href="/images/icons/favorite.svg#Icons"></use>
-                    </svg>
-
-                    <img src="/images/preview/2_1.jpg" class="studios__wrapper__list__item__preview"/>
 
                     <div class="studios__wrapper__list__item__details">
                         <div class="studios__wrapper__list__item__details__rating">
@@ -475,11 +258,12 @@ $this->title = 'Все ателье по пошиву и ремноту в Са�
 
             <li class="studios__wrapper__list__item">
                 <a href="#">
-                    <svg class="studios__wrapper__list__item__favorite" viewBox="0 0 95 95">
-                        <use xlink:href="/images/icons/favorite.svg#Icons"></use>
-                    </svg>
-
-                    <img src="/images/preview/2_1.jpg" class="studios__wrapper__list__item__preview"/>
+                    <div class="studios__wrapper__list__item__image">
+                        <svg class="studios__wrapper__list__item__image__favorite" viewBox="0 0 95 95">
+                            <use xlink:href="/images/icons/favorite.svg#Icons"></use>
+                        </svg>
+                        <img src="/images/preview/2_1.jpg" class="studios__wrapper__list__item__image__preview"/>
+                    </div>
 
                     <div class="studios__wrapper__list__item__details">
                         <div class="studios__wrapper__list__item__details__rating">
@@ -548,11 +332,12 @@ $this->title = 'Все ателье по пошиву и ремноту в Са�
             </li>
             <li class="studios__wrapper__list__item">
                 <a href="#">
-                    <svg class="studios__wrapper__list__item__favorite" viewBox="0 0 95 95">
-                        <use xlink:href="/images/icons/favorite.svg#Icons"></use>
-                    </svg>
-
-                    <img src="/images/preview/2_1.jpg" class="studios__wrapper__list__item__preview"/>
+                    <div class="studios__wrapper__list__item__image">
+                        <svg class="studios__wrapper__list__item__image__favorite" viewBox="0 0 95 95">
+                            <use xlink:href="/images/icons/favorite.svg#Icons"></use>
+                        </svg>
+                        <img src="/images/preview/2_1.jpg" class="studios__wrapper__list__item__image__preview"/>
+                    </div>
 
                     <div class="studios__wrapper__list__item__details">
                         <div class="studios__wrapper__list__item__details__rating">
@@ -621,11 +406,235 @@ $this->title = 'Все ателье по пошиву и ремноту в Са�
             </li>
             <li class="studios__wrapper__list__item">
                 <a href="#">
-                    <svg class="studios__wrapper__list__item__favorite" viewBox="0 0 95 95">
-                        <use xlink:href="/images/icons/favorite.svg#Icons"></use>
-                    </svg>
+                    <div class="studios__wrapper__list__item__image">
+                        <svg class="studios__wrapper__list__item__image__favorite" viewBox="0 0 95 95">
+                            <use xlink:href="/images/icons/favorite.svg#Icons"></use>
+                        </svg>
+                        <img src="/images/preview/2_1.jpg" class="studios__wrapper__list__item__image__preview"/>
+                    </div>
 
-                    <img src="/images/preview/2_1.jpg" class="studios__wrapper__list__item__preview"/>
+                    <div class="studios__wrapper__list__item__details">
+                        <div class="studios__wrapper__list__item__details__rating">
+                            <svg class="studios__wrapper__list__item__details__rating__icon" viewBox="0 0 95 95">
+                                <use xlink:href="/images/icons/new-star.svg#star_id"></use>
+                            </svg>
+                            <svg class="studios__wrapper__list__item__details__rating__icon" viewBox="0 0 95 95">
+                                <use xlink:href="/images/icons/new-star.svg#star_id"></use>
+                            </svg>
+
+                            <svg class="studios__wrapper__list__item__details__rating__icon" viewBox="0 0 95 95">
+                                <use xlink:href="/images/icons/new-star.svg#star_id"></use>
+                            </svg>
+
+                            <svg class="studios__wrapper__list__item__details__rating__icon" viewBox="0 0 95 95">
+                                <use xlink:href="/images/icons/new-star.svg#star_id"></use>
+                            </svg>
+
+                            <svg class="studios__wrapper__list__item__details__rating__icon" viewBox="0 0 95 95">
+                                <use xlink:href="/images/icons/new-star.svg#star_id"></use>
+                            </svg>
+                        </div>
+                        <h1>
+                            <span>Ателье &laquoИрина&raquo</span>
+                        </h1>
+                        <div class="studios__wrapper__list__item__details__metro">
+                            <svg class="studios__wrapper__list__item__details__metro__icon" viewBox="0 0 95 95">
+                                <use xlink:href="/images/icons/metro.svg#svg_1"></use>
+                            </svg>
+                            <span class="studios__wrapper__list__item__details__metro__title">Василеостровская</span>
+                            <span class="studios__wrapper__list__item__details__metro__time">(10 мин)</span>
+                        </div>
+                        <div class="studios__wrapper__list__item__details__statistic">
+                            <div class="studios__wrapper__list__item__details__statistic__favorites">
+                                <div class="studios__wrapper__list__item__details__statistic__favorites__wrapper">
+                                    <span class="studios__wrapper__list__item__details__statistic__favorites__wrapper__count">412</span>
+                                    <svg class="studios__wrapper__list__item__details__statistic__favorites__wrapper__icon"
+                                         viewBox="0 0 480 480">
+                                        <use xlink:href="/images/icons/heart_77931.svg#Layer_1"></use>
+                                    </svg>
+                                </div>
+                            </div>
+                            <div class="studios__wrapper__list__item__details__statistic__report">
+                                <div class="studios__wrapper__list__item__details__statistic__report__wrapper">
+                                    <span class="studios__wrapper__list__item__details__statistic__report__wrapper__count">123</span>
+                                    <svg class="studios__wrapper__list__item__details__statistic__report__wrapper__icon"
+                                         viewBox="0 0 480 480">
+                                        <use xlink:href="/images/icons/report.svg#Layer_x0020_1"></use>
+                                    </svg>
+                                </div>
+                            </div>
+                            <div class="studios__wrapper__list__item__details__statistic__views">
+                                <div class="studios__wrapper__list__item__details__statistic__views__wrapper">
+                                    <span class="studios__wrapper__list__item__details__statistic__views__wrapper__all">1674</span>
+                                    <span class="studios__wrapper__list__item__details__statistic__views__wrapper__today"
+                                          title="За сегодня">33</span>
+                                    <svg class="studios__wrapper__list__item__details__statistic__views__wrapper__icon"
+                                         viewBox="0 0 25 25">
+                                        <use xlink:href="/images/icons/views.svg#icon"></use>
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </li>
+
+            <li class="studios__wrapper__list__item">
+                <a href="#">
+                    <div class="studios__wrapper__list__item__image">
+                        <svg class="studios__wrapper__list__item__image__favorite" viewBox="0 0 95 95">
+                            <use xlink:href="/images/icons/favorite.svg#Icons"></use>
+                        </svg>
+                        <img src="/images/preview/2_1.jpg" class="studios__wrapper__list__item__image__preview"/>
+                    </div>
+
+                    <div class="studios__wrapper__list__item__details">
+                        <div class="studios__wrapper__list__item__details__rating">
+                            <svg class="studios__wrapper__list__item__details__rating__icon" viewBox="0 0 95 95">
+                                <use xlink:href="/images/icons/new-star.svg#star_id"></use>
+                            </svg>
+                            <svg class="studios__wrapper__list__item__details__rating__icon" viewBox="0 0 95 95">
+                                <use xlink:href="/images/icons/new-star.svg#star_id"></use>
+                            </svg>
+
+                            <svg class="studios__wrapper__list__item__details__rating__icon" viewBox="0 0 95 95">
+                                <use xlink:href="/images/icons/new-star.svg#star_id"></use>
+                            </svg>
+
+                            <svg class="studios__wrapper__list__item__details__rating__icon" viewBox="0 0 95 95">
+                                <use xlink:href="/images/icons/new-star.svg#star_id"></use>
+                            </svg>
+
+                            <svg class="studios__wrapper__list__item__details__rating__icon" viewBox="0 0 95 95">
+                                <use xlink:href="/images/icons/new-star.svg#star_id"></use>
+                            </svg>
+                        </div>
+                        <h1>
+                            <span>Ателье &laquoИрина&raquo</span>
+                        </h1>
+                        <div class="studios__wrapper__list__item__details__metro">
+                            <svg class="studios__wrapper__list__item__details__metro__icon" viewBox="0 0 95 95">
+                                <use xlink:href="/images/icons/metro.svg#svg_1"></use>
+                            </svg>
+                            <span class="studios__wrapper__list__item__details__metro__title">Василеостровская</span>
+                            <span class="studios__wrapper__list__item__details__metro__time">(10 мин)</span>
+                        </div>
+                        <div class="studios__wrapper__list__item__details__statistic">
+                            <div class="studios__wrapper__list__item__details__statistic__favorites">
+                                <div class="studios__wrapper__list__item__details__statistic__favorites__wrapper">
+                                    <span class="studios__wrapper__list__item__details__statistic__favorites__wrapper__count">412</span>
+                                    <svg class="studios__wrapper__list__item__details__statistic__favorites__wrapper__icon"
+                                         viewBox="0 0 480 480">
+                                        <use xlink:href="/images/icons/heart_77931.svg#Layer_1"></use>
+                                    </svg>
+                                </div>
+                            </div>
+                            <div class="studios__wrapper__list__item__details__statistic__report">
+                                <div class="studios__wrapper__list__item__details__statistic__report__wrapper">
+                                    <span class="studios__wrapper__list__item__details__statistic__report__wrapper__count">123</span>
+                                    <svg class="studios__wrapper__list__item__details__statistic__report__wrapper__icon"
+                                         viewBox="0 0 480 480">
+                                        <use xlink:href="/images/icons/report.svg#Layer_x0020_1"></use>
+                                    </svg>
+                                </div>
+                            </div>
+                            <div class="studios__wrapper__list__item__details__statistic__views">
+                                <div class="studios__wrapper__list__item__details__statistic__views__wrapper">
+                                    <span class="studios__wrapper__list__item__details__statistic__views__wrapper__all">1674</span>
+                                    <span class="studios__wrapper__list__item__details__statistic__views__wrapper__today"
+                                          title="За сегодня">33</span>
+                                    <svg class="studios__wrapper__list__item__details__statistic__views__wrapper__icon"
+                                         viewBox="0 0 25 25">
+                                        <use xlink:href="/images/icons/views.svg#icon"></use>
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </li>
+            <li class="studios__wrapper__list__item">
+                <a href="#">
+                    <div class="studios__wrapper__list__item__image">
+                        <svg class="studios__wrapper__list__item__image__favorite" viewBox="0 0 95 95">
+                            <use xlink:href="/images/icons/favorite.svg#Icons"></use>
+                        </svg>
+                        <img src="/images/preview/2_1.jpg" class="studios__wrapper__list__item__image__preview"/>
+                    </div>
+
+                    <div class="studios__wrapper__list__item__details">
+                        <div class="studios__wrapper__list__item__details__rating">
+                            <svg class="studios__wrapper__list__item__details__rating__icon" viewBox="0 0 95 95">
+                                <use xlink:href="/images/icons/new-star.svg#star_id"></use>
+                            </svg>
+                            <svg class="studios__wrapper__list__item__details__rating__icon" viewBox="0 0 95 95">
+                                <use xlink:href="/images/icons/new-star.svg#star_id"></use>
+                            </svg>
+
+                            <svg class="studios__wrapper__list__item__details__rating__icon" viewBox="0 0 95 95">
+                                <use xlink:href="/images/icons/new-star.svg#star_id"></use>
+                            </svg>
+
+                            <svg class="studios__wrapper__list__item__details__rating__icon" viewBox="0 0 95 95">
+                                <use xlink:href="/images/icons/new-star.svg#star_id"></use>
+                            </svg>
+
+                            <svg class="studios__wrapper__list__item__details__rating__icon" viewBox="0 0 95 95">
+                                <use xlink:href="/images/icons/new-star.svg#star_id"></use>
+                            </svg>
+                        </div>
+                        <h1>
+                            <span>Ателье &laquoИрина&raquo</span>
+                        </h1>
+                        <div class="studios__wrapper__list__item__details__metro">
+                            <svg class="studios__wrapper__list__item__details__metro__icon" viewBox="0 0 95 95">
+                                <use xlink:href="/images/icons/metro.svg#svg_1"></use>
+                            </svg>
+                            <span class="studios__wrapper__list__item__details__metro__title">Василеостровская</span>
+                            <span class="studios__wrapper__list__item__details__metro__time">(10 мин)</span>
+                        </div>
+                        <div class="studios__wrapper__list__item__details__statistic">
+                            <div class="studios__wrapper__list__item__details__statistic__favorites">
+                                <div class="studios__wrapper__list__item__details__statistic__favorites__wrapper">
+                                    <span class="studios__wrapper__list__item__details__statistic__favorites__wrapper__count">412</span>
+                                    <svg class="studios__wrapper__list__item__details__statistic__favorites__wrapper__icon"
+                                         viewBox="0 0 480 480">
+                                        <use xlink:href="/images/icons/heart_77931.svg#Layer_1"></use>
+                                    </svg>
+                                </div>
+                            </div>
+                            <div class="studios__wrapper__list__item__details__statistic__report">
+                                <div class="studios__wrapper__list__item__details__statistic__report__wrapper">
+                                    <span class="studios__wrapper__list__item__details__statistic__report__wrapper__count">123</span>
+                                    <svg class="studios__wrapper__list__item__details__statistic__report__wrapper__icon"
+                                         viewBox="0 0 480 480">
+                                        <use xlink:href="/images/icons/report.svg#Layer_x0020_1"></use>
+                                    </svg>
+                                </div>
+                            </div>
+                            <div class="studios__wrapper__list__item__details__statistic__views">
+                                <div class="studios__wrapper__list__item__details__statistic__views__wrapper">
+                                    <span class="studios__wrapper__list__item__details__statistic__views__wrapper__all">1674</span>
+                                    <span class="studios__wrapper__list__item__details__statistic__views__wrapper__today"
+                                          title="За сегодня">33</span>
+                                    <svg class="studios__wrapper__list__item__details__statistic__views__wrapper__icon"
+                                         viewBox="0 0 25 25">
+                                        <use xlink:href="/images/icons/views.svg#icon"></use>
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </li>
+            <li class="studios__wrapper__list__item">
+                <a href="#">
+                    <div class="studios__wrapper__list__item__image">
+                        <svg class="studios__wrapper__list__item__image__favorite" viewBox="0 0 95 95">
+                            <use xlink:href="/images/icons/favorite.svg#Icons"></use>
+                        </svg>
+                        <img src="/images/preview/2_1.jpg" class="studios__wrapper__list__item__image__preview"/>
+                    </div>
 
                     <div class="studios__wrapper__list__item__details">
                         <div class="studios__wrapper__list__item__details__rating">

@@ -12,6 +12,7 @@ use frontend\assets\AppAsset;
 use common\widgets\Alert;
 
 AppAsset::register($this);
+Yii::$app->name = 'Tailoring';
 ?>
 <?php $this->beginPage() ?>
 <!DOCTYPE html>
@@ -37,14 +38,13 @@ AppAsset::register($this);
         ],
     ]);
     $menuItems = [
+        ['label' => 'Санкт-Петербург', 'url' => ['/objects/index']],
         ['label' => 'Катлог ателье', 'url' => ['/objects/index']],
         ['label' => 'На карте', 'icon'=> 'cog', 'url' => ['/objects/index']],
-        ['label' => 'Санкт-Петербург', 'url' => ['/objects/index']],
         ['label' => '', 'url' => ['/objects/index']],
     ];
     if (Yii::$app->user->isGuest) {
-        $menuItems[] = ['label' => 'Регистрация', 'url' => ['/site/signup']];
-        $menuItems[] = ['label' => 'Войти', 'url' => ['/site/login']];
+        $menuItems[] = ['label' => 'Вход и регистрация', 'url' => ['/site/signup']];
     } else {
         $menuItems[] = '<li>'
             . Html::beginForm(['/site/logout'], 'post')
@@ -74,7 +74,7 @@ AppAsset::register($this);
     <div class="container">
         <p class="pull-left">&copy; <?= Html::encode(Yii::$app->name) ?> <?= date('Y') ?></p>
 
-        <p class="pull-right"><?= Yii::powered() ?></p>
+        <p class="pull-right">Напишите нам</p>
     </div>
 </footer>
 

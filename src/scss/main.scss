@@ -7,7 +7,7 @@
 
 .navbar-inverse {
   background-color: $lineMenu;
-  border-color: $lineMenuBorder;
+  border-color: $lineMenu;
 
   a {
     color: $colorLink !important;
@@ -45,7 +45,7 @@
     padding-right: 49px;
   }
 
-  :nth-child(3) :before {
+  :first-child :before {
     position: absolute;
     width: 32px;
     height: 100%;
@@ -120,7 +120,7 @@
 
   &__title {
     margin-right: 12px;
-    font-size: 19px;
+    font-size: 17px;
   }
 
   &__item {
@@ -150,11 +150,14 @@
     margin-top: -105px;
 
     &__main {
+      margin-top: 44px;
       color: rebeccapurple;
+      font-size: 51px;
     }
 
     &__secondary {
       color: red;
+      margin-top: -9px;
     }
   }
 }
@@ -163,8 +166,11 @@
   font-size: 15px;
 
   &__title {
+    font-weight: bold;
     max-width: 1266px;
-    margin: 0 auto 41px;
+    margin: 57px 41px 27px;
+    font-size: 28px;
+    color: lightslategray;
     text-transform: uppercase;
   }
 
@@ -185,20 +191,22 @@
         float: left;
         margin: 0 40px 37px 0;
 
-        &__preview {
-          width: 335px;
+        &__image {
+          &__preview {
+            width: 335px;
+          }
+
+          &__favorite {
+            right: -72px;
+            position: absolute;
+            width: 125px;
+            top: -7px;
+          }
         }
 
-        &__favorite {
-          right: -50px;
-          position: absolute;
-          width: 125px;
-          top: -7px;
-        }
-
-        & :hover {
+        &:hover &__image {
           opacity: 50%;
-          transition: 2s;
+          transition: 1s;
         }
 
         &__details {
@@ -214,7 +222,7 @@
 
           &__rating {
             position: relative;
-            margin-bottom: -9px;
+            margin-bottom: -24px;
 
             &__icon {
               fill: #FFD700;
@@ -235,29 +243,32 @@
 
             &__icon {
               fill: green;
-              width: 35px;
+              width: 27px;
               position: absolute;
               height: 35px;
-              bottom: -26px;
+              bottom: -16px;
               left: -4px;
             }
 
             &__title {
               position: absolute;
-              left: 30px;
+              left: 24px;
               color: #606c84;
               font-size: 12px;
+              bottom: -8px;
             }
 
             &__time {
               color: lightsteelblue;
               position: absolute;
-              left: 139px;
+              left: 131px;
+              bottom: -8px;
               font-size: 12px;
             }
           }
 
           &__statistic {
+            font-size: 12px;
             &__favorites {
               margin-top: 32px;
               margin-bottom: -9px;
@@ -267,15 +278,14 @@
 
                 &__count {
                   color: #0b93d5;
-                  bottom: 42px;
-                  right: 17px;
-                  font-size: 12px;
+                  bottom: 19px;
+                  right: 11px;
                   position: absolute;
                 }
 
                 &__icon {
-                  width: 24px;
-                  top: -62px;
+                  width: 19px;
+                  top: -38px;
                   right: -14px;
                   position: absolute;
                 }
@@ -291,15 +301,15 @@
 
                 &__count {
                   color: #0b93d5;
-                  bottom: 1px;
-                  font-size: 12px;
-                  right: 17px;
+                  bottom: -7px;
+                  right: 11px;
                   position: absolute;
                 }
 
                 &__icon {
-                  bottom: -3px;
-                  width: 23px;
+                  fill: violet;
+                  bottom: -9px;
+                  width: 21px;
                   right: -14px;
                   position: absolute;
                 }
@@ -312,21 +322,22 @@
 
                 &__all {
                   color: #0b93d5;
-                  bottom: -33px;
-                  right: 43px;
+                  bottom: -35px;
+                  right: 30px;
                   position: absolute;
                 }
 
                 &__today {
                   color: orange;
-                  bottom: -33px;
-                  right: 17px;
+                  bottom: -35px;
+                  right: 11px;
                   position: absolute;
                 }
 
                 &__icon {
-                  width: 23px;
-                  top: 12px;
+                  fill: mediumblue;
+                  width: 20px;
+                  top: 16px;
                   right: -16px;
                   position: absolute;
                 }
@@ -344,35 +355,28 @@
       margin: 84px 0 22px 0;
 
       &__title {
-        text-decoration: none;
         padding: 20px 40px;
-        border: 2px solid #bfd9f1;
+        border: 2px solid darkseagreen;
         border-radius: 30px;
-        -webkit-border-radius: 30px;
-        color: #afcbe6;
-        font-family: "lato-regular", Helvetica, Arial, sans-serif;
-        font-size: 16px;
-        text-transform: uppercase;
-        letter-spacing: 1px;
-        text-align: center;
-        transition: all .2s linear;
-        -webkit-transition: all .2s linear;
-        -o-transition: all .2s linear;
+        color: darkseagreen;
       }
     }
   }
 }
 
-
-.properties_list li:hover {
-  .property_img {
-    transition: 1s;
-    opacity: 50%;
-  }
-}
-
 .studios__wrapper__list__item a {
   text-decoration: none !important;
+}
+
+.pull-right {
+  cursor: pointer;
+  margin-top: -11px;
+  padding: 6px;
+  padding-left: 12px;
+  padding-right: 12px;
+  border-radius: 24px;
+  border: 2px solid;
+  font-size: 15px;
 }
 
 footer {
