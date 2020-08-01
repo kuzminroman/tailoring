@@ -14,7 +14,7 @@ $this->title = 'Все ателье по пошиву и ремноту в Са�
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
 
         <form class="form-inline mr-auto">
-            <input class="form-control main-search" type="text" placeholder="Поиск" aria-label="Search">
+            <input class="form-control main-search" type="text" placeholder="Поиск ателье" aria-label="Search">
             <button class="btn btn-mdb-color btn-rounded btn-sm my-0 ml-sm-2 btn btn-success" type="submit">Поиск
             </button>
         </form>
@@ -27,44 +27,79 @@ $this->title = 'Все ателье по пошиву и ремноту в Са�
 
 </nav>
 
+<div class="poplare-questions" style="
+    margin-top: 33px;
+    margin-bottom: 36px;
+
+">
+    <span style="margin-right: 12px;font-size: 19px;">Популярные запросы:</span>
+    <span class="question-search" style="
+    padding: 13px;
+    margin-top: 29px;
+    border: 0px solid;
+    border-radius: 78px;
+    background-color: whitesmoke;
+    box-shadow: 0 3px 6px rgba(40,46,60,0.45);
+    margin-right: 14px;
+">Сшить платье</span>
+    <span class="question-search" style="
+    padding: 13px;
+    margin-top: 29px;
+    border: 0px solid;
+    border-radius: 78px;
+    background-color: whitesmoke;
+    box-shadow: 0 3px 6px rgba(40,46,60,0.45);
+    margin-right: 14px;
+">Ремонт шубы</span>
+    <span class="question-search" style="
+    padding: 13px;
+    margin-top: 29px;
+    border: 0px solid;
+    border-radius: 78px;
+    background-color: whitesmoke;
+    box-shadow: 0 3px 6px rgba(40,46,60,0.45);
+    margin-right: 14px;
+">Сшить брюки</span>
+    <span class="question-search" style="
+    padding: 13px;
+    margin-top: 29px;
+    border: 0px solid;
+    border-radius: 78px;
+    background-color: whitesmoke;
+    box-shadow: 0 3px 6px rgba(40,46,60,0.45);
+    margin-right: 14px;
+">Пошив пальто
+    </span>
+</div>
 
 <section class="hero">
-    <!--    <header>
-            <div class="wrapper">
-                <a href="#"><img src="/images/other/logo.png" class="logo" alt="" titl=""/></a>
-                <a href="#" class="hamburger"></a>
-                <nav>
-                    <ul>
-                        <li><a href="#">Buy</a></li>
-                        <li><a href="#">Rent</a></li>
-                        <li><a href="#">Sell</a></li>
-                        <li><a href="#">About</a></li>
-                        <li><a href="#">Contact</a></li>
-                    </ul>
-                    <a href="#" class="login_btn">Login</a>
-                </nav>
-            </div>
-        </header>  end header section  -->
-
     <section class="caption">
         <h2 class="caption">Find Dream Home</h2>
         <h3 class="properties">Appartements - Houses - Mansions</h3>
     </section>
-</section><!--  end hero section  -->
+</section>
 
-<section class="listings">
+<section class="listings" style="margin-top: -22px;">
+    <h1 style="
+    max-width: 1500px;
+    margin: 0px auto 50px;
+    text-transform: uppercase;
+    /* position: relative; */
+">Список ателье Санкт-Петербурга</h1>
     <div class="wrapper">
         <ul class="properties_list">
 <a href="#">
             <li>
-                <img src="/images/preview/2_1.jpg" alt="" title="" class="property_img"/>
+                <svg class="property_details__rating__icon" viewBox="0 0 95 95" style="right: -81px;position: absolute;width: 150px;top: -7px;">
+                    <use xlink:href="/images/icons/favorite.svg#Icons"></use>
+                </svg>
 
-                <div class="property_details">
+                <img src="/images/preview/2_1.jpg" class="property_img"/>
+
+                <div class="property_details" style="border-bottom-right-radius: 17px; border-bottom-left-radius: 17px;">
                     <div class="property_details__rating">
-
-
                         <svg class="property_details__rating__icon" viewBox="0 0 95 95">
-                               <use xlink:href="/images/icons/new-star.svg#star_id"></use>
+                            <use xlink:href="/images/icons/new-star.svg#star_id"></use>
                         </svg>
                         <svg class="property_details__rating__icon" viewBox="0 0 95 95">
                             <use xlink:href="/images/icons/new-star.svg#star_id"></use>
@@ -90,6 +125,7 @@ $this->title = 'Все ателье по пошиву и ремноту в Са�
                             <use xlink:href="/images/icons/metro.svg#svg_1"></use>
                         </svg>
                         <span class="main-description__metro__name">Василеостровская</span>
+                        <span style="color: lightsteelblue; position: absolute;left: 179px;">(10 мин)</span>
                         <style>
 
                             .property_details__rating {
@@ -127,6 +163,7 @@ $this->title = 'Все ателье по пошиву и ремноту в Са�
                             .main-description__metro {
                                 position: relative;
                             }
+
                             .main-description__metro__icon {
                                 fill: green;
                                 width: 35px;
@@ -135,12 +172,40 @@ $this->title = 'Все ателье по пошиву и ремноту в Са�
                                 bottom: -26px;
                                 left: -4px;
                             }
+
                             .main-description__metro__name {
                                 position: absolute;
                                 left: 37px;
                                 color: #606c84;
                             }
                         </style>
+                    </div>
+                    <div class="property_details__info_count">
+                        <div class="property_details__info_count__favorites" style="margin-top: 32px;margin-bottom: -9px;">
+                            <div class="property_details__info_count__favorites__wrapper" style="position: relative;">
+                                <span style="color: #0b93d5;bottom: 42px;right: 17px;position: absolute;">412</span>
+                                <svg class="property_details__info_count__favorites__wrapper__icon" viewBox="0 0 480 480" style="width: 27px;top: -62px;/* float: right; */right: -14px;position: absolute;/* margin-right: -13px; */">
+                                    <use xlink:href="/images/icons/heart_77931.svg#Layer_1"></use>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="property_details__report" style="margin-top: 32px;margin-bottom: -9px;">
+                            <div class="property_details__report__wrapper" style="position: relative;">
+                                <span style="color: #0b93d5;bottom: 1px;right: 17px;position: absolute;">123</span>
+                                <svg class="property_details__report__wrapper__icon" viewBox="0 0 480 480" style="bottom: -3px;width: 27px;/* float: right; */right: -14px;position: absolute;/* margin-right: -13px; */">
+                                    <use xlink:href="/images/icons/report.svg#Layer_x0020_1"></use>
+                                </svg>
+                            </div>
+                        </div>
+
+                        <div class="property_details__info_count__views" style="/* margin-top: 4px; *//* margin-bottom: -9px; */">
+                            <div class="property_details__info_count__views__wrapper" style="position: relative;">
+                                <span style="color: #0b93d5;bottom: -33px;right: 43px;position: absolute;">1674</span><span style="color: orange;bottom: -33px;right: 17px;position: absolute;" title="За сегодня">33</span><svg class="property_details__info_count__views__wrapper__icon" viewBox="0 0 25 25" style="width: 28px;top: 12px;/* float: right; */right: -16px;position: absolute;/* margin-right: -13px; */">
+                                    <use xlink:href="/images/icons/views.svg#icon"></use>
+                                </svg>
+                            </div>
+                        </div>
+
                     </div>
                 </div>
 

@@ -40,6 +40,7 @@ AppAsset::register($this);
         ['label' => 'Катлог ателье', 'url' => ['/objects/index']],
         ['label' => 'На карте', 'icon'=> 'cog', 'url' => ['/objects/index']],
         ['label' => 'Санкт-Петербург', 'url' => ['/objects/index']],
+        ['label' => '', 'url' => ['/objects/index']],
     ];
     if (Yii::$app->user->isGuest) {
         $menuItems[] = ['label' => 'Регистрация', 'url' => ['/site/signup']];
