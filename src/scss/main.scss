@@ -1,7 +1,6 @@
 @charset 'UTF-8';
 
-@import 'vars/_fonts',
-'vars/_colors';
+@import 'vars/_fonts', 'vars/_colors';
 
 @import 'abstract/mixins';
 
@@ -124,7 +123,7 @@
   }
 
   &__item {
-    padding: 13px;
+    padding: 9px;
     margin-top: 29px;
     border: 0 solid;
     border-radius: 78px;
@@ -150,9 +149,10 @@
     margin-top: -105px;
 
     &__main {
-      margin-top: 44px;
-      color: rebeccapurple;
+      margin-top: 63px;
+      color: dodgerblue;
       font-size: 51px;
+      font-family: "lato-regular", Helvetica, Arial, sans-serif !important;
     }
 
     &__secondary {

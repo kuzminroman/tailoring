@@ -24,8 +24,7 @@ $this->title = 'Все ателье по пошиву и ремноту в Са�
 
 <section class="main-page-header-image">
     <section class="main-page-header-image__caption">
-        <h2 class="main-page-header-image__caption__main">Работа освобождает</h2>
-        <h3 class="main-page-header-image__caption__secondary">1933-1945</h3>
+        <h2 class="main-page-header-image__caption__main">Реализуй свои мечты</h2>
     </section>
 </section>
 
