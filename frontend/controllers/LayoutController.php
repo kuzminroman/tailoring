@@ -13,9 +13,41 @@ class LayoutController extends Controller
         return $this->render('index');
     }
 
-    public function actionTest()
+    public function actionMain()
     {
-        return $this->render('test');
+        return $this->render('main');
     }
+
+    public function actionObjects()
+    {
+        return $this->render('objects');
+    }
+
+    public function actionMap()
+    {
+        return $this->render('map');
+    }
+
+    public function actionWishlist()
+    {
+        return $this->render('wishlist');
+    }
+
+    public function actionOpen()
+    {
+        return $this->render('open');
+    }
+
+    public function actionLogin()
+    {
+        return $this->render('login');
+    }
+
+    public function actionRegist()
+    {
+        return $this->render('regist');
+    }
+
+
 
 }

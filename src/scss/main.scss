@@ -4,6 +4,10 @@
 
 @import 'abstract/mixins';
 
+.main-page {
+  margin-top: 64px;
+}
+
 .navbar-inverse {
   background-color: $lineMenu;
   border-color: $lineMenu;
@@ -72,7 +76,6 @@
 }
 
 .nav-main-search {
-  margin-top: 64px;
   background-color: #808000;
 
   .collapse {
@@ -359,6 +362,7 @@
         border: 2px solid darkseagreen;
         border-radius: 30px;
         color: darkseagreen;
+        cursor: pointer;
       }
     }
   }
@@ -379,12 +383,106 @@
   font-size: 15px;
 }
 
+.open-to-project {
+  margin-top: 12px;
+  &__login {
+    float: left;
+    border-right: solid 1px $whiteGray;
+    padding: 264px;
+    position: relative;
+    margin-right: 26px;
+
+    &__title {
+      position: absolute;
+      top: 20px;
+      font-weight: bolder;
+      left: 238px;
+      text-transform: uppercase;
+    }
+
+    &__form {
+      position: absolute;
+      top: 80px;
+      left: 54px;
+      width: 90% !important;
+    }
+    &:hover {
+      opacity: 70%;
+    }
+  }
+
+  &__regist {
+    padding: 270px;
+    position: relative;
+    width: 154px;
+    float: right;
+
+    &__title {
+      font-weight: bolder;
+      text-transform: uppercase;
+      position: absolute;
+      top: 22px;
+      left: 196px;
+    }
+
+    &__text {
+      position: absolute;
+      top: 71px;
+      left: 12px;
+      text-indent: 20px;
+    }
+
+    &:hover {
+      opacity: 70%;
+    }
+  }
+}
+
+.btn-form-login {
+  color: $white;
+  background-color: $mainTheme;
+  border-color: $mainTheme;
+  width: 100% !important;
+
+  &:hover {
+    background-color: $mainThemeWhite;
+    border-color: $mainThemeWhite;
+  }
+}
+
+.group-button-for-main-regist a {
+  width: 86%;
+  position: absolute;
+  text-align: center;
+  left: 36px;
+  cursor: pointer;
+  padding: 7px;
+  border-radius: 3px;
+  border: solid 1px $mainTheme;
+  background-color: $mainTheme;
+  color: $white;
+  text-decoration: none !important;
+
+  &:hover {
+    background-color: $mainThemeWhite;
+    border-color: $mainThemeWhite;
+    color: $white !important;
+  }
+  &:first-child {
+    margin-top: 55px;
+  }
+}
+
+.label-form-login {
+  width: 18% !important;
+}
+
+
 footer {
   background-color: $lineMenu;
   margin-top: 92px;
   width: 100%;
   padding-top: 33px;
-  margin-bottom: 40px;
   height: 80px;
   color: $colorLink;
 

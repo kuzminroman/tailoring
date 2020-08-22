@@ -13,6 +13,7 @@ use common\widgets\Alert;
 
 AppAsset::register($this);
 Yii::$app->name = 'Tailoring';
+Yii::$app->homeUrl = '/layout/main/'
 ?>
 <?php $this->beginPage() ?>
 <!DOCTYPE html>
@@ -38,16 +39,16 @@ Yii::$app->name = 'Tailoring';
         ],
     ]);
     $menuItems = [
-        ['label' => 'Санкт-Петербург', 'url' => ['/objects/index']],
-        ['label' => 'Катлог ателье', 'url' => ['/objects/index']],
-        ['label' => 'На карте', 'icon'=> 'cog', 'url' => ['/objects/index']],
-        ['label' => '', 'url' => ['/objects/index']],
+        ['label' => 'Санкт-Петербург', 'url' => ['#']],
+        ['label' => 'Катлог ателье', 'url' => ['/layout/objects/']],
+        ['label' => 'На карте', 'icon'=> 'cog', 'url' => ['/layout/map/']],
+        ['label' => '', 'url' => ['/layout/wishlist/']],
     ];
     if (Yii::$app->user->isGuest) {
-        $menuItems[] = ['label' => 'Вход и регистрация', 'url' => ['/site/signup']];
+        $menuItems[] = ['label' => 'Вход и регистрация', 'url' => ['/layout/open/']];
     } else {
         $menuItems[] = '<li>'
-            . Html::beginForm(['/site/logout'], 'post')
+            . Html::beginForm(['/site/logout/'], 'post')
             . Html::submitButton(
                 'Logout (' . Yii::$app->user->identity->username . ')',
                 ['class' => 'btn btn-link logout']
@@ -61,7 +62,7 @@ Yii::$app->name = 'Tailoring';
     ]);
     NavBar::end();
     ?>
-    <div class="container">
+    <div class="container main-page">
         <?= Breadcrumbs::widget([
             'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
         ]) ?>
