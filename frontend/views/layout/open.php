@@ -32,8 +32,8 @@ $this->title = 'Вход и регистрация';
             предложение. Если вы хотите размещаться,
             как алелье, то при регистрации укажите, что-то должно быть написано, сейчас каша в голове, просто жесть</p>
         <div class="group-button-for-main-regist">
-            <a href="/layout/regist/?option=z">Заказчик</a>
-            <a href="/layout/regist/?option=a">Ателье/Мастер</a>
+            <a href="/layout/regist?option=Z">Заказчик</a>
+            <a href="/layout/regist?option=A">Ателье/Мастер</a>
         </div>
     </div>
 </div>
