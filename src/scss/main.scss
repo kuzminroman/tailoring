@@ -477,6 +477,29 @@
   width: 18% !important;
 }
 
+.btn-main-color {
+  color: $white;
+  border: solid 1px $mainTheme;
+  background-color: $mainTheme;
+  &:hover {
+    background-color: $mainThemeWhite;
+    border-color: $mainThemeWhite;
+  }
+  &:focus {
+    outline-offset: unset !important;
+    outline-color: $outlineColorButton !important;
+  }
+  &-gray {
+    color: $whiteGray;
+  }
+}
+
+.page-registration {
+  width: 446px;
+  &__title-form {
+    margin-bottom: 25px !important;
+  }
+}
 
 footer {
   background-color: $lineMenu;

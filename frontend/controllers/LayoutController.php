@@ -48,6 +48,14 @@ class LayoutController extends Controller
         return $this->render('regist');
     }
 
+    public function actionPersonalArea()
+    {
+        return $this->render('personalArea');
+    }
 
+    public function actionPersonalAreaClient()
+    {
+        return $this->render('personalAreaClient');
+    }
 
 }

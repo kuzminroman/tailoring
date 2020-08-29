@@ -1,26 +1,52 @@
-<?php if (Yii::$app->request->get('option') === 'A') : ?>
-    <h3>Основная информация</h3>
-    <form class="registration__form" action="#" method="post">
-        <div class="form-group">
-            <label for="exampleFormControlInput1">Наименование</label>
-            <p>Для самозанятых можно указать ФИО. Для ателье наименование организации</p>
-            <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Введите намименование">
-        </div>
-        <div class="form-group">
-            <label for="exampleFormControlSelect1">Выберите направление деятельности</label>
-            <p>Если вы не ателье, то выберите пункт &laquo;Мастер&raquo;</p>
-            <select class="form-control" id="exampleFormControlSelect1">
-            <option>Ателье</option>
-            <option>Мастер</option>
-        </select>
-        </div>
+<?php
+/* @var $this yii\web\View */
+$this->title = 'Регистрация';
+?>
+<div class="page-registration">
+    <h3 class="page-registration__title-form">
+        Регистрация <?= Yii::$app->request->get('option') === 'A' ? 'клиента' : 'пользователя' ?></h3>
+    <form class="page-registration_client__registration-form-main" action="#" method="post">
+        <?php if (Yii::$app->request->get('option') === 'A') : ?>
+            <div class="form-group">
+                <label for="inputName">Наименование</label>
+                <input type="text" class="form-control" id="inputName">
+                <small id="nameHelp" class="form-text text-muted">Для самозанятых можно указать ФИО. Для ателье
+                    наименование организаци</small>
+            </div>
+            <div class="form-group">
+                <label for="exampleInputEmailPhone">Укажите почту или телефон</label>
+                <input type="text" class="form-control" id="exampleInputEmailPhone" aria-describedby="emailPhoneHelp">
+            </div>
 
-        <div class="form-group">
-            <label for="exampleFormControlTextarea1">Описанние</label>
-            <p>Опишите вас, чтобы быть более привлекательными для клиентов</p>
-            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-        </div>
+            <label for="type-organization-work">Выберите направление деятельности</label>
+            <div id="type-organization-work" class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="inlineRadioOptionsSalon" id="inlineRadioSalon"
+                       value="1">
+                <label class="form-check-label" for="inlineRadioSalon">Ателье</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="inlineRadioOptionsMaster" id="inlineRadioMaster"
+                       value="2">
+                <label class="form-check-label" for="inlineRadioMaster"
+                       title="Выбор между мастером или швеей, пока остановимся на таком варианте">Самозанятый<sup>*</sup></label>
+            </div>
+            <div class="form-group">
+                <small id="sectionHelp" class="form-text text-muted">Если вы не ателье, то выберите пункт &laquo;Мастер&raquo;</small>
+            </div>
+        <?php elseif(Yii::$app->request->get('option') === 'Z') : ?>
+            <div class="form-group">
+                <label for="inputNameUser">Имя</label>
+                <input type="text" class="form-control" id="inputNameUser">
+            </div>
+            <div class="form-group">
+                <label for="inputSurname">Фамилия</label>
+                <input type="text" class="form-control" id="inputSurname">
+            </div>
+            <div class="form-group">
+                <label for="exampleInputEmailPhone">Укажите почту или телефон</label>
+                <input type="text" class="form-control" id="exampleInputEmailPhone" aria-describedby="emailPhoneHelp">
+            </div>
+        <?php endif; ?>
+        <button type="submit" class="btn btn-main-color">Регистрация</button>
     </form>
-    <hr/>
-    <h3>Контактная информация</h3>
-<?php endif; ?>
+</div>
