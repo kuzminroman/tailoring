@@ -496,9 +496,94 @@
 
 .page-registration {
   width: 446px;
+
   &__title-form {
     margin-bottom: 25px !important;
   }
+}
+
+.personal-area {
+  margin-top: 40px;
+
+  &__main_information {
+    &__main-img {
+      cursor: pointer;
+    }
+
+    position: relative;
+    display: inline-flex;
+
+    &__container {
+      margin-left: 15px;
+
+      &__description {
+        margin-top: 15px;
+      }
+    }
+  }
+
+  &__contacts-information {
+    position: relative;
+    padding-top: 19px;
+    &__metro {
+      &__list {
+        margin-top: 12px;
+      }
+
+    }
+  }
+  &__tags-information {
+    padding-top: 19px;
+    position: relative;
+    &__tag {
+      width: auto;
+      margin: 0 8px 8px 0;
+      display: inline-flex;
+      max-width: 100%;
+      box-sizing: border-box;
+      outline: none;
+      cursor: default;
+      padding: 0;
+      font-family: Arial,sans-serif;
+      font-size: 14px;
+      border: 0;
+      background-color: transparent;
+    }
+
+  }
+}
+
+.title-line {
+  position: absolute;
+  left: 42%;
+  top: 29px;
+  font-size: 13px;
+  background: $white;
+  padding: 0 10px;
+}
+
+.link-edit {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}
+
+.view-tag-gray {
+  display: inline-block;
+  position: relative;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  box-sizing: border-box;
+  text-align: left;
+  flex-shrink: 0;
+  flex-grow: 0;
+  background-color: rgba(203,209,211,.3);
+  color: #666;
+  padding: 0;
+  height: 30px;
+  line-height: 28px;
+  border: 1px solid transparent;
 }
 
 footer {

@@ -9,17 +9,10 @@
             <div class="row">
                 <div class="form-group col-md-4">
                     <label for="inputName">Наименование</label>
-                    <input type="text" class="form-control" id="inputName" value="ООО Ирина">
+                    <input type="text" class="form-control" id="inputName" value="ООО &laquo;Ирина&raquo;">
                 </div>
             </div>
-            <div class="row">
-                <div class="form-group col-md-3">
-                    <label for="exampleInputEmailPhone">Почта</label>
-                    <input type="text" class="form-control" id="exampleInputEmailPhone"
-                           aria-describedby="emailPhoneHelp"
-                           value="kuzmina@gmail.com">
-                </div>
-            </div>
+
 
             <label for="type-organization-work">Направаление деятельности</label>
             <div id="type-organization-work" class="form-check form-check-inline">
@@ -37,13 +30,15 @@
             <div class="row">
             <div class="form-group col-md-8">
                 <label for="exampleFormControlTextarea1">Описанние</label>
-                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3">Опишите ваше ателье, чтобы быть более привлекательным для клиентов</textarea>
             </div>
             </div>
 
             <hr/>
             <h3>Контактная информация</h3>
             <br/>
+
+
             <div class="row">
                 <div class="form-group col-md-3">
                     <label for="inputCity">Город</label>
@@ -60,8 +55,16 @@
             </div>
             <div class="row">
                 <div class="form-group col-md-3">
+                    <label for="exampleInputEmailPhone">Почта</label>
+                    <input type="text" class="form-control" id="exampleInputEmailPhone"
+                           aria-describedby="emailPhoneHelp"
+                           value="kuzmina@gmail.com">
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group col-md-3">
                     <label for="inputAddress">Телефон</label>
-                    <input type="tel" class="form-control" id="inputAddress" required pattern="^[0-9-()+\s]+$">
+                    <input type="tel" class="form-control" id="inputAddress" required pattern="^[0-9-()+\s]+$" value="+79617493524">
                 </div>
             </div>
         </div>
