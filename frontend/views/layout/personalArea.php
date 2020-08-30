@@ -43,41 +43,100 @@ $this->title = 'Личный кабинет';
         <hr/>
         <div class="personal-area__tags-information title-line">Ключевые нарправления</div>
         <br/>
-        <div class="personal-area__tags-information__tag">
-            <span class="view-tag-gray">
-                <span>Ремонт брюк</span>
+        <div class="personal-area__tags-information__tags">
+            <div class="personal-area__tags-information__tags__item">
+                <span class="view-tag-gray">
+                    <span>Ремонт брюк</span>
             </span>
-        </div>
-        <div class="personal-area__tags-information__tag">
+            </div>
+            <div class="personal-area__tags-information__tags__item">
             <span class="view-tag-gray">
                 <span>Ремонт платья</span>
             </span>
-        </div>
-        <div class="personal-area__tags-information__tag">
+            </div>
+            <div class="personal-area__tags-information__tags__item">
             <span class="view-tag-gray">
                 <span>Платье на заказ</span>
             </span>
-        </div>
-        <div class="personal-area__tags-information__tag">
-            <span class="view-tag-gray">
-                <span>Ремонт шубы</span>
-            </span>
-        </div>
-        <div class="personal-area__tags-information__tag">
+            </div>
+            <div class="personal-area__tags-information__tags__item">
+                <span class="view-tag-gray"><span>Ремонт шубы</span></span>
+            </div>
+            <div class="personal-area__tags-information__tags__item">
             <span class="view-tag-gray">
                 <span>Пошив свадебного костюма</span>
             </span>
-        </div>
-        <div class="personal-area__tags-information__tag">
+            </div>
+            <div class="personal-area__tags-information__tags__item">
             <span class="view-tag-gray">
                 <span>Ремонт пиджака</span>
             </span>
-        </div>
-        <div class="personal-area__tags-information__tag">
+            </div>
+            <div class="personal-area__tags-information__tags__item">
             <span class="view-tag-gray">
                 <span>Ремонт костюмов для детей</span>
             </span>
+            </div>
+            <div class="personal-area__tags-information__tags__item">
+                <span class="view-tag-gray">
+                    <span>Ремонт брюк</span>
+            </span>
+            </div>
+            <div class="personal-area__tags-information__tags__item">
+            <span class="view-tag-gray">
+                <span>Ремонт платья</span>
+            </span>
+            </div>
+            <div class="personal-area__tags-information__tags__item">
+            <span class="view-tag-gray">
+                <span>Платье на заказ</span>
+            </span>
+            </div>
+            <div class="personal-area__tags-information__tags__item">
+                <span class="view-tag-gray"><span>Ремонт шубы</span></span>
+            </div>
+            <div class="personal-area__tags-information__tags__item">
+            <span class="view-tag-gray">
+                <span>Пошив свадебного костюма</span>
+            </span>
+            </div>
+            <div class="personal-area__tags-information__tags__item">
+            <span class="view-tag-gray">
+                <span>Ремонт пиджака</span>
+            </span>
+            </div>
+            <div class="personal-area__tags-information__tags__item">
+            <span class="view-tag-gray">
+                <span>Ремонт костюмов для детей</span>
+            </span>
+            </div>
+            <div class="personal-area__tags-information__tags__item">
+            <span class="view-tag-gray">
+                <span>Ремонт костюмов для детей</span>
+            </span>
+            </div>
+            <div class="personal-area__tags-information__tags__item">
+            <span class="view-tag-gray">
+                <span>Ремонт костюмов для детей</span>
+            </span>
+            </div>
+            <div class="personal-area__tags-information__tags__item">
+            <span class="view-tag-gray">
+                <span>Ремонт костюмов для детей</span>
+            </span>
+            </div>
+            <div class="personal-area__tags-information__tags__item">
+            <span class="view-tag-gray">
+                <span>Ремонт костюмов для детей</span>
+            </span>
+            </div>
+            <div class="personal-area__tags-information__tags__item">
+            <span class="view-tag-gray">
+                <span>Ремонт костюмов для детей</span>
+            </span>
+            </div>
         </div>
+        <br/>
         <a class="personal-area__main_information link-edit" href="/layout/personal-area-client/">Редактировать</a>
     </div>
     <div class="personal-area__gallery-information">

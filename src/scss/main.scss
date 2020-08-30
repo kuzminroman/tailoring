@@ -535,21 +535,12 @@
   &__tags-information {
     padding-top: 19px;
     position: relative;
-    &__tag {
-      width: auto;
-      margin: 0 8px 8px 0;
-      display: inline-flex;
-      max-width: 100%;
-      box-sizing: border-box;
-      outline: none;
-      cursor: default;
-      padding: 0;
-      font-family: Arial,sans-serif;
-      font-size: 14px;
-      border: 0;
-      background-color: transparent;
+    &__tags {
+      &__item {
+        margin: 0 8px 8px 0;
+        display: inline-flex;
+      }
     }
-
   }
 }
 
@@ -569,21 +560,17 @@
 }
 
 .view-tag-gray {
+  border-radius: 5px;
   display: inline-block;
   position: relative;
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-  box-sizing: border-box;
-  text-align: left;
-  flex-shrink: 0;
-  flex-grow: 0;
-  background-color: rgba(203,209,211,.3);
-  color: #666;
-  padding: 0;
-  height: 30px;
+  background-color: $bgTag;
+  color: $fontColorTag;
   line-height: 28px;
   border: 1px solid transparent;
+
+  & span {
+    padding: 12px;
+  }
 }
 
 footer {
