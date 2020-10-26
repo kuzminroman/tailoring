@@ -137,6 +137,31 @@
   }
 }
 
+.metro-svg {
+  fill: green;
+  width: 27px;
+  position: absolute;
+  height: 35px;
+  bottom: -16px;
+  left: -4px;
+}
+
+.metro-title {
+  position: absolute;
+  left: 24px;
+  color: $colorTitleMetro;
+  font-size: 12px;
+  bottom: -8px;
+}
+
+.metro-time {
+  color: $colorTimeToMetro;
+  position: absolute;
+  left: 131px;
+  bottom: -8px;
+  font-size: 12px;
+}
+
 .main-page-header-image {
   width: 100%;
   height: 265px;
@@ -244,31 +269,6 @@
 
           &__metro {
             position: relative;
-
-            &__icon {
-              fill: green;
-              width: 27px;
-              position: absolute;
-              height: 35px;
-              bottom: -16px;
-              left: -4px;
-            }
-
-            &__title {
-              position: absolute;
-              left: 24px;
-              color: #606c84;
-              font-size: 12px;
-              bottom: -8px;
-            }
-
-            &__time {
-              color: lightsteelblue;
-              position: absolute;
-              left: 131px;
-              bottom: -8px;
-              font-size: 12px;
-            }
           }
 
           &__statistic {
@@ -604,13 +604,65 @@
       }
 
       &__info {
+        &__address {
+          &__full {
+            color: $fontColorTag;
+            position: relative;
+
+            span {
+              position: absolute;
+              top: 29px;
+            }
+          }
+
+          &__raion {
+            position: relative;
+
+            span {
+              position: absolute;
+              top: 56px;
+              color: $fontColorTag;
+              font-size: 13px;
+            }
+          }
+
+
+          &__metro {
+            position: relative;
+
+            &__item {
+              position: relative;
+
+              .metro-svg {
+                position: absolute;
+                bottom: unset !important;
+                top: 76px !important;
+              }
+
+              .metro-title {
+                position: absolute;
+                bottom: unset;
+                top: 84px !important;
+              }
+
+              .metro-time {
+                position: absolute;
+                bottom: unset !important;
+                top: 84px !important;
+              }
+            }
+          }
+        }
+
         &__phone {
           position: relative;
+
           a {
             position: absolute;
             top: 5px;
             text-decoration: none !important;
-            color: $encoreColorLink;
+            color: $fontColorTag;
+
             &:hover {
               color: $colorLinkHover;
             }
@@ -619,12 +671,14 @@
 
         &__tags {
           position: absolute;
-          bottom: 1px;
+          bottom: -7px;
+
           &__item {
-            margin: 0 0 8px 0;
+            margin: 0 0 5px 0;
             display: inline-flex;
+
             .view-tag-gray {
-              line-height: 17px!important;
+              line-height: 17px !important;
             }
           }
         }

@@ -36,6 +36,7 @@ $tags = [
     'Пошив костюма',
     'Ремонт рубашек'
 ];
+
 ?>
 
 <div class="object-list">
@@ -50,13 +51,22 @@ $tags = [
             <div class="object-list__item__right-block__info">
                 <div class="object-list__item__right-block__info__phone">
                     <a href="tel:+7(812)456-05-16">
-                        +7(812)456-05-16
+                        +7 (812) 456-05-16
                     </a>
                 </div>
 
                 <div class="object-list__item__right-block__info__address">
-                    <span class="object-list__item__right-block__info__address__full"></span>
-                    <span class="object-list__item__right-block__info__address__metro"></span>
+                    <div class="object-list__item__right-block__info__address__full">
+                        <span>ул. Дзержинского, д.67А, оф.312</span>
+                    </div>
+                    <div class="object-list__item__right-block__info__address__raion">
+                        <span>Центральный район</span>
+                    </div>
+                    <div class="object-list__item__right-block__info__address__metro">
+                        <?= \frontend\widgets\ShowMetroWidget::widget([
+                                'objectId' => 1
+                        ]);?>
+                    </div>
                 </div>
 
                 <div class="object-list__item__right-block__info__tags">
