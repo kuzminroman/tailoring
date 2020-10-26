@@ -31,6 +31,7 @@
       position: absolute;
       width: 221px !important;
       top: -8px;
+      margin-left: 70px;
 
       img {
         width: 187px;
@@ -42,7 +43,7 @@
 .navbar-nav {
   position: absolute;
   font-size: 13px;
-  right: 303px;
+  right: 114px;
 
   li {
     padding-right: 49px;
@@ -570,6 +571,65 @@
 
   & span {
     padding: 12px;
+  }
+}
+
+.object-list {
+  padding-right: 85px;
+  padding-left: 85px;
+
+  &__item {
+    margin: 0 8px 8px 0;
+    display: inline-flex;
+
+    &__left-block {
+      float: left;
+
+      &__image {
+        img {
+          width: 300px;
+        }
+      }
+    }
+
+    &__right-block {
+      float: left;
+      width: 640px;
+      margin-left: 15px;
+      position: relative;
+
+      &__title {
+        font-weight: bold;
+        font-size: 18px;
+      }
+
+      &__info {
+        &__phone {
+          position: relative;
+          a {
+            position: absolute;
+            top: 5px;
+            text-decoration: none !important;
+            color: $encoreColorLink;
+            &:hover {
+              color: $colorLinkHover;
+            }
+          }
+        }
+
+        &__tags {
+          position: absolute;
+          bottom: 1px;
+          &__item {
+            margin: 0 0 8px 0;
+            display: inline-flex;
+            .view-tag-gray {
+              line-height: 17px!important;
+            }
+          }
+        }
+      }
+    }
   }
 }
 
