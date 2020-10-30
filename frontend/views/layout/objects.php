@@ -45,6 +45,35 @@ $tags = [
             <div class="object-list__item__left-block__image">
                 <img alt="" src="/images/preview/2_1.jpg"/>
             </div>
+            <div class="object-list__item__left-block__rating">
+               <?= \frontend\widgets\ShowRatingWidget::widget([
+                       'objectId' => 1
+               ])?>
+            </div>
+
+            <div class="object-list__item__left-block__statistic">
+                <div class="statistic-favorite-object">
+                        <span class="statistic-favorite-object__count">412</span>
+                        <svg class="statistic-favorite-object__icon"
+                             viewBox="0 0 750 750">
+                            <use xlink:href="/images/icons/heart_77931.svg#Layer_1"></use>
+                        </svg>
+                </div>
+                <div class="statistic-report-object">
+                        <span class="statistic-report-object__count">123</span>
+                        <svg class="statistic-report-object__icon"
+                             viewBox="0 0 600 600">
+                            <use xlink:href="/images/icons/report.svg#Layer_x0020_1"></use>
+                        </svg>
+                </div>
+                <div class="statistic-views-object">
+                        <span class="statistic-views-object__all">13</span>
+                        <span class="statistic-views-object__today" title="За сегодня">3</span>
+                        <svg class="statistic-views-object__icon" viewBox="0 0 32 32">
+                            <use xlink:href="/images/icons/views.svg#icon"></use>
+                        </svg>
+                </div>
+            </div>
         </div>
         <div class="object-list__item__right-block">
             <div class="object-list__item__right-block__title">Ателье &laquo;Ирина&raquo;</div>
