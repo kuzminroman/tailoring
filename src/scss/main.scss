@@ -650,19 +650,15 @@
         &__address {
           &__full {
             color: $fontColorTag;
-            position: relative;
 
             span {
-              position: absolute;
               top: 29px;
             }
           }
 
           &__raion {
-            position: relative;
-
+            margin: 5px 0;
             span {
-              position: absolute;
               top: 56px;
               color: $fontColorTag;
               font-size: 13px;
@@ -673,37 +669,32 @@
 
 
           &__metro {
-            position: relative;
-
             &__item {
               position: relative;
-
               .metro-svg {
                 position: absolute;
                 bottom: unset !important;
-                top: 76px !important;
+                top: 0 !important;
               }
 
               .metro-title {
                 position: absolute;
                 bottom: unset;
-                top: 84px !important;
+                top: 8px !important;
               }
 
               .metro-time {
                 position: absolute;
                 bottom: unset !important;
-                top: 84px !important;
+                top: 8px !important;
               }
             }
           }
         }
 
         &__phone {
-          position: relative;
-
+          margin-bottom: 5px;
           a {
-            position: absolute;
             top: 5px;
             text-decoration: none !important;
             color: $fontColorTag;
@@ -716,7 +707,7 @@
 
         &__tags {
           position: absolute;
-          bottom: -7px;
+          bottom: 0;
 
           &__item {
             margin: 0 0 5px 0;
