@@ -1,6 +1,5 @@
 <?php
 
-
 namespace frontend\widgets;
 
 
@@ -12,65 +11,105 @@ class ShowStatisticObjectWidget extends Widget
     public $objectId;
     private $basePath = '/images/icons/';
     private $tag;
-    private $svgData = '#svg_1';
+    private $baseClass = 'statistic-object';
+    private $classFavorite = 'favorite';
+    private $classReport = 'report';
+    private $classViews = 'views';
+    private $classIcon = 'icon';
+    private $classCount = 'count-all';
+    private $classToday = 'today';
 
+    const FAVORITE = 1;
+    const REPORT = 2;
+    const VIEW = 3;
 
     public function init()
     {
         parent::init();
-
     }
 
     /**
-     * @param int $objectId
+     * @param int $typeStat
      * @return array
      */
-    private function getInfoMetro($objectId = 1)
+    private function getStatistic($typeStat)
     {
-        return [
-            [
-                'color' => '#008000',
-                'name' => 'Василеостровская',
-                'time' => '10 минут'
-            ],
-            [
-                'color' => '#800080',
-                'name' => 'Спортивная',
-                'time' => '33 минуты'
-            ],
+        $countFavorites = 55;
+        $countReport = 41;
+        $countViews = [
+            'all' => 41,
+            'today' => 12,
         ];
+        $arrayStat = [
+            self::FAVORITE => $countFavorites,
+            self::REPORT => $countReport,
+            self::VIEW => $countViews,
+        ];
+
+        return $arrayStat[$typeStat];
     }
 
     /**
-     * @param int $objectId
+     * @param int $typeId
      * @return string
      */
-    private function getSvgPath($objectId = 1)
+    private function getSvgPath($typeId)
     {
-        $cities = [
-            self::SPB => 'metroSpb.svg',
-            self::MSK => 'metroMsk.svg',
-            self::EKB => 'metroEkb.svg',
+        $svg = [
+            self::FAVORITE => 'heart.svg#Layer_1',
+            self::REPORT => 'report.svg#Layer_x0020_1',
+            self::VIEW => 'views.svg#icon',
+        ];
+        return $this->basePath . $svg[$typeId];
+    }
+
+    /**
+     * @param $typeId
+     */
+    private function getHtml($typeId)
+    {
+        $countToday = 0;
+
+        $classes = [
+            self::FAVORITE =>
+                $this->classFavorite,
+            self::REPORT => $this->classReport,
+            self::VIEW => $this->classViews
         ];
 
-        return $this->basePath . $cities[1] . $this->svgData;
+        $viewBox = [
+            self::FAVORITE => '0 0 750 750',
+            self::REPORT => '0 0 600 600',
+            self::VIEW => '0 0 32 32',
+        ];
 
+        $mainClass = $this->baseClass . '-' . $classes[$typeId];
+        $pathSvg = '<use xlink:href="' . $this->getSvgPath($typeId) . '"></use>';
+        $count = $this->getStatistic($typeId);
+
+        if ((int)$typeId === self::VIEW) {
+            $countToday = $count['today'];
+            $count = $count['all'];
+        }
+
+        echo Html::beginTag('div', ['class' => $mainClass]);
+        $this->tag = Html::tag('span', $count, ['class' => $mainClass . '__' . $this->classCount]);
+
+        if ((int)$typeId === self::VIEW) {
+            $this->tag .= Html::tag('span', $countToday, ['class' => $mainClass . '__' . $this->classToday]);
+        }
+
+        $this->tag .= Html::tag('svg', $pathSvg, ['class' => $mainClass . '__' . $this->classIcon, 'viewBox'=>$viewBox[$typeId]]);
+        echo $this->tag;
+        echo Html::endTag('div');
     }
 
     public function run()
     {
-        $metroArray = $this->getInfoMetro($this->objectId);
         if (isset($this->objectId)) {
-            $use = '<use xlink:href="'. $this->getSvgPath($this->objectId) . '"></use>';
-            foreach($metroArray as $id => $metroData) {
-                echo Html::beginTag('div', ['class'=> 'object-list__item__right-block__info__address__metro__item']);
-                $this->tag = Html::tag('svg', $use, ['class' => 'metro-svg', 'viewBox' => '0 0 95 95', 'style' => ['fill' => $metroData['color']]]);
-                $this->tag .= Html::tag('span', $metroData['name'], ['class' => 'metro-title']);
-                $this->tag .= Html::tag('span', '(' . $metroData['time'] . ')', ['class' => 'metro-time']);
-                echo $this->tag . '<br/>';
-                echo Html::endTag('div');
-            }
+            $this->getHtml(self::VIEW);
+            $this->getHtml(self::FAVORITE);
+            $this->getHtml(self::REPORT);
         }
     }
-
 }

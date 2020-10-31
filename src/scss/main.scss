@@ -165,72 +165,35 @@
 }
 
 
-.statistic-favorite-object {
-  margin-top: 32px;
-  margin-bottom: -9px;
+.statistic-object-favorite {
+  margin-top: 5px;
 
-  position: relative;
-
-  &__count {
-    color: #0b93d5;
-    bottom: 19px;
-    right: 11px;
-    position: absolute;
+  &__count-all {
+    margin-left: 25px;
   }
 
   &__icon {
-    width: 19px;
-    top: -38px;
-    right: -14px;
-    position: absolute;
+    width: 15px;
   }
 }
 
-.statistic-report-object {
-  margin-top: 32px;
-  margin-bottom: -9px;
+.statistic-object-report {
+  margin-top: 6px;
 
-  position: relative;
-
-  &__count {
-    color: #0b93d5;
-    bottom: -7px;
-    right: 11px;
-    position: absolute;
+  &__count-all {
+    margin-left: 25px;
   }
 
   &__icon {
-    fill: violet;
-    bottom: -9px;
-    width: 21px;
-    right: -14px;
-    position: absolute;
+    width: 16px;
+    float: right;
   }
 }
 
-.statistic-views-object {
-  position: relative;
-
-  &__all {
-    color: #0b93d5;
-    bottom: -35px;
-    right: 30px;
-    position: absolute;
-  }
-
-  &__today {
-    color: orange;
-    bottom: -35px;
-    right: 11px;
-    position: absolute;
-  }
-
+.statistic-object-views {
   &__icon {
-    fill: mediumblue;
-    width: 20px;
-    top: 16px;
-    right: -16px;
-    position: absolute;
+    width: 17px;
+    height: 19px;
   }
 }
 
@@ -328,6 +291,7 @@
           border-right: 1px solid $detailsColorBorder;
           transition: all .2s linear;
           -webkit-transition: all .2s linear;
+          position: relative;
 
           h1 {
             color: black;
@@ -341,7 +305,12 @@
             position: relative;
           }
 
-          font-size: 12px;
+          &__statistic {
+            position: absolute;
+            right: 9px;
+            top: 47px;
+            font-size: 12px;
+          }
         }
       }
     }
@@ -578,6 +547,7 @@
 
     &__left-block {
       float: left;
+      position: relative;
 
       &__rating {
         padding: 5px 39px 4px 4px;
@@ -592,56 +562,64 @@
       }
 
       &__statistic {
-        position: relative !important;
-        font-size: 12px;
+        display: inline-flex;
+        font-size: 11px;
+        position: absolute;
+        right: 18px;
+        bottom: 4px;
 
-        .statistic-favorite-object {
-          position: absolute !important;
-          left: 94%;
-          top: 31px;
+        .statistic-object-favorite {
+          position: relative;
+          margin-right: 40px;
+          margin-top: unset;
 
-          &__count {
-            bottom: 21px;
-            right: 3px;
+          &__count-all {
+            position: absolute;
+            right: 2px;
           }
 
           &__icon {
-            width: 16px !important;
+            width: 15px;
+            position: absolute;
           }
         }
 
-        .statistic-report-object {
-          position: absolute !important;
-          left: 81%;
-          top: 5px;
+        .statistic-object-report {
+          position: relative;
+          margin: unset;
 
-          &__count {
-            bottom: -5px;
-            right: 8px;
+          &__count-all {
+            position: absolute;
+            right: 2px;
+          }
+
+          &__icon {
+            width: 21px;
+            position: absolute;
+            fill: $colorIconReport
           }
         }
 
-        .statistic-views-object {
-          position: absolute !important;
-          left: 65%;
-          top: -21px;
+        .statistic-object-views {
+          position: relative;
+          margin-right: 41px;
 
-          &__all {
-            bottom: -31px;
-            right: 24px;
+          &__count-all {
+            position: absolute;
+            right: 16px;
           }
 
           &__today {
-            bottom: -31px;
-            right: 6px;
+            position: absolute;
+            right: 1px;
           }
 
           &__icon {
-            top: 15px !important;
-            right: -16px;
+            width: 21px;
+            position: absolute;
+            fill: $colorIconView;
           }
         }
-
       }
 
       &__image {
