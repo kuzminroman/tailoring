@@ -58,4 +58,9 @@ class LayoutController extends Controller
         return $this->render('personalAreaClient');
     }
 
+    public function actionObjectFirstIrina()
+    {
+        return $this->render('objectFirstIrina');
+    }
+
 }
