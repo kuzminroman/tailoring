@@ -9,6 +9,9 @@ use yii\helpers\Html;
 class ShowStatisticObjectWidget extends Widget
 {
     public $objectId;
+    public $viewBoxFavorite;
+    public $viewBoxReport;
+    public $viewBoxView;
     private $basePath = '/images/icons/';
     private $tag;
     private $baseClass = 'statistic-object';
@@ -78,9 +81,9 @@ class ShowStatisticObjectWidget extends Widget
         ];
 
         $viewBox = [
-            self::FAVORITE => '0 0 750 750',
-            self::REPORT => '0 0 600 600',
-            self::VIEW => '0 0 32 32',
+            self::FAVORITE => $this->viewBoxFavorite,
+            self::REPORT => $this->viewBoxReport,
+            self::VIEW => $this->viewBoxView,
         ];
 
         $mainClass = $this->baseClass . '-' . $classes[$typeId];

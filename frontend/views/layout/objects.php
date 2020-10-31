@@ -53,7 +53,10 @@ $tags = [
 
             <div class="object-list__item__left-block__statistic">
                 <?= \frontend\widgets\ShowStatisticObjectWidget::widget([
-                    'objectId' => 1
+                    'objectId' => 1,
+                    'viewBoxFavorite' => '0 0 750 750',
+                    'viewBoxReport' => '0 0 600 600',
+                    'viewBoxView' => '0 0 32 32',
                 ]) ?>
             </div>
         </div>

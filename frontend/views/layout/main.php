@@ -73,25 +73,12 @@ $this->title = 'Все ателье по пошиву и ремноту в Са�
                             <span class="metro-time">(10 мин)</span>
                         </div>
                         <div class="studios__wrapper__list__item__details__statistic">
-                            <div class="statistic-object-views">
-                                <span class="statistic-object-views__count-all">1674</span>
-                                <span class="statistic-object-views__today" title="За сегодня">33</span>
-                                <svg class="statistic-object-views__icon" viewBox="0 0 25 25">
-                                    <use xlink:href="/images/icons/views.svg#icon"></use>
-                                </svg>
-                            </div>
-                            <div class="statistic-object-favorite">
-                                <span class="statistic-object-favorite__count-all">412</span>
-                                <svg class="statistic-object-favorite__icon" viewBox="0 0 480 480">
-                                    <use xlink:href="/images/icons/heart.svg#Layer_1"></use>
-                                </svg>
-                            </div>
-                            <div class="statistic-object-report">
-                                <span class="statistic-object-report__count-all">123</span>
-                                <svg class="statistic-object-report__icon" viewBox="0 0 480 480">
-                                    <use xlink:href="/images/icons/report.svg#Layer_x0020_1"></use>
-                                </svg>
-                            </div>
+                            <?= \frontend\widgets\ShowStatisticObjectWidget::widget([
+                                'objectId' => 1,
+                                'viewBoxFavorite' => '0 0 480 480',
+                                'viewBoxReport' => '0 0 480 480',
+                                'viewBoxView' => '0 0 25 25',
+                            ]) ?>
                         </div>
                     </div>
                 </a>
