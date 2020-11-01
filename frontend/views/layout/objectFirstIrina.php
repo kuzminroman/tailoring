@@ -1,6 +1,6 @@
 <?php
 /* @var $this yii\web\View */
-$this->title = 'Ателье &laquo;Ирина&raquo;';
+$this->title = 'Ателье Ирина';
 ?>
 
 <style>
@@ -23,6 +23,9 @@ $this->title = 'Ателье &laquo;Ирина&raquo;';
     }
     .demo{
         width: 800px;
+    }
+    img {
+        width: 467px;
     }
 </style>
 
@@ -56,3 +59,4 @@ $this->title = 'Ателье &laquo;Ирина&raquo;';
     </div>
 
 </div>
+<button class="town">Click Me</button>

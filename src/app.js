@@ -8,15 +8,15 @@ $(document).ready(function() {
     $('#image-gallery').lightSlider({
         gallery:true,
         item:1,
-        thumbItem:9,
+        thumbItem:6,
         slideMargin: 0,
         speed:500,
-        auto:true,
         loop:true,
         onSliderLoad: function() {
             $('#image-gallery').removeClass('cS-hidden');
         }
     });
 });
-
+var btn = document.querySelector('.town');
+btn.addEventListener('click', function(){alert('hello');});
 
