@@ -17,6 +17,3 @@ $(document).ready(function() {
         }
     });
 });
-var btn = document.querySelector('.town');
-btn.addEventListener('click', function(){alert('hello');});
-

@@ -724,6 +724,106 @@
   }
 }
 
+.object-page {
+  &__header {
+    height: 392px;
+    margin-bottom: 12px;
+
+    &__left-block {
+      float: left;
+      background-color: $colorBlockToObjectPage;
+      padding: 17px;
+      border-radius: 4px;
+      margin-right: 10px;
+      height: 100%;
+
+      &__slider {
+        &__gallery {
+          &__list {
+            max-width: 474px;
+
+            .gallery {
+              list-style: none outside none;
+              padding-left: 0;
+              margin: 0;
+
+              li {
+                img {
+                  width: 467px;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+    &__right-block {
+      height: 100%;
+      float: left;
+      background-color: $colorBlockToObjectPage;
+      padding: 30px;
+      border-radius: 4px;
+      margin-right: 10px;
+      width: 400px;
+
+      &__title {
+        font-size: 23px;
+        font-weight: bold;
+        margin-bottom: 15px;
+      }
+
+      &__address {
+        &__metro {
+          #title-metro {
+            font-size: 14px;
+            font-weight: bold;
+          }
+        }
+      }
+
+      &__send-message {
+        margin-top: 21px;
+
+        button {
+          width: 100%;
+          background-color: dodgerblue;
+          border-radius: 5px;
+          padding: 4px;
+          border: 0;
+          color: antiquewhite;
+          font-size: 15px;
+          text-transform: uppercase;
+        }
+      }
+
+      &__rating {
+        margin-top: 12px;
+
+        span {
+          font-size: 14px;
+          font-weight: bold;
+        }
+
+        .rating-object {
+          margin-top: 4px;
+
+          &__icon {
+            width: 41px;
+          }
+        }
+      }
+    }
+
+  }
+
+  &__block-description {
+    background-color: $colorBlockToObjectPage;
+    padding: 17px;
+    border-radius: 4px;
+  }
+}
+
 footer {
   background-color: $lineMenu;
   margin-top: 92px;

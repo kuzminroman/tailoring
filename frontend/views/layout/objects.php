@@ -47,7 +47,8 @@ $tags = [
             </div>
             <div class="object-list__item__left-block__rating">
                 <?= \frontend\widgets\ShowRatingWidget::widget([
-                    'objectId' => 1
+                    'objectId' => 1,
+                    'viewBox' => '0 0 55 55',
                 ]) ?>
             </div>
 

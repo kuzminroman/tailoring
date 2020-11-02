@@ -10,6 +10,7 @@ use yii\helpers\Html;
 class ShowRatingWidget extends Widget
 {
     public $objectId;
+    public $viewBox;
     private $basePath = '/images/icons/';
     private $tag;
     private $svgData = '#star_id';
@@ -30,7 +31,7 @@ class ShowRatingWidget extends Widget
      */
     private function getInfoRatingObject($objectId = 1)
     {
-        $sumOfRatings = 9;
+        $sumOfRatings = 16;
         $countUsers = 4;
         return round($sumOfRatings / $countUsers);
     }
@@ -53,7 +54,7 @@ class ShowRatingWidget extends Widget
             echo Html::beginTag('div', ['class'=> 'rating-object']);
             for($i = 1; $i <= self::FINAL_RATING; $i++) {
                 $color = $i > $rating ? $this->colorGray : $this->colorGold;
-                echo $this->tag = Html::tag('svg', $use, ['class' => 'rating-object__icon', 'viewBox' => '0 0 55 55', 'style' => ['fill' => $color]]);
+                echo $this->tag = Html::tag('svg', $use, ['class' => 'rating-object__icon', 'viewBox' => $this->viewBox, 'style' => ['fill' => $color]]);
             }
             echo Html::endTag('div');
         }
