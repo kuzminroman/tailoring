@@ -880,6 +880,13 @@ body {
     }
   }
 
+  &__tags {
+    background-color: $white;
+    padding: 17px;
+    border-radius: 4px;
+    margin-top: 14px;
+  }
+
   &__map {
     display: none;
     padding: 15px;

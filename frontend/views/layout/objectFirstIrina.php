@@ -95,7 +95,12 @@ $this->title = 'Ателье Ирина';
 
     <div class="object-page__tags">
         <span>Клчевые слова</span>
-
+        <br/>
+        <br/>
+        <?= \frontend\widgets\ShowTagsWidget::widget([
+            'objectId' => 1,
+            'isObject' => true,
+        ])?>
     </div>
 </div>
 
