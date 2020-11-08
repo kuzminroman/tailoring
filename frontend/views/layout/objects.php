@@ -1,41 +1,6 @@
 <?php
 /* @var $this yii\web\View */
 $this->title = 'Каталог ателье';
-$description = 'Перечень услуг ателье по пошиву и ремонту одежды
-                штопка, нашивки; ремонт кожаной одежды (работа с жидкой кожей);
-                ремонт рукавов; корректировка длины одежды – укорачивание брюк, платьев
-                (возможно также удлинение за счет вставок);';
-
-$tags = [
-    'Пошив платья',
-    'Пошив платья',
-    'Пошив платья',
-    'Пошив платья',
-    'Пошив платья',
-    'Пошив платья',
-    'Ремонт джинс',
-    'Ремонт джинс',
-    'Ремонт джинс',
-    'Ремонт джинс',
-    'Ремонт джинс',
-    'Ремонт джинс',
-    'Ремонт джинс',
-    'Вышивка бисером',
-    'Вышивка бисером',
-    'Вышивка бисером',
-    'Вышивка бисером',
-    'Ремонт шубы',
-    'Ремонт шубы',
-    'Ремонт шубы',
-    'Ремонт шубы',
-    'Пошив костюма',
-    'Пошив костюма',
-    'Пошив костюма',
-    'Пошив костюма',
-    'Пошив костюма',
-    'Пошив костюма',
-    'Ремонт рубашек'
-];
 
 ?>
 
@@ -85,26 +50,9 @@ $tags = [
                 </div>
 
                 <div class="object-list__item__right-block__info__tags">
-                    <?php $i = 0;?>
-                    <?php foreach ($tags as $tag) : ?>
-                    <?php $i++; ?>
-                    <?php if ((int)$i >= 8) : ?>
-                            <div class="object-list__item__right-block__info__tags__item">
-                                <span class="view-tag-gray">
-                                    <span>  <?='...'?> </span>
-                                </span>
-                            </div>
-                       <?php break; ?>
-                    <?php endif;?>
-
-                    <div class="object-list__item__right-block__info__tags__item">
-                        <span class="view-tag-gray">
-                            <span>
-                                <?= $tag; ?>
-                            </span>
-                        </span>
-                    </div>
-                    <?php endforeach; ?>
+                   <?= \frontend\widgets\ShowTagsWidget::widget([
+                           'objectId' => 1
+                   ])?>
                 </div>
             </div>
             <div class="object-list__item__right-block__description"></div>
@@ -132,26 +80,9 @@ $tags = [
                 </div>
 
                 <div class="object-list__item__right-block__info__tags">
-                    <?php $i = 0;?>
-                    <?php foreach ($tags as $tag) : ?>
-                        <?php $i++; ?>
-                        <?php if ((int)$i >= 8) : ?>
-                            <div class="object-list__item__right-block__info__tags__item">
-                                <span class="view-tag-gray">
-                                    <span>  <?='...'?> </span>
-                                </span>
-                            </div>
-                            <?php break; ?>
-                        <?php endif;?>
-
-                        <div class="object-list__item__right-block__info__tags__item">
-                        <span class="view-tag-gray">
-                            <span>
-                                <?= $tag; ?>
-                            </span>
-                        </span>
-                        </div>
-                    <?php endforeach; ?>
+                    <?= \frontend\widgets\ShowTagsWidget::widget([
+                        'objectId' => 1
+                    ])?>
                 </div>
             </div>
             <div class="object-list__item__right-block__description"></div>

@@ -8,10 +8,18 @@ $params = array_merge(
 
 return [
     'id' => 'app-frontend',
+    'language' => 'ru-RU',
     'basePath' => dirname(__DIR__),
     'bootstrap' => ['log'],
     'controllerNamespace' => 'frontend\controllers',
     'homeUrl' => '/',
+    'container' => [
+        'singletons' => [
+            \yiicod\geo\storages\StorageInterface::class => [
+                'class' => \yiicod\geo\storages\CacheStorage::class,
+            ],
+        ],
+    ],
     'components' => [
         'request' => [
             'csrfParam' => '_csrf-frontend',
@@ -46,6 +54,15 @@ return [
         ],
         'errorHandler' => [
             'errorAction' => 'site/error',
+        ],
+
+        'i18n' => [
+            'translations' => [
+                'app' => [
+                    'class' => 'yii\i18n\PhpMessageSource',
+                    'forceTranslation' => true,
+                ],
+            ],
         ],
     ],
     'params' => $params,

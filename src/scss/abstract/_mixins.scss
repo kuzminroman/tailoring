@@ -1,0 +1,18 @@
+@mixin in-favorite {
+  background: url("../img/icons/in-favorite-mark.svg") no-repeat 3px center #ADFF2F !important;
+  padding-left: 33px !important;
+  border: 3px solid #ADFF2F !important;
+
+  &:after {
+    content: 'В избранном' !important;
+  }
+}
+
+
+@mixin params-descr {
+  padding: 4px;
+  background-color: #D3D3D3;
+  color: $white;
+  font-weight: bold;
+  border-radius: 4px;
+}
