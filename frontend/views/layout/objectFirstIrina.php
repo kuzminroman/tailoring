@@ -68,12 +68,20 @@ $this->title = 'Ателье Ирина';
                     'viewBox' => '0 0 75 75'
                 ]) ?>
             </div>
-            <?php if(Yii::$app->user->isGuest) : ?>
-            <div class="object-page__header__right-block__send-message">
-                <button type="button" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">Отправить сообщение</button>
+            <?php if (Yii::$app->user->isGuest) : ?>
+                <div class="object-page__header__right-block__send-message">
+                    <button type="button" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">Отправить
+                        сообщение
+                    </button>
+                </div>
+            <?php endif; ?>
+            <br/>
+            <div class="object-page__header__right-block__address__share">
+                <span>Поделиться:</span>
+                <br/>
+                <div class="ya-share2" data-curtain
+                     data-services="vkontakte,facebook,odnoklassniki,telegram,twitter,viber,whatsapp"></div>
             </div>
-            <?php endif;?>
-
         </div>
     </div>
 
@@ -81,6 +89,7 @@ $this->title = 'Ателье Ирина';
     </div>
 
     <div class="object-page__block-description">
+        <p style="text-align: center; margin-bottom: 15px;">Описание</p>
         <p>Качественное выполнение работы. Индивидуальный подход к каждому.</p>
         <div class="object-page__block-description__operating-mode">
             <p>Понедельник - пятница <span>9:00 - 18:00</span></p>
@@ -94,9 +103,7 @@ $this->title = 'Ателье Ирина';
     </div>
 
     <div class="object-page__tags">
-        <span>Клчевые слова</span>
-        <br/>
-        <br/>
+        <p>Ключевые направления</p>
         <?= \frontend\widgets\ShowTagsWidget::widget([
             'objectId' => 1,
             'isObject' => true,

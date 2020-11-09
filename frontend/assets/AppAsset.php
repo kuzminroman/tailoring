@@ -15,6 +15,7 @@ class AppAsset extends AssetBundle
     public $js = [
         'source/plugins/lightslider/src/js/lightslider.js',
         'source/dist/bundle.js',
+        'https://yastatic.net/share2/share.js'
     ];
     public $depends = [
         'yii\web\YiiAsset',

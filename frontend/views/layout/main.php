@@ -33,7 +33,7 @@ $this->title = 'Все ателье по пошиву и ремноту в Са�
     <div class="studios__wrapper">
         <ul class="studios__wrapper__list">
             <li class="studios__wrapper__list__item">
-                <a href="#">
+                <a href="/layout/object-first-irina/">
                     <div class="studios__wrapper__list__item__image">
                         <svg class="studios__wrapper__list__item__image__favorite" viewBox="0 0 95 95">
                             <use xlink:href="/images/icons/favorite.svg#Icons"></use>
