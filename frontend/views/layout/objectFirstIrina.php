@@ -109,16 +109,71 @@ $this->title = 'Ателье Ирина';
             'isObject' => true,
         ])?>
     </div>
-</div>
 
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
+    <div class="object-page__social">
+
+    </div>
+
+    <div class="object-page__reports" style="display: inline-flex;">
+        <div class="circles">
+            <div class="circle">
+                <?php $name = 'Роман';?>
+                <?php $surname = 'Кузьмин';?>
+                <utf-div class="circle__number"><?=strtoupper($name[1]) . strtoupper($surname[1])?></utf-div>
             </div>
+        </div>
+        <div class="object-page__reports__item">
+
+            <span style="font-weight: bold;">Кузьмин Роман</span>
+            <p style="margin-top: 16px;">Отличное ателье</p>
+            <p>Заказ был выполнен быстро и качественно</p>
+            <p>Советую всем посетить.</p>
+        </div>
+
+        <style>
+            .circles {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                font-family: sans-serif;
+                color: #FFF;
+                margin-right: 98px;
+                margin-left: 24px;
+                position: relative;
+            }
+
+            .circle {
+                background: #12B6F9;
+                padding: 39px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                border-radius: 50%;
+                width: 20px;
+                height: 20px;
+                max-width: 20px;
+                max-height: 20px;
+                position: absolute;
+                left: 0;
+                top: 0;
+            }
+
+            .circle__number {
+                font-size: 3rem;
+            }
+        </style>
+
+    </div>
+
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+         aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
             <div class="modal-body">
                 <form>
                     <div class="form-group">

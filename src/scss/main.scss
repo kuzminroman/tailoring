@@ -856,10 +856,7 @@ body {
   }
 
   &__block-description {
-    background-color: $white;
-    padding: 17px;
-    border-radius: 4px;
-    margin-top: 14px;
+    @include blockToPageObject;
 
     &__operating-mode {
       p {
@@ -883,18 +880,27 @@ body {
       text-align: center;
       margin-bottom: 12px;
     }
-    background-color: $white;
-    padding: 17px;
-    border-radius: 4px;
-    margin-top: 14px;
+    @include blockToPageObject;
   }
 
   &__map {
     display: none;
     padding: 15px;
-    background-color: white;
+    background-color: $white;
     border-radius: 4px;
     height: 130px;
+  }
+
+  &__reports {
+    width: 100%;
+    @include blockToPageObject;
+    &__item {
+      margin-top: 9px;
+    }
+  }
+
+  &__social {
+    @include blockToPageObject;
   }
 }
 
