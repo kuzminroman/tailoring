@@ -107,64 +107,87 @@ $this->title = 'Ателье Ирина';
         <?= \frontend\widgets\ShowTagsWidget::widget([
             'objectId' => 1,
             'isObject' => true,
-        ])?>
+        ]) ?>
     </div>
 
     <div class="object-page__social">
-
     </div>
 
-    <div class="object-page__reports" style="display: inline-flex;">
-        <div class="circles">
-            <div class="circle">
-                <?php $name = 'Роман';?>
-                <?php $surname = 'Кузьмин';?>
-                <utf-div class="circle__number"><?=strtoupper($name[1]) . strtoupper($surname[1])?></utf-div>
+
+    <div class="object-page__reports">
+        <div>
+        <span>Отзывы</span>
+        </div>
+        <br/>
+        <br/>
+        <div class="object-page__reports__item">
+            <div class="object-page__reports__item__block-circle">
+                <?php $name = 'Роман'; ?>
+                <?php $surname = 'YU'; ?>
+                <?php mb_internal_encoding("UTF-8"); ?>
+                <?php
+                $s = mb_substr($surname, 0, 1);
+                $n = mb_substr($name, 0, 1);
+                $sUp = strtoupper($s);
+                $nUp = strtoupper($n);
+
+                $enLetters = [
+                    'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'
+                ];
+                $ruLetters = [
+                    'А', 'Б', 'В', 'Г', 'Д', 'Е', 'Ё', 'Ж', 'З', 'И', 'Й', 'К', 'Л', 'М', 'Н', 'О', 'П', 'Р', 'С', 'Т', 'У', 'Ф', 'Х', 'Ц', 'Ч', 'Ш', 'Щ', 'Ы', 'Э', 'Ю', 'Я'
+                ];
+
+                $colors = [
+                    '#B22222' => [0, 1, 2, 3, 4, 5, 6, 7],
+                    '#FF1493' => [8, 9, 10, 11],
+                    '#008000' => [12, 13, 14, 15],
+                    '#0000FF' => [16, 17, 18, 19, 20, 21],
+                    '#A0522D' => [22, 23, 24, 25],
+                    '#12B6F9' => [26, 27, 28, 29, 30],
+                ];
+
+                $ruLetter = false;
+
+                foreach ($ruLetters as $k => $w) {
+                    if (strtoupper($w) === $sUp) {
+                        $ruLetter = true;
+                        foreach ($colors as $key => $item) {
+                            if (in_array($k, $item)) {
+                                $colorLetters = $key;
+                            }
+                        }
+
+                    }
+                }
+
+                if ($ruLetter === false) {
+                    foreach ($enLetters as $k => $w) {
+                        if (strtoupper($w) === $sUp) {
+                            foreach ($colors as $key => $item) {
+                                if (in_array($k, $item)) {
+                                    $colorLetters = $key;
+                                }
+                            }
+                        }
+                    }
+                }
+                ?>
+                <div class="object-page__reports__item__block-circle__circle"
+                     style="background-color: <?= $colorLetters ?>;">
+                    <div class="object-page__reports__item__block-circle__circle__initials"><?= $nUp . $sUp; ?></div>
+                </div>
+            </div>
+            <div class="object-page__reports__item__user-info">
+                <span class="object-page__reports__item__user-info__name">Кузьмин Роман</span>
+                <div class="object-page__reports__item__user-info__text">
+                    <p>Отличное ателье</p>
+                    <p>Заказ был выполнен быстро и качественно</p>
+                    <p>Советую всем посетить.</p>
+                </div>
             </div>
         </div>
-        <div class="object-page__reports__item">
-
-            <span style="font-weight: bold;">Кузьмин Роман</span>
-            <p style="margin-top: 16px;">Отличное ателье</p>
-            <p>Заказ был выполнен быстро и качественно</p>
-            <p>Советую всем посетить.</p>
-        </div>
-
-        <style>
-            .circles {
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                font-family: sans-serif;
-                color: #FFF;
-                margin-right: 98px;
-                margin-left: 24px;
-                position: relative;
-            }
-
-            .circle {
-                background: #12B6F9;
-                padding: 39px;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                border-radius: 50%;
-                width: 20px;
-                height: 20px;
-                max-width: 20px;
-                max-height: 20px;
-                position: absolute;
-                left: 0;
-                top: 0;
-            }
-
-            .circle__number {
-                font-size: 3rem;
-            }
-        </style>
-
     </div>
-
     <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
          aria-hidden="true">
         <div class="modal-dialog" role="document">
@@ -174,31 +197,32 @@ $this->title = 'Ателье Ирина';
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
-            <div class="modal-body">
-                <form>
-                    <div class="form-group">
-                        <textarea placeholder="<?=Yii::t('app', 'Write message')?>" class="form-control" rows="6"></textarea>
-                    </div>
-                </form>
-            </div>
-            <div class="modal-footer">
-                <a class="modal-footer__link-to-dialog" href="#"><?=Yii::t('app', 'Go to dialog')?></a>
-                <button type="button" class="btn btn-secondary" data-dismiss="modal"><?=Yii::t('app', 'Close')?></button>
-                <button type="button" class="btn btn-primary"><?=Yii::t('app', 'Send')?></button>
+                <div class="modal-body">
+                    <form>
+                        <div class="form-group">
+                            <textarea placeholder="<?= Yii::t('app', 'Write message') ?>" class="form-control"
+                                      rows="6"></textarea>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <a class="modal-footer__link-to-dialog" href="#"><?= Yii::t('app', 'Go to dialog') ?></a>
+                    <button type="button" class="btn btn-secondary"
+                            data-dismiss="modal"><?= Yii::t('app', 'Close') ?></button>
+                    <button type="button" class="btn btn-primary"><?= Yii::t('app', 'Send') ?></button>
+                </div>
             </div>
         </div>
     </div>
-</div>
-
-<?php
-//
-//    $ip = '77.222.100.8';
-//    $query = @unserialize(file_get_contents('http://ip-api.com/php/'.$ip.'?lang=ru'));
-//    var_dump($query);
-//
-//    if($query && $query['status'] == 'success') {
-//        echo 'Привет, посетитель из '.$query['country'].', '.$query['city'].'!';
-//        } else {
+    <?php
+    //
+    //    $ip = '77.222.100.8';
+    //    $query = @unserialize(file_get_contents('http://ip-api.com/php/'.$ip.'?lang=ru'));
+    //    var_dump($query);
+    //
+    //    if($query && $query['status'] == 'success') {
+    //        echo 'Привет, посетитель из '.$query['country'].', '.$query['city'].'!';
+    //        } else {
 //        echo 'Не удалось определить локацию';
 //    }
 ?>
