@@ -37,3 +37,14 @@ favorite.addEventListener('click', function () {
     this.classList.toggle('in-favorite');
 });
 
+$(".show_more").click(function(){ // задаем функцию при нажатиии на элемент <div>
+    $(".all-reports").toggle(); // отображаем, или скрываем элемент
+    $(".show_more").toggle();
+    $(".hide_reports").toggle();
+});
+
+$(".hide_reports").click(function(){ // задаем функцию при нажатиии на элемент <div>
+    $(".all-reports").toggle(); // отображаем, или скрываем элемент
+    $(".hide_reports").toggle(); // отображаем, или скрываем элемент
+    $(".show_more").toggle(); // отображаем, или скрываем элемент
+});

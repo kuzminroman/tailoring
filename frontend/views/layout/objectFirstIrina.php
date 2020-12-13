@@ -111,83 +111,25 @@ $this->title = 'Ателье Ирина';
     </div>
 
     <div class="object-page__social">
+        <span>Социальные сети</span>
     </div>
 
 
     <div class="object-page__reports">
-        <div>
-        <span>Отзывы</span>
+        <div style="text-align: center;">
+            <span>Отзывы</span>
         </div>
         <br/>
-        <br/>
-        <div class="object-page__reports__item">
-            <div class="object-page__reports__item__block-circle">
-                <?php $name = 'Роман'; ?>
-                <?php $surname = 'YU'; ?>
-                <?php mb_internal_encoding("UTF-8"); ?>
-                <?php
-                $s = mb_substr($surname, 0, 1);
-                $n = mb_substr($name, 0, 1);
-                $sUp = strtoupper($s);
-                $nUp = strtoupper($n);
-
-                $enLetters = [
-                    'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'
-                ];
-                $ruLetters = [
-                    'А', 'Б', 'В', 'Г', 'Д', 'Е', 'Ё', 'Ж', 'З', 'И', 'Й', 'К', 'Л', 'М', 'Н', 'О', 'П', 'Р', 'С', 'Т', 'У', 'Ф', 'Х', 'Ц', 'Ч', 'Ш', 'Щ', 'Ы', 'Э', 'Ю', 'Я'
-                ];
-
-                $colors = [
-                    '#B22222' => [0, 1, 2, 3, 4, 5, 6, 7],
-                    '#FF1493' => [8, 9, 10, 11],
-                    '#008000' => [12, 13, 14, 15],
-                    '#0000FF' => [16, 17, 18, 19, 20, 21],
-                    '#A0522D' => [22, 23, 24, 25],
-                    '#12B6F9' => [26, 27, 28, 29, 30],
-                ];
-
-                $ruLetter = false;
-
-                foreach ($ruLetters as $k => $w) {
-                    if (strtoupper($w) === $sUp) {
-                        $ruLetter = true;
-                        foreach ($colors as $key => $item) {
-                            if (in_array($k, $item)) {
-                                $colorLetters = $key;
-                            }
-                        }
-
-                    }
+        <div style="display: grid;">
+            <style>
+                .all-reports {
+                    display: none;
                 }
-
-                if ($ruLetter === false) {
-                    foreach ($enLetters as $k => $w) {
-                        if (strtoupper($w) === $sUp) {
-                            foreach ($colors as $key => $item) {
-                                if (in_array($k, $item)) {
-                                    $colorLetters = $key;
-                                }
-                            }
-                        }
-                    }
-                }
-                ?>
-                <div class="object-page__reports__item__block-circle__circle"
-                     style="background-color: <?= $colorLetters ?>;">
-                    <div class="object-page__reports__item__block-circle__circle__initials"><?= $nUp . $sUp; ?></div>
-                </div>
-            </div>
-            <div class="object-page__reports__item__user-info">
-                <span class="object-page__reports__item__user-info__name">Кузьмин Роман</span>
-                <div class="object-page__reports__item__user-info__text">
-                    <p>Отличное ателье</p>
-                    <p>Заказ был выполнен быстро и качественно</p>
-                    <p>Советую всем посетить.</p>
-                </div>
-            </div>
+            </style>
+            <?= \frontend\widgets\ShowReportsWidget::widget() ?>
         </div>
     </div>
+
     <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
          aria-hidden="true">
         <div class="modal-dialog" role="document">
