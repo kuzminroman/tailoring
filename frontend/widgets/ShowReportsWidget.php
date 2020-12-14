@@ -47,10 +47,10 @@ class ShowReportsWidget extends Widget
             echo Html::endTag('div');
 
             if ($hideClass === 'first-report') {
-                echo Html::tag('div', Html::tag('span', 'Скрыть'), ['class' => 'hide_reports', 'style' => ['display' => 'none', 'text-align' => 'center']]);
+                echo Html::tag('div', Html::tag('span', 'Скрыть', ['class' => 'hide_reports__button']), ['class' => 'hide_reports', 'style' => ['display' => 'none', 'text-align' => 'center']]);
 
                 if ($countNotAll >= 1) {
-                    echo Html::tag('div', Html::tag('span', 'Показать ещё (' . $countNotAll . ')'), ['class' => 'show_more', 'style' => ['text-align' => 'center']]);
+                    echo Html::tag('div', Html::tag('span', 'Показать ещё (' . $countNotAll . ')', ['class' => 'show_more']), ['style' => ['text-align' => 'center']]);
                 }
             }
 

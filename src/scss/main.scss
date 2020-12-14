@@ -956,7 +956,7 @@ body {
 }
 
 .hide_reports {
-  span {
+  &__button {
     background-color: silver;
     padding: 5px;
     border-radius: 5px;
@@ -965,12 +965,10 @@ body {
 }
 
 .show_more {
-  span {
     padding: 5px;
     cursor: pointer;
     background-color: darkgray;
     border-radius: 8px;
-  }
 }
 
 footer {
