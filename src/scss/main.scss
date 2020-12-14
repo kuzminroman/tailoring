@@ -957,18 +957,20 @@ body {
 
 .hide_reports {
   &__button {
-    background-color: silver;
     padding: 5px;
-    border-radius: 5px;
     cursor: pointer;
+    color: white;
+    background-color: #87CEFA;
+    border-radius: 5px;
   }
 }
 
 .show_more {
-    padding: 5px;
-    cursor: pointer;
-    background-color: darkgray;
-    border-radius: 8px;
+  background-color: #87CEFA;
+  padding: 5px;
+  border-radius: 5px;
+  cursor: pointer;
+  color: white;
 }
 
 footer {
