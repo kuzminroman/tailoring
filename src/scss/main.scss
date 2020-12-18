@@ -812,7 +812,7 @@ body {
         }
 
         &__in-map {
-          background-color: paleturquoise;
+          background-color: #20B2AA;
           padding: 5px;
           border-radius: 4px;
           color: snow;
@@ -892,6 +892,7 @@ body {
   }
 
   &__reports {
+    position: relative;
     @include blockToPageObject;
     width: 100%;
     &__item {
@@ -937,6 +938,19 @@ body {
         }
       }
     }
+
+    &__add-report {
+      position: absolute;
+      right: 20px;
+      color: white;
+      top: 20px;
+      /* font-weight: bold; */
+      /* text-transform: uppercase; */
+      background-color: #A52A2A;
+      padding: 8px;
+      border-radius: 7px;
+      cursor: pointer;
+    }
   }
 
   &__social {
@@ -953,6 +967,10 @@ body {
     font-size: 14px;
     bottom: 25px;
   }
+}
+
+.all-reports {
+  display: none;
 }
 
 .hide_reports {
