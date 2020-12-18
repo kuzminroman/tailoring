@@ -121,13 +121,9 @@ $this->title = 'Ателье Ирина';
         </div>
         <br/>
         <div style="display: grid;">
-            <style>
-                .all-reports {
-                    display: none;
-                }
-            </style>
             <?= \frontend\widgets\ShowReportsWidget::widget() ?>
         </div>
+        <span class="object-page__reports__add-report" data-toggle="modal" data-target="#addReport" data-whatever="@mdo">Добавить отзыв</span>
     </div>
 
     <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
@@ -149,6 +145,38 @@ $this->title = 'Ателье Ирина';
                 </div>
                 <div class="modal-footer">
                     <a class="modal-footer__link-to-dialog" href="#"><?= Yii::t('app', 'Go to dialog') ?></a>
+                    <button type="button" class="btn btn-secondary"
+                            data-dismiss="modal"><?= Yii::t('app', 'Close') ?></button>
+                    <button type="button" class="btn btn-primary"><?= Yii::t('app', 'Send') ?></button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="addReport" tabindex="-1" role="dialog" aria-labelledby="addReportLabel"
+         aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="form-group">
+                            <label for="exampleInputName">Имя</label>
+                            <input type="text" class="form-control" id="exampleInputName" placeholder="">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputSurname">Фамилия</label>
+                            <input type="text" class="form-control" id="exampleInputSurname" placeholder="">
+                        </div>
+                        <div class="form-group">
+                            <textarea placeholder="<?= Yii::t('app', 'Write message') ?>" class="form-control" rows="6"></textarea>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
                     <button type="button" class="btn btn-secondary"
                             data-dismiss="modal"><?= Yii::t('app', 'Close') ?></button>
                     <button type="button" class="btn btn-primary"><?= Yii::t('app', 'Send') ?></button>
