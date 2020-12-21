@@ -26,12 +26,9 @@ class ShowReportsWidget extends Widget
 
         foreach ($reports as $key => $report) {
             $i++;
-
             $hideClass = $i === 1 ? 'first-report' : 'all-reports';
 
-
             echo Html::beginTag('div', ['class' => $hideClass]);
-
             echo Html::beginTag('div', ['class' => 'object-page__reports__item']);
             echo Html::beginTag('div', ['class' => 'object-page__reports__item__block-circle']);
             echo Html::beginTag('div', ['class' => 'object-page__reports__item__block-circle__circle', 'style' => ['background-color' => $report['colorLatter']]]);

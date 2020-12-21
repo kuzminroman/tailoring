@@ -991,6 +991,45 @@ body {
   color: white;
 }
 
+.rating-block {
+  &__title {
+    text-align: center;
+    margin-bottom: 10px;
+    font-weight: bold;
+  }
+  overflow: hidden;
+  width: 225px;
+  margin: 0 auto;
+  &:not(:checked) > input {
+    display: none;
+  }
+  &:not(:checked) > label {
+    float: right;
+    width: 42px;
+    padding: 0;
+    cursor: pointer;
+    font-size: 32px;
+    line-height: 32px;
+    color: lightgrey;
+    text-shadow: 1px 1px #bbbbbb;
+    &:before {
+      content: '★';
+    }
+    &:hover, &:hover ~ label {
+      color: gold;
+    }
+  }
+  > input:checked ~ label {
+    color: gold;
+    text-shadow: 1px 1px #cc6600;
+  }
+  > input:checked + label:hover, > input:checked + label:hover ~ label, > input:checked ~ label:hover, > input:checked ~ label:hover ~ label, > label:hover ~ input:checked ~ label {
+    color: gold;
+    text-shadow: 1px 1px goldenrod;
+  }
+}
+
+
 footer {
   background-color: $lineMenu;
   margin-top: 92px;

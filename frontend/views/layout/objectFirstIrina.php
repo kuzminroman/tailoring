@@ -152,6 +152,7 @@ $this->title = 'Ателье Ирина';
             </div>
         </div>
     </div>
+
     <div class="modal fade" id="addReport" tabindex="-1" role="dialog" aria-labelledby="addReportLabel"
          aria-hidden="true">
         <div class="modal-dialog" role="document">
@@ -162,7 +163,7 @@ $this->title = 'Ателье Ирина';
                     </button>
                 </div>
                 <div class="modal-body">
-                    <form>
+                    <form action="form.php" method="post">
                         <div class="form-group">
                             <label for="exampleInputName">Имя</label>
                             <input type="text" class="form-control" id="exampleInputName" placeholder="">
@@ -172,7 +173,30 @@ $this->title = 'Ателье Ирина';
                             <input type="text" class="form-control" id="exampleInputSurname" placeholder="">
                         </div>
                         <div class="form-group">
-                            <textarea placeholder="<?= Yii::t('app', 'Write message') ?>" class="form-control" rows="6"></textarea>
+                            <textarea placeholder="<?= Yii::t('app', 'Write message') ?>" class="form-control"
+                                      rows="6"></textarea>
+                        </div>
+
+                        <div class="rating-block">
+
+                            <div class="rating-block__title">
+                                <span>Добавьте оценку</span>
+                            </div>
+
+                            <input type="radio" id="starFive" name="ratingStar" value="5">
+                            <label for="starFive"></label>
+
+                            <input type="radio" id="starFour" name="ratingStar" value="4">
+                            <label for="starFour"></label>
+
+                            <input type="radio" id="starThree" name="ratingStar" value="3">
+                            <label for="starThree"></label>
+
+                            <input type="radio" id="starTwo" name="ratingStar" value="2">
+                            <label for="starTwo"></label>
+
+                            <input type="radio" id="starOne" name="ratingStar" value="1">
+                            <label for="starOne"></label>
                         </div>
                     </form>
                 </div>
