@@ -903,9 +903,16 @@ body {
         align-items: center;
         font-family: sans-serif;
         color: #FFF;
-        margin-right: 98px;
+        margin-right: 15px;
         margin-left: 24px;
         position: relative;
+
+        .rating-object {
+          margin-bottom: -61px !important;
+          &__icon {
+            width: 19px !important;
+          }
+        }
 
         &__circle {
           background: #12B6F9;
@@ -925,10 +932,10 @@ body {
           &__initials {
             font-size: 3rem;
           }
+
         }
       }
       &__user-info {
-        margin-top: 9px;
         &__name {
           font-weight: bold;
         }
@@ -971,6 +978,7 @@ body {
 
 .all-reports {
   display: none;
+  margin-top: 40px;
 }
 
 .hide_reports {

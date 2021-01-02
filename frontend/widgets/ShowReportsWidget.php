@@ -18,6 +18,15 @@ class ShowReportsWidget extends Widget
 
     }
 
+    private static function getRating()
+    {
+        return ShowRatingWidget::widget([
+            'objectId' => 1,
+            'viewBox' => '0 0 175 50',
+            'ratingUser' => 1,
+        ]);
+    }
+
     public function run()
     {
         $reports = Reports::getColorsSpecialIcon();
@@ -34,6 +43,8 @@ class ShowReportsWidget extends Widget
             echo Html::beginTag('div', ['class' => 'object-page__reports__item__block-circle__circle', 'style' => ['background-color' => $report['colorLatter']]]);
             echo Html::tag('div', $report['nameFirstLatter'] . $report['surnameFirstLatter'], ['class' => 'object-page__reports__item__block-circle__circle__initials']);
             echo Html::endTag('div');
+            echo self::getRating();
+
             echo Html::endTag('div');
 
             echo Html::beginTag('div', ['class' => 'object-page__reports__item__user-info']);

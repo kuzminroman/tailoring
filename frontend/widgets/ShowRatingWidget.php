@@ -11,6 +11,7 @@ class ShowRatingWidget extends Widget
 {
     public $objectId;
     public $viewBox;
+    public $ratingUser = null;
     private $basePath = '/images/icons/';
     private $tag;
     private $svgData = '#star_id';
@@ -22,7 +23,6 @@ class ShowRatingWidget extends Widget
     public function init()
     {
         parent::init();
-
     }
 
     /**
@@ -31,6 +31,10 @@ class ShowRatingWidget extends Widget
      */
     private function getInfoRatingObject($objectId = 1)
     {
+        if (isset($this->ratingUser)) {
+            return $this->ratingUser;
+        }
+
         $sumOfRatings = 16;
         $countUsers = 4;
         return round($sumOfRatings / $countUsers);

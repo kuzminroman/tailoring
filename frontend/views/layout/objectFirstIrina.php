@@ -112,6 +112,23 @@ $this->title = 'Ателье Ирина';
 
     <div class="object-page__social">
         <span>Социальные сети</span>
+        <div class="object-page__social__item">
+            <div class="object-page__social__item__icon">
+                <svg class="rating-object__icon" viewBox="0 0 100 100" style="fill: #FFD700;">
+                    <use xlink:href="/images/icons/vk.svg#icon"></use>
+                </svg>
+            </div>
+            <div class="object-page__social__item__icon">
+                <svg class="rating-object__icon" viewBox="0 0 580 580" style="fill: #FFD700;">
+                    <use xlink:href="/images/icons/instagram.svg#insta"></use>
+                </svg>
+            </div>
+            <div class="object-page__social__item__icon">
+                <svg class="rating-object__icon" viewBox="0 0 570 570" style="fill: #FFD700;">
+                    <use xlink:href="/images/icons/odnoklassniki.svg#icon"></use>
+                </svg>
+            </div>
+        </div>
     </div>
 
 
