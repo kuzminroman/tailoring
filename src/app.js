@@ -16,6 +16,19 @@ $(document).ready(function() {
             $('#image-gallery').removeClass('cS-hidden');
         }
     });
+
+    $('#content-slider-photoshoot').lightSlider({
+        keyPress:true,
+        item: 5,
+       // thumbItem: 4,
+     //   slideMargin: 0,
+        speed: 500,
+        loop: true,
+        onSliderLoad: function () {
+            $('#image-gallery').removeClass('cS-hidden');
+        }
+    });
+
 });
 
 $(function () {

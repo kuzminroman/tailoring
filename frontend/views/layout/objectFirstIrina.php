@@ -112,25 +112,83 @@ $this->title = 'Ателье Ирина';
 
     <div class="object-page__social">
         <span>Социальные сети</span>
+        <br/>
+        <br/>
         <div class="object-page__social__item">
-            <div class="object-page__social__item__icon">
-                <svg class="rating-object__icon" viewBox="0 0 100 100" style="fill: #FFD700;">
-                    <use xlink:href="/images/icons/vk.svg#icon"></use>
-                </svg>
-            </div>
-            <div class="object-page__social__item__icon">
-                <svg class="rating-object__icon" viewBox="0 0 580 580" style="fill: #FFD700;">
-                    <use xlink:href="/images/icons/instagram.svg#insta"></use>
-                </svg>
-            </div>
-            <div class="object-page__social__item__icon">
-                <svg class="rating-object__icon" viewBox="0 0 570 570" style="fill: #FFD700;">
-                    <use xlink:href="/images/icons/odnoklassniki.svg#icon"></use>
-                </svg>
-            </div>
+            <a href="https://vk.com/feed">
+                <div class="object-page__social__item__icon">
+                    <svg style="width: 45px;" viewBox="0 0 100 100">
+                        <use xlink:href="/images/icons/vk.svg#icon"></use>
+                    </svg>
+                </div>
+            </a>
+        </div>
+        <div class="object-page__social__item">
+            <a class="object-page__social__item__link" href="https://www.instagram.com/">
+                <div class="object-page__social__item__link__icon">
+                    <svg style="width: 45px;" viewBox="0 0 580 580">
+                        <use xlink:href="/images/icons/instagram.svg#insta"></use>
+                    </svg>
+                </div>
+            </a>
+        </div>
+        <div class="object-page__social__item">
+            <a class="object-page__social__item__link" href="https://ok.ru/">
+                <div class="object-page__social__item__link__icon">
+                    <svg style="width: 45px;" viewBox="0 0 570 570">
+                        <use xlink:href="/images/icons/odnoklassniki.svg#icon"></use>
+                    </svg>
+                </div>
+            </a>
         </div>
     </div>
 
+    <div class="object-page__photoshoot">
+        <div class="object-page__photoshoot__item">
+            <div class="object-page__photoshoot__item__title">
+                <span>Фотосессия #1</span>
+                <style>
+                    .object-page__photoshoot__item__title:first-child {
+                        font-size: 19px;
+                        cursor: pointer;
+                    }
+                    .object-page__photoshoot__item__title:first-child:hover {
+                        opacity: 35%;
+                        text-decoration: underline;
+                    }
+                </style>
+            </div>
+            <div class="object-page__photoshoot__item__container">
+                <ul id="content-slider-photoshoot">
+                    <li>
+                        <div class="myslide">
+                            <img style="width: 200px;" src="/images/preview/2_1.jpg" />
+                        </div>
+                    </li>
+                    <li>
+                        <div class="myslide">
+                            <img style="width: 200px;" src="/images/preview/2_1.jpg"/>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="myslide">
+                            <img style="width: 200px;" src="/images/preview/2_1.jpg"/>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="myslide">
+                            <img style="width: 200px;" src="/images/preview/2_1.jpg" />
+                        </div>
+                    </li>
+                    <li>
+                        <div class="myslide">
+                            <img style="width: 200px;" src="/images/preview/2_1.jpg" />
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
 
     <div class="object-page__reports">
         <div style="text-align: center;">

@@ -963,6 +963,10 @@ body {
   &__social {
     @include blockToPageObject;
   }
+
+  &__photoshoot {
+    @include blockToPageObject;
+  }
 }
 
 .modal-footer {
