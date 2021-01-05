@@ -36,7 +36,7 @@ $(function () {
 });
 
 var favorite = document.querySelector('.object-page__header__right-block__title__favorite');
-//
+
 // favorite.addEventListener('mouseover', function () {
 //     this.classList.add('in-favorite');
 // });
@@ -44,11 +44,12 @@ var favorite = document.querySelector('.object-page__header__right-block__title_
 // favorite.addEventListener('mouseout', function () {
 //     this.classList.remove('in-favorite');
 // });
-//
 
-favorite.addEventListener('click', function () {
-    this.classList.toggle('in-favorite');
-});
+if (favorite) {
+    favorite.addEventListener('click', function () {
+        this.classList.toggle('in-favorite');
+    });
+}
 
 $(".show_more").click(function () {
     $(".all-reports").toggle();

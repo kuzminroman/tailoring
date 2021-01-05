@@ -358,10 +358,10 @@ body {
   margin-top: 12px;
   &__login {
     float: left;
-    border-right: solid 1px $whiteGray;
-    padding: 264px;
+    padding: 280px;
     position: relative;
-    margin-right: 26px;
+    background-color: $white;
+    border-radius: 10px;
 
     &__title {
       position: absolute;
@@ -383,11 +383,11 @@ body {
   }
 
   &__regist {
-    padding: 270px;
+    padding: 280px;
     position: relative;
-    width: 154px;
     float: right;
-
+    background-color: $white;
+    border-radius: 10px;
     &__title {
       font-weight: bolder;
       text-transform: uppercase;

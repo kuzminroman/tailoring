@@ -27,7 +27,8 @@
         "yiister/yii2-adminlte": "~1.0",
         "ext-imagick": "*",
         "unclead/yii2-multiple-input": "~2.0",
-        "rmrevin/yii2-fontawesome": "~3.5"
+        "rmrevin/yii2-fontawesome": "~3.5",
+        "ext-intl": "*"
     },
     "require-dev": {
         "yiisoft/yii2-debug": "~2.1.0",

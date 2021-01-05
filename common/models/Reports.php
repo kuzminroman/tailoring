@@ -2,6 +2,9 @@
 
 namespace common\models;
 
+use DateTime;
+use Yii;
+
 /**
  * Class Reports
  * @package common\models
@@ -75,6 +78,9 @@ class Reports extends \yii\db\ActiveRecord
                 'text' => '<p>Отличное ателье!</p>
                            <p>Заказ был выполнен быстро и качественно.</p>
                            <p>Советую всем посетить.</p>',
+                'datetime' => '1162663248',
+                'rating' => 3,
+
             ],
             [
                 'name' => 'Александр',
@@ -82,6 +88,9 @@ class Reports extends \yii\db\ActiveRecord
                 'text' => '<p>Замечательное ателье!</p>
                            <p>Заказ был выполнен быстро и качественно.</p>
                            <p>Советую всем посетить.</p>',
+                'datetime' => '1609770000',
+                'rating' => 2,
+
             ],
 
             [
@@ -90,6 +99,10 @@ class Reports extends \yii\db\ActiveRecord
                 'text' => '<p>Замечательное ателье!</p>
                            <p>Заказ был выполнен быстро и качественно.</p>
                            <p>Советую всем посетить.</p>',
+                'datetime' => '1509818448',
+                'rating' => 4,
+
+
             ],
 
             [
@@ -98,6 +111,9 @@ class Reports extends \yii\db\ActiveRecord
                 'text' => '<p>Замечательное ателье!</p>
                            <p>Заказ был выполнен быстро и качественно.</p>
                            <p>Советую всем посетить.</p>',
+                'datetime' => '1609524048',
+                'rating' => 4,
+
             ],
 
             [
@@ -106,6 +122,9 @@ class Reports extends \yii\db\ActiveRecord
                 'text' => '<p>Замечательное ателье!</p>
                            <p>Заказ был выполнен быстро и качественно.</p>
                            <p>Советую всем посетить.</p>',
+                'datetime' => '1577901648',
+                'rating' => 1,
+
             ],
 
             [
@@ -114,6 +133,9 @@ class Reports extends \yii\db\ActiveRecord
                 'text' => '<p>Замечательное ателье!</p>
                            <p>Заказ был выполнен быстро и качественно.</p>
                            <p>Советую всем посетить.</p>',
+                'datetime' => '1625961648',
+                'rating' => 2,
+
             ],
 
             [
@@ -122,6 +144,10 @@ class Reports extends \yii\db\ActiveRecord
                 'text' => '<p>Замечательное ателье!</p>
                            <p>Заказ был выполнен быстро и качественно.</p>
                            <p>Советую всем посетить.</p>',
+                'datetime' => '1609787135',
+                'rating' => 5,
+
+
             ],
 
         ];

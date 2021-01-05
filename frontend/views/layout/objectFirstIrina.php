@@ -68,10 +68,18 @@ $this->title = 'Ателье Ирина';
                     'viewBox' => '0 0 75 75'
                 ]) ?>
             </div>
-            <?php if (Yii::$app->user->isGuest) : ?>
+            <?php if (!Yii::$app->user->isGuest) : ?>
                 <div class="object-page__header__right-block__send-message">
                     <button type="button" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">Отправить
                         сообщение
+                    </button>
+                </div>
+            <?php endif; ?>
+            <br/>
+            <?php if (Yii::$app->user->isGuest) : ?>
+                <div class="object-page__header__right-block__send-message">
+                    <button type="button" data-toggle="modal" data-target="#123" data-whatever="@mdo">
+                        Забронировать
                     </button>
                 </div>
             <?php endif; ?>
@@ -155,6 +163,9 @@ $this->title = 'Ателье Ирина';
                     .object-page__photoshoot__item__title:first-child:hover {
                         opacity: 35%;
                         text-decoration: underline;
+                    }
+                    .object-page__photoshoot__item__title {
+                        margin-bottom: 10px;
                     }
                 </style>
             </div>
