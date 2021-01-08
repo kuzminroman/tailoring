@@ -7,9 +7,19 @@ use yii\widgets\ActiveForm;
 <div style="padding: 25px; background-color: white;" class="settings-personal-area-contacts-main">
 
     <?php $form = ActiveForm::begin(['id' => 'form-signup']); ?>
-    <?= $form->field($model, 'name')->textInput(['autofocus' => true]) ?>
+
+    <?php if ($model->type !== 1) : ?>
+        <?= $form->field($model, 'first_name')->textInput(['autofocus' => true]) ?>
+        <?= $form->field($model, 'last_name')->textInput(['autofocus' => true]) ?>
+        <?= $form->field($model, 'middle_name')->textInput(['autofocus' => true]) ?>
+
+        <?= $form->field($model, 'gender')->dropDownList(Client::$gender) ?>
+    <?php else : ?>
+        <?= $form->field($model, 'first_name')->textInput(['autofocus' => true])->label('Наименование') ?>
+
+    <?php endif;?>
     <?= $form->field($model, 'type')->dropDownList(\common\models\Client::$typeClients) ?>
-    <?= $form->field($model, 'desc')->textarea() ?>
+    <?= $form->field($model, 'description')->textarea() ?>
 
     <div class="form-group">
         <?= Html::submitButton('Сохранить', ['class' => 'btn btn-primary', 'name' => 'signup-button']) ?>

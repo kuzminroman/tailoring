@@ -36,7 +36,9 @@ return [
             'showScriptName' => false,
             //'suffix' => '.html',
             'enableStrictParsing' => false,
-
+            'rules' => [
+                '' => 'layout/main',
+            ],
         ],
 
         'session' => [

@@ -21,6 +21,7 @@ use yii\web\IdentityInterface;
  * @property integer $created_at
  * @property integer $updated_at
  * @property string $password
+ * @property client $client
  */
 class User extends ActiveRecord implements IdentityInterface
 {
@@ -191,11 +192,26 @@ class User extends ActiveRecord implements IdentityInterface
         $this->verification_token = Yii::$app->security->generateRandomString() . '_' . time();
     }
 
-    /**
+    /***
      *
      */
     public function removePasswordResetToken()
     {
         $this->password_reset_token = null;
     }
+
+
+    /***
+     * @return \yii\db\ActiveQuery
+     */
+    public function getClient()
+    {
+        return $this->hasOne(Client::className(), ['user_id' => 'id']);
+    }
+
+    public static function getUrl($id)
+    {
+        return self::findOne(['id' => $id])->client->type;
+    }
+
 }

@@ -180,35 +180,42 @@ class Client extends \yii\db\ActiveRecord
                 }
             }
 
-            if ($this->phones['input_phone'][0] === '') {
-                if ($this->phonesRelations) {
-                    Phones::deleteAll(['client_id' => $this->id]);
-                }
-            } else {
-                foreach ($this->phones['input_phone'] as $phone) {
-                    if (!in_array($phone, $phones) || empty($phones)) {
-                        $phoneObject = new Phones();
-                        $phoneObject->number = $phone;
-                        $phoneObject->client_id = $this->id;
-                        $phoneObject->save(false);
+            if (array_key_exists('input_phone', $this->phones)) {
+                if ($this->phones['input_phone'][0] === '') {
+                    if ($this->phonesRelations) {
+                        Phones::deleteAll(['client_id' => $this->id]);
+                    }
+                } else {
+                    foreach ($this->phones['input_phone'] as $phone) {
+                        if (!in_array($phone, $phones) || empty($phones)) {
+                            $phoneObject = new Phones();
+                            $phoneObject->number = $phone;
+                            $phoneObject->client_id = $this->id;
+                            $phoneObject->save(false);
+                        }
+
+                        if (in_array($phone, $phones)) {
+                            $item = array_search($phone, $phones);
+                            unset($phones[$item]);
+                        }
                     }
 
-                    if (in_array($phone, $phones)) {
-                        $item = array_search($phone, $phones);
-                        unset($phones[$item]);
-                    }
+                    Phones::deleteAll(['number' => array_values($phones)]);
                 }
-
-                Phones::deleteAll(['number' => array_values($phones)]);
             }
 
             $tags = ArrayHelper::map($this->tagRelations, 'id', 'id');
 
+
             if ($this->tags === '') {
+
                 Activities::deleteAll(['client_id' => $this->id, 'tag_id' => $tags]);
             } else {
+
                 foreach ($this->tags as $tag) {
                     if (!in_array($tag, $tags)) {
+                        var_dump($tag, '321321');
+                        die;
                         $activities = new Activities();
                         $activities->client_id = $this->id;
                         $activities->tag_id = $tag;
@@ -231,6 +238,8 @@ class Client extends \yii\db\ActiveRecord
     {
         $phones = [];
 
+       /// var_dump($this->tags);
+        //die;
         $this->tags = $this->tagRelations;
 
         if ($this->tags) {
