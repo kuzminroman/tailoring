@@ -10,7 +10,6 @@ use Yii;
  * @property int $id
  * @property string|null $name
  *
- * @property Geography[] $geographies
  */
 class City extends \yii\db\ActiveRecord
 {
@@ -41,15 +40,5 @@ class City extends \yii\db\ActiveRecord
             'id' => 'ID',
             'name' => 'Name',
         ];
-    }
-
-    /**
-     * Gets query for [[Geographies]].
-     *
-     * @return \yii\db\ActiveQuery
-     */
-    public function getGeographies()
-    {
-        return $this->hasMany(Geography::className(), ['city' => 'id']);
     }
 }

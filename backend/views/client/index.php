@@ -1,7 +1,8 @@
 <?php
 
-use yii\helpers\Html;
+use common\models\Client;
 use yii\grid\GridView;
+use yii\helpers\Html;
 
 /* @var $this yii\web\View */
 /* @var $searchModel common\models\ClientSearch */
@@ -27,8 +28,18 @@ $this->params['breadcrumbs'][] = $this->title;
             ['class' => 'yii\grid\SerialColumn'],
 
             'id',
-            'name',
-            'gender',
+            'first_name',
+            [
+                'attribute' => 'type',
+                'label' => 'Тип клиента',
+                'class' => 'yii\grid\DataColumn',
+                'value' => function ($data) {
+                    return Client::$typeClients[$data->type];
+                },
+
+                'filter' => Client::$typeClients,
+            ],
+            //  Client::$typeClients['type'],
             //'mail',
             //'desc',
             //'type',

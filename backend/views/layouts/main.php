@@ -84,7 +84,7 @@ yiister\adminlte\assets\Asset::register($this);
                         "items" => [
                             ["label" => "Home", "url" => "/", "icon" => "home"],
                             ["label" => "Clients", "url" => ["/client"], "icon" => "diamond"],
-                            ["label" => "Subject", "url" => ["/subject"], "icon" => "tags"],
+                            ["label" => "Subject", "url" => ["/tag"], "icon" => "tags"],
 
                         ],
                     ]

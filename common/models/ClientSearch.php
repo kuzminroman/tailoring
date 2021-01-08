@@ -18,7 +18,7 @@ class ClientSearch extends Client
     {
         return [
             [['id', 'gender', 'type', 'approve', 'status'], 'integer'],
-            [['name', 'mail', 'desc', 'dateCreate', 'dateUpdate', 'viewCategory', 'typeWork', 'title', 'keywords', 'descriptionSeo'], 'safe'],
+            [['name', 'desc', 'date_create', 'date_update', 'seo_title', 'seo_keywords', 'seo_description'], 'safe'],
         ];
     }
 
@@ -61,20 +61,17 @@ class ClientSearch extends Client
             'id' => $this->id,
             'gender' => $this->gender,
             'type' => $this->type,
-            'dateCreate' => $this->dateCreate,
-            'dateUpdate' => $this->dateUpdate,
+            'date_create' => $this->date_create,
+            'date_update' => $this->date_update,
             'approve' => $this->approve,
             'status' => $this->status,
         ]);
 
-        $query->andFilterWhere(['like', 'name', $this->name])
-            ->andFilterWhere(['like', 'mail', $this->mail])
-            ->andFilterWhere(['like', 'desc', $this->desc])
-            ->andFilterWhere(['like', 'viewCategory', $this->viewCategory])
-            ->andFilterWhere(['like', 'typeWork', $this->typeWork])
-            ->andFilterWhere(['like', 'title', $this->title])
-            ->andFilterWhere(['like', 'keywords', $this->keywords])
-            ->andFilterWhere(['like', 'descriptionSeo', $this->descriptionSeo]);
+        $query->andFilterWhere(['like', 'name', $this->first_name])
+            ->andFilterWhere(['like', 'desc', $this->description])
+            ->andFilterWhere(['like', 'title', $this->seo_title])
+            ->andFilterWhere(['like', 'keywords', $this->seo_keywords])
+            ->andFilterWhere(['like', 'descriptionSeo', $this->seo_description]);
 
         return $dataProvider;
     }

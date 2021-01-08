@@ -10,8 +10,10 @@ use yii\bootstrap\NavBar;
 use yii\widgets\Breadcrumbs;
 use frontend\assets\AppAsset;
 use common\widgets\Alert;
+use kartik\icons\FontAwesomeAsset;
 
 AppAsset::register($this);
+FontAwesomeAsset::register($this);
 Yii::$app->name = 'Tailoring';
 Yii::$app->homeUrl = '/layout/main/'
 ?>
@@ -45,7 +47,7 @@ Yii::$app->homeUrl = '/layout/main/'
         ['label' => '', 'url' => ['/layout/wishlist/']],
     ];
     if (Yii::$app->user->isGuest) {
-        $menuItems[] = ['label' => 'Вход и регистрация', 'url' => ['/layout/open/']];
+        $menuItems[] = ['label' => 'Вход и регистрация', 'url' => ['/main/open/']];
     } else {
         $menuItems[] = '<li>'
             . Html::beginForm(['/site/logout/'], 'post')

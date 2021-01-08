@@ -2,54 +2,72 @@
 
 namespace common\models;
 
-use common\modules\subject\models\Subject;
-use common\models\TypeWork;
-use zxbodya\yii2\galleryManager\GalleryBehavior;
+use common\modules\tag\models\Tag;
 use Yii;
 use yii\helpers\ArrayHelper;
+use zxbodya\yii2\galleryManager\GalleryBehavior;
 
 /**
  * This is the model class for table "client".
  *
  * @property int $id
- * @property string|null $name
+ * @property string|null $first_name
+ * @property string|null $last_name
+ * @property string|null $middle_name
  * @property int|null $gender
- * @property string|null $mail
- * @property string|null $desc
+ * @property string|null $description
  * @property int|null $type
- * @property string|null $dateCreate
- * @property string|null $dateUpdate
- * @property int|null $approve
- * @property string|null $title
- * @property string|null $keywords
- * @property string|null $descriptionSeo
+ * @property string|null $date_create
+ * @property string|null $date_update
+ * @property string|null $seo_title
+ * @property string|null $seo_keywords
+ * @property string|null $seo_description
+ * @property int $city
+ * @property int $user_id
+ * @property int $address
  * @property int $status
+ * @property int|null $approve
  *
- * @property Subject[] $clientAndSubjects
- * @property TypeWork[] $clientAndTypeWork
- * @property ViewCategory[] $clientAndViewCategory
- * @property ClientPhones[] $clientPhones
- */
+ * @property tagRelations[] $tagRelations
+ * @property phonesRelations[] $phonesRelations
+ * @property activitiesRelations[] $activitiesRelations
+ **/
+
 class Client extends \yii\db\ActiveRecord
 {
+    public const STATUS_ACTIVE = 0;
+    public const STATUS_DEL = 1;
 
-    public $subjects = [];
+    public $tags = [];
     public $phones = [];
-    public $typeWork = [];
-    public $arrayTypeWork = [];
-    public $viewCategory = [];
-    public $arrayViewCategory = [];
+    public $activities = [];
+
+    public static $typeClients = [
+        1 => 'Ателье',
+        2 => 'Самозанятый',
+        3 => 'Заказчик',
+    ];
+
+    public static $gender = [
+        1 => 'Женский',
+        2 => 'Мужской'
+    ];
+
+   public static $approve = [
+        1 => 'Модерация',
+        2 => 'Опубликован',
+        3 => 'Снят с публикации'
+    ];
 
     public function behaviors()
     {
-        $model = $this;
         return [
             'galleryBehavior' => [
                 'class' => GalleryBehavior::className(),
                 'type' => 'product',
                 'extension' => 'jpg',
-                'directory' => Yii::getAlias('@backend') . '/web/images/product',
-                'url' => 'http://' . $_SERVER['HTTP_HOST'] . '/images/product',
+                'directory' => Yii::getAlias('@common') . '/media/images/client',
+                'url' => 'http://' . $_SERVER['HTTP_HOST'] . '/images/client',
                 'versions' => [
                     'small' => function ($img) {
                         /** @var \Imagine\Image\ImageInterface $img */
@@ -87,12 +105,10 @@ class Client extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['gender', 'type', 'approve', 'status'], 'integer'],
-            [['dateCreate', 'dateUpdate'], 'safe'],
-            [['title', 'keywords', 'descriptionSeo'], 'string'],
-            [['status'], 'required'],
-            [['subjects', 'arrayTypeWork', 'arrayViewCategory', 'phones', 'desc'], 'safe'],
-            [['name', 'mail'], 'string', 'max' => 255],
+            [['gender', 'type', 'approve', 'status', 'city', 'user_id'], 'integer'],
+            [['date_create', 'date_update', 'phones', 'tags'], 'safe'],
+            [['seo_title', 'seo_keywords', 'seo_description'], 'string'],
+            [['first_name', 'last_name', 'middle_name', 'description'], 'string', 'max' => 255],
         ];
     }
 
@@ -103,214 +119,132 @@ class Client extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'name' => 'Name',
-            'gender' => 'Gender',
-            'mail' => 'Mail',
-            'desc' => 'Desc',
-            'type' => 'Type',
-            'dateCreate' => 'Date Create',
-            'dateUpdate' => 'Date Update',
-            'viewCategory' => 'View Category',
-            'typeWork' => 'Type Work',
-            'approve' => 'Approve',
-            'title' => 'Title',
-            'keywords' => 'Keywords',
-            'descriptionSeo' => 'Description Seo',
-            'status' => 'Status',
+            'first_name' => 'Имя',
+            'last_name' => 'Фамилия',
+            'middle_name' => 'Отчество',
+            'gender' => 'Пол',
+            'description' => 'Описание',
+            'type' => 'Тип клиента',
+            'date_create' => 'Дата создания',
+            'date_update' => 'Дата обновления',
+            'approve' => 'Одобрение',
+            'seo_title' => 'Мета-тайтл',
+            'seo_keywords' => 'Ключевые слова',
+            'seo_description' => 'Мета-описание',
+            'address' => 'Адрес',
+            'city' => 'Город',
+            'status' => 'Статус',
         ];
     }
 
-    /**
-     * Gets query for [[ClientAndSubjects]].
-     *
-     * @return \yii\db\ActiveQuery
-     */
-    public function getClientAndSubjects()
+    public function getActivitiesRelations()
     {
-        return $this->hasMany(ClientAndSubject::className(), ['clientId' => 'id']);
+        return $this->hasMany(Activities::className(), ['client_id' => 'id']);
     }
 
-    public function getSubject()
+    public function getTagRelations()
     {
-        return $this->hasMany(Subject::className(), ['id' => 'subjectId'])
-            ->via('clientAndSubjects');
+        return $this->hasMany(Tag::className(), ['id' => 'tag_id'])
+            ->via('activitiesRelations');
     }
 
-    /**
-     * Gets query for [[ClientAndTypeWork]].
-     *
-     * @return \yii\db\ActiveQuery
-     */
-    public function getClientAndTypeWork()
+    public function getPhonesRelations()
     {
-        return $this->hasMany(TypeworkAndClient::className(), ['clientId' => 'id']);
+        return $this->hasMany(Phones::className(), ['client_id' => 'id']);
     }
 
-    /**
-     * @return \yii\db\ActiveQuery
-     */
-    public function getTypeWork()
-    {
-        return $this->hasMany(TypeWork::className(), ['id' => 'typeworkId'])
-            ->via('clientAndTypeWork');
-    }
 
-    /**
-     * @return \yii\db\ActiveQuery
-     */
-    public function getClientAndViewCategory()
-    {
-        return $this->hasMany(ViewCategoryAndClient::className(), ['clientId' => 'id']);
-    }
-
-    /**
-     * @return \yii\db\ActiveQuery
-     */
-    public function getViewCategory()
-    {
-        return $this->hasMany(ViewCategory::className(), ['id' => 'viewCategoryId'])
-            ->via('clientAndViewCategory');
-    }
-
-    /**
-     * @param bool $insert
-     * @return bool
-     * @throws \yii\base\InvalidConfigException
-     */
     public function beforeSave($insert)
     {
         if ($this->isNewRecord) {
-            $this->dateCreate = Yii::$app->formatter->asDate('now', 'php:Y-m-d h:i:s');
+            $this->status = self::STATUS_ACTIVE;
+            $this->date_create = Yii::$app->formatter->asDate('now', 'php:Y-m-d h:i:s');
         }
 
         if (!$this->isNewRecord) {
-            $this->dateUpdate = Yii::$app->formatter->asDate('now', 'php:Y-m-d h:i:s');
+            $this->date_update = Yii::$app->formatter->asDate('now', 'php:Y-m-d h:i:s');
         }
 
         return parent::beforeSave($insert);
     }
 
-    /**
-     * @return \yii\db\ActiveQuery
-     */
-    public function getClientPhones() {
-        return $this->hasMany(ClientPhones::className(), ['clientId' => 'id']);
-    }
-
     public function afterSave($insert, $changedAttributes)
     {
-        $arrayPhones = [];
-        if($this->clientPhones){
-            foreach($this->clientPhones as $phones) {
-                $arrayPhones[] = $phones->number;
+        $phones = [];
+
+        if (!empty($this->date_update)) {
+
+            if ($this->phonesRelations) {
+                foreach ($this->phonesRelations as $phone) {
+                    $phones[] = $phone->number;
+                }
             }
+
+            if ($this->phones['input_phone'][0] === '') {
+                if ($this->phonesRelations) {
+                    Phones::deleteAll(['client_id' => $this->id]);
+                }
+            } else {
+                foreach ($this->phones['input_phone'] as $phone) {
+                    if (!in_array($phone, $phones) || empty($phones)) {
+                        $phoneObject = new Phones();
+                        $phoneObject->number = $phone;
+                        $phoneObject->client_id = $this->id;
+                        $phoneObject->save(false);
+                    }
+
+                    if (in_array($phone, $phones)) {
+                        $item = array_search($phone, $phones);
+                        unset($phones[$item]);
+                    }
+                }
+
+                Phones::deleteAll(['number' => array_values($phones)]);
+            }
+
+            $tags = ArrayHelper::map($this->tagRelations, 'id', 'id');
+
+            if ($this->tags === '') {
+                Activities::deleteAll(['client_id' => $this->id, 'tag_id' => $tags]);
+            } else {
+                foreach ($this->tags as $tag) {
+                    if (!in_array($tag, $tags)) {
+                        $activities = new Activities();
+                        $activities->client_id = $this->id;
+                        $activities->tag_id = $tag;
+                        $activities->save(false);
+                    }
+
+                    if (isset($tags[$tag])) {
+                        unset($tags[$tag]);
+                    }
+
+                    Activities::deleteAll(['tag_id' => $tags]);
+                }
+            }
+
+            parent::afterSave($insert, $changedAttributes);
         }
-
-        if ($this->phones['Phones'][0] == ''){
-            if ($this->clientPhones) {
-                ClientPhones::deleteAll(['clientId' => $this->id]);
-            }
-        } else {
-            foreach($this->phones['Phones'] as $phone) {
-                if (!in_array($phone, $arrayPhones) || empty($arrayPhones)) {
-                    $clientPhone = new ClientPhones();
-                    $clientPhone->number = $phone;
-                    $clientPhone->clientId = $this->id;
-                    $clientPhone->save(false);
-                }
-
-                if (in_array($phone, $arrayPhones)) {
-                    $object = array_search($phone, $arrayPhones);
-                    unset($arrayPhones[$object]);
-                }
-            }
-            ClientPhones::deleteAll(['number' => array_values($arrayPhones)]);
-        }
-
-        $arr = ArrayHelper::map($this->subject, 'id', 'id');
-
-        if($this->subjects == '') {
-            ClientAndSubject::deleteAll(['clientId' => $this->id, 'subjectId' => $arr]);
-        } else {
-            foreach ($this->subjects as $sub) {
-                if (!in_array($sub, $arr)) {
-                    $clientAndSubject = new ClientAndSubject();
-                    $clientAndSubject->clientId = $this->id;
-                    $clientAndSubject->subjectId = $sub;
-                    $clientAndSubject->save(false);
-                }
-
-                if (isset($arr[$sub])) {
-                    unset($arr[$sub]);
-                }
-
-                ClientAndSubject::deleteAll(['subjectId' => $arr]);
-            }
-        }
-
-        $arrVt = ArrayHelper::map($this->typeWork, 'id', 'id');
-
-        if($this->arrayTypeWork == '') {
-            TypeworkAndClient::deleteAll(['clientId' => $this->id, 'typeworkId' => $arrVt]);
-        } else {
-            foreach ($this->arrayTypeWork as $tw) {
-                if (!in_array($tw, $arrVt)) {
-                    $clientAndTypework = new TypeworkAndClient();
-                    $clientAndTypework->clientId = $this->id;
-                    $clientAndTypework->typeworkId = $tw;
-                    $clientAndTypework->save(false);
-                }
-
-                if (isset($arrVt[$tw])) {
-                    unset($arrVt[$tw]);
-                }
-
-                TypeworkAndClient::deleteAll(['typeworkId' => $arrVt]);
-            }
-        }
-
-        $arrViewCategory = ArrayHelper::map($this->viewCategory, 'id', 'id');
-
-        if($this->arrayViewCategory == '') {
-            ViewCategoryAndClient::deleteAll(['clientId' => $this->id, 'viewCategoryId' => $arrViewCategory]);
-        } else {
-            foreach ($this->arrayViewCategory as $vc) {
-                if (!in_array($vc, $arrViewCategory)) {
-                    $clientAndViewCategory = new ViewCategoryAndClient();
-                    $clientAndViewCategory->clientId = $this->id;
-                    $clientAndViewCategory->viewCategoryId = $vc;
-                    $clientAndViewCategory->save(false);
-                }
-
-                if (isset($arrViewCategory[$vc])) {
-                    unset($arrViewCategory[$vc]);
-                }
-
-                ViewCategoryAndClient::deleteAll(['viewCategoryId' => $arrViewCategory]);
-            }
-        }
-
-        parent::afterSave($insert, $changedAttributes);
     }
 
     public function afterFind()
     {
-        $this->subjects = $this->subject;
-        $this->arrayTypeWork = $this->typeWork;
-        $this->arrayViewCategory = $this->viewCategory;
+        $phones = [];
 
-        if ($this->subjects ) {
-            foreach ($this->subjects as $keyword) {
-                $keywords[] = $keyword->name;
+        $this->tags = $this->tagRelations;
+
+        if ($this->tags) {
+            foreach ($this->tags as $tag) {
+                $tags[] = $tag->name;
             }
-            $this->keywords = implode(', ', $keywords);
+            $this->seo_keywords = implode(', ', $tags);
         }
 
-        if($this->clientPhones) {
-            foreach($this->clientPhones as $phones) {
-                $phoneArray[] = $phones->number;
+        if($this->phonesRelations) {
+            foreach($this->phonesRelations as $phone) {
+                $phones[] = $phone->number;
             }
-            $this->phones = $phoneArray;
+            $this->phones = $phones;
         }
 
         parent::afterFind();

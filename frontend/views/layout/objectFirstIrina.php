@@ -33,7 +33,6 @@ $this->title = 'Ателье Ирина';
                 </div>
             </div>
         </div>
-
         <div class="object-page__header__right-block">
             <div class="object-page__header__right-block__title">
                 <span>Ателье &laquo;Ирина&raquo;</span>
@@ -91,6 +90,7 @@ $this->title = 'Ателье Ирина';
                      data-services="vkontakte,facebook,odnoklassniki,telegram,twitter,viber,whatsapp"></div>
             </div>
         </div>
+        <div style="text-align: right"><a href="/layout/personal-area-client/">Редактировать</a></div>
     </div>
 
     <div class="object-page__map">

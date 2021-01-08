@@ -10,6 +10,7 @@ use yii\base\Model;
 class LoginForm extends Model
 {
     public $username;
+    public $mail;
     public $password;
     public $rememberMe = true;
 
@@ -22,49 +23,40 @@ class LoginForm extends Model
     public function rules()
     {
         return [
-            // username and password are both required
             [['username', 'password'], 'required'],
-            // rememberMe must be a boolean value
             ['rememberMe', 'boolean'],
-            // password is validated by validatePassword()
             ['password', 'validatePassword'],
         ];
     }
 
     /**
-     * Validates the password.
-     * This method serves as the inline validation for password.
-     *
-     * @param string $attribute the attribute currently being validated
-     * @param array $params the additional name-value pairs given in the rule
+     * @param $attribute
+     * @param $params
      */
     public function validatePassword($attribute, $params)
     {
         if (!$this->hasErrors()) {
             $user = $this->getUser();
-            if (!$user /*|| !$user->validatePassword($this->password)*/) {
+
+            if (!$user || !$user->validatePassword($this->password)) {
                 $this->addError($attribute, 'Incorrect username or password.');
             }
         }
     }
 
-    /**
-     * Logs in a user using the provided username and password.
-     *
-     * @return bool whether the user is logged in successfully
+    /***
+     * @return bool
      */
     public function login()
     {
         if ($this->validate()) {
             return Yii::$app->user->login($this->getUser(), $this->rememberMe ? 3600 * 24 * 30 : 0);
         }
-        
+
         return false;
     }
 
     /**
-     * Finds user by [[username]]
-     *
      * @return User|null
      */
     protected function getUser()
@@ -74,5 +66,20 @@ class LoginForm extends Model
         }
 
         return $this->_user;
+    }
+
+
+    /**
+     * {@inheritdoc}
+     */
+    public function attributeLabels()
+    {
+        return [
+            'id' => 'ID',
+            'username' => 'Логин',
+            'password' => 'Пароль',
+            'rememberMe' => 'Запоминть меня',
+            'type' => 'Тип клиента'
+        ];
     }
 }

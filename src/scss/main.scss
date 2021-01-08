@@ -374,8 +374,8 @@ body {
     &__form {
       position: absolute;
       top: 80px;
-      left: 54px;
-      width: 90% !important;
+      left: 75px;
+      width: 75% !important;
     }
     &:hover {
       opacity: 70%;
@@ -1041,6 +1041,9 @@ body {
   }
 }
 
+.tab-content {
+  background-color: $white;
+}
 
 footer {
   background-color: $lineMenu;

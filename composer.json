@@ -20,15 +20,17 @@
         "yiisoft/yii2-swiftmailer": "~2.0.0 || ~2.1.0",
         "creocoder/yii2-taggable": "dev-master",
         "kartik-v/yii2-widget-select2": "dev-master",
-        "yiister/yii2-gentelella": "~1.0",
+        "yiister/yii2-gentelella": "*",
         "dvizh/yii2-gallery": "@dev",
         "zxbodya/yii2-gallery-manager": "*@dev",
         "bscheshirwork/yii2-gallery-manager-imaginary": "*@dev",
-        "yiister/yii2-adminlte": "~1.0",
+        "yiister/yii2-adminlte": "*",
         "ext-imagick": "*",
         "unclead/yii2-multiple-input": "~2.0",
-        "rmrevin/yii2-fontawesome": "~3.5",
-        "ext-intl": "*"
+        "rmrevin/yii2-fontawesome": "*",
+        "ext-intl": "*",
+        "kartik-v/yii2-tabs-x": "dev-master",
+        "kartik-v/yii2-icons": "@dev"
     },
     "require-dev": {
         "yiisoft/yii2-debug": "~2.1.0",

@@ -17,11 +17,9 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'id') ?>
 
-    <?= $form->field($model, 'name') ?>
+    <?= $form->field($model, 'first_name') ?>
 
     <?= $form->field($model, 'gender') ?>
-
-    <?= $form->field($model, 'phone') ?>
 
     <?php // echo $form->field($model, 'mail') ?>
 

@@ -2,7 +2,7 @@
 namespace frontend\controllers;
 
 use common\models\TypeWork;
-use common\modules\subject\models\Subject;
+use common\modules\subject\models\Tag;
 use frontend\models\ResendVerificationEmailForm;
 use frontend\models\VerifyEmailForm;
 use Yii;
@@ -76,9 +76,7 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
-        $model = new Subject();
-        $typeWork = new TypeWork();
-        return $this->render('index', ['model' => $model, 'typeWork' => $typeWork]);
+        return $this->render('index');
     }
 
     /**
