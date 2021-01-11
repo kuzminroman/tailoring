@@ -22,7 +22,6 @@ use common\models\Client;
         'data' => $data,
         'options' => ['multiple' => true] ,
         'pluginOptions' => [
-            'allowClear' => true,
             'tags' => true,
         ],
     ]);?>

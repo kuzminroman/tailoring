@@ -1,5 +1,8 @@
-<?php use yii\helpers\Html;
+<?php
+
+use yii\helpers\Html;
 use yii\widgets\ActiveForm;
+use common\models\Client;
 
 /* @var $model yii\base\Model */
 ?>
@@ -18,7 +21,6 @@ use yii\widgets\ActiveForm;
         <?= $form->field($model, 'first_name')->textInput(['autofocus' => true])->label('Наименование') ?>
 
     <?php endif;?>
-    <?= $form->field($model, 'type')->dropDownList(\common\models\Client::$typeClients) ?>
     <?= $form->field($model, 'description')->textarea() ?>
 
     <div class="form-group">

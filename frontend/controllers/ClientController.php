@@ -9,9 +9,34 @@ use Yii;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use zxbodya\yii2\galleryManager\GalleryManagerAction;
+use yii\filters\AccessControl;
+use yii\filters\VerbFilter;
 
 class ClientController extends Controller
 {
+    public function behaviors()
+    {
+        return [
+            'access' => [
+                'class' => AccessControl::className(),
+                'only' => ['regist', 'index', 'edit'],
+                'rules' => [
+                    [
+                        'actions' => ['regist', 'index', 'edit'],
+                        'allow' => true,
+                        'roles' => ['@'],
+                    ],
+                ],
+            ],
+            'verbs' => [
+                'class' => VerbFilter::className(),
+                'actions' => [
+                    'logout' => ['post'],
+                ],
+            ],
+        ];
+    }
+
     public function actionIndex()
     {
         return $this->render('index');

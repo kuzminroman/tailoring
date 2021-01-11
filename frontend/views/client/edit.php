@@ -15,27 +15,29 @@ $this->params['breadcrumbs'][] = $this->title;
 <?php
 
 $items = [
-    [
-        'label' => '<i class="fas fa-home"></i> Контактная информация',
-        'content' => $this->render('/regist-pages/contacts', ['model' => $model]),
-        'active' => true,
-    ],
 
     [
         'label' => '<i class="fas fa-user"></i> Основаная инфрмация',
-        'content' => $this->render('/regist-pages/main', ['model' => $model]),
+        'content' => $this->render('/edit-pages/main', ['model' => $model]),
         // 'url' => '#main'
     ],
 
     [
-        'label' => '<i class="fas fa-user"></i> Ключевые направления',
-        'content' => $this->render('/regist-pages/tags', ['model' => $model]),
+        'label' => '<i class="fas fa-home"></i> Контактная информация',
+        'content' => $this->render('/edit-pages/contacts', ['model' => $model]),
+        'active' => true,
+    ],
+
+
+    [
+        'label' => '<i class="fas fa-atom"></i> Ключевые направления',
+        'content' => $this->render('/edit-pages/tags', ['model' => $model]),
         // 'url' => '#main'
     ],
 
     [
-        'label' => '<i class="fas fa-user"></i> Галлерея',
-        'content' => $this->render('/regist-pages/gallery', ['model' => $model]),
+        'label' => '<i class="fas fa-image"></i> Галлерея',
+        'content' => $this->render('/edit-pages/gallery', ['model' => $model]),
         // 'url' => '#main'
     ],
 ];

@@ -36,7 +36,6 @@ class Tag extends \yii\db\ActiveRecord
     {
         return [
             [['seo_keywords', 'seo_description'], 'safe'],
-            [['status'], 'required'],
             [['status'], 'integer'],
             [['name', 'seo_title'], 'string', 'max' => 255],
         ];

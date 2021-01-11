@@ -171,6 +171,7 @@ class Client extends \yii\db\ActiveRecord
     public function afterSave($insert, $changedAttributes)
     {
         $phones = [];
+        $newTagId = null;
 
         if (!empty($this->date_update)) {
 
@@ -207,18 +208,28 @@ class Client extends \yii\db\ActiveRecord
             $tags = ArrayHelper::map($this->tagRelations, 'id', 'id');
 
 
-            if ($this->tags === '') {
+            if (is_array($this->tags) && is_object($this->tags[0])) {
+                return true;
+            }
 
+            if ($this->tags === '') {
                 Activities::deleteAll(['client_id' => $this->id, 'tag_id' => $tags]);
             } else {
-
                 foreach ($this->tags as $tag) {
+
                     if (!in_array($tag, $tags)) {
-                        var_dump($tag, '321321');
-                        die;
+
+                        if (!Tag::findOne(['name' => $tag]) && $tag !== '') {
+                            $tagObject = new Tag();
+                            $tagObject->name = $tag;
+                            $tagObject->status = 1;
+                            $tagObject->save(false);
+                            $newTagId = $tagObject->id;
+                        }
+
                         $activities = new Activities();
                         $activities->client_id = $this->id;
-                        $activities->tag_id = $tag;
+                        $activities->tag_id = $newTagId ?: $tag;
                         $activities->save(false);
                     }
 
@@ -226,8 +237,8 @@ class Client extends \yii\db\ActiveRecord
                         unset($tags[$tag]);
                     }
 
-                    Activities::deleteAll(['tag_id' => $tags]);
                 }
+                Activities::deleteAll(['tag_id' => $tags]);
             }
 
             parent::afterSave($insert, $changedAttributes);
