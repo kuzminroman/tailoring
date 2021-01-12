@@ -1,6 +1,13 @@
 <?php
 /* @var $this yii\web\View */
-$this->title = 'Ателье Ирина';
+/* @var $model common\models\Client */
+
+use common\helpers\GeoHelper;
+
+$this->title = $model->first_name;
+
+$this->params['breadcrumbs'][] = $this->title;
+
 ?>
 
 <div class="object-page">
@@ -35,21 +42,24 @@ $this->title = 'Ателье Ирина';
         </div>
         <div class="object-page__header__right-block">
             <div class="object-page__header__right-block__title">
-                <span>Ателье &laquo;Ирина&raquo;</span>
+                <span><?= $model->first_name ?></span>
                 <span class="object-page__header__right-block__title__favorite"></span>
             </div>
             <div class="object-page__header__right-block__phone">
                 <label for="phone-number-object">Телефон:</label>
-                <a id="phone-number-object" href="tel:+7 (961) 749-35-24">
-                    +7 (961) 749-35-24
-                </a>
+                <?php foreach ($model->phonesRelations as $phone) : ?>
+                    <a id="phone-number-object" href="tel:<?= $phone['number'] ?>">
+                        <?= $phone['number'] ?>
+                    </a>
+                <?php endforeach; ?>
             </div>
             <div class="object-page__header__right-block__address">
                 <label for="address-object">Адрес:</label>
                 <span id="address-object">
-                    ул.Дзержинского д.22, оф.132
+                    <?= $model->address ?>
                 </span>
-                <span class="object-page__header__right-block__address__in-map" data-toggle="tooltip" data-placement="top" title="Открыть карту">на карте</span>
+                <span class="object-page__header__right-block__address__in-map" data-toggle="tooltip"
+                      data-placement="top" title="Открыть карту">на карте</span>
                 <br/>
                 <label for="raion-object">Район:</label>
                 <span id="raion-object">Центральный</span>
@@ -90,7 +100,9 @@ $this->title = 'Ателье Ирина';
                      data-services="vkontakte,facebook,odnoklassniki,telegram,twitter,viber,whatsapp"></div>
             </div>
         </div>
-        <div style="text-align: right"><a href="/layout/personal-area-client/">Редактировать</a></div>
+        <?php if (Yii::$app->user->id === $model->user_id) : ?>
+            <div style="text-align: right"><a href="/client/edit">Редактировать</a></div>
+        <?php endif; ?>
     </div>
 
     <div class="object-page__map">
@@ -98,7 +110,7 @@ $this->title = 'Ателье Ирина';
 
     <div class="object-page__block-description">
         <p style="text-align: center; margin-bottom: 15px;">Описание</p>
-        <p>Качественное выполнение работы. Индивидуальный подход к каждому.</p>
+        <p><?= $model->description ?></p>
         <div class="object-page__block-description__operating-mode">
             <p>Понедельник - пятница <span>9:00 - 18:00</span></p>
             <p>Суббота - воскресенье <span>выходной</span></p>
@@ -113,7 +125,7 @@ $this->title = 'Ателье Ирина';
     <div class="object-page__tags">
         <p>Ключевые направления</p>
         <?= \frontend\widgets\ShowTagsWidget::widget([
-            'objectId' => 1,
+            'model' => $model,
             'isObject' => true,
         ]) ?>
     </div>
@@ -160,10 +172,12 @@ $this->title = 'Ателье Ирина';
                         font-size: 19px;
                         cursor: pointer;
                     }
+
                     .object-page__photoshoot__item__title:first-child:hover {
                         opacity: 35%;
                         text-decoration: underline;
                     }
+
                     .object-page__photoshoot__item__title {
                         margin-bottom: 10px;
                     }
@@ -173,7 +187,12 @@ $this->title = 'Ателье Ирина';
                 <ul id="content-slider-photoshoot">
                     <li>
                         <div class="myslide">
-                            <img style="width: 200px;" src="/images/preview/2_1.jpg" />
+                            <img style="width: 200px;" src="/images/preview/2_1.jpg"/>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="myslide">
+                            <img style="width: 200px;" src="/images/preview/2_1.jpg"/>
                         </div>
                     </li>
                     <li>
@@ -188,12 +207,7 @@ $this->title = 'Ателье Ирина';
                     </li>
                     <li>
                         <div class="myslide">
-                            <img style="width: 200px;" src="/images/preview/2_1.jpg" />
-                        </div>
-                    </li>
-                    <li>
-                        <div class="myslide">
-                            <img style="width: 200px;" src="/images/preview/2_1.jpg" />
+                            <img style="width: 200px;" src="/images/preview/2_1.jpg"/>
                         </div>
                     </li>
                 </ul>
@@ -209,7 +223,8 @@ $this->title = 'Ателье Ирина';
         <div style="display: grid;">
             <?= \frontend\widgets\ShowReportsWidget::widget() ?>
         </div>
-        <span class="object-page__reports__add-report" data-toggle="modal" data-target="#addReport" data-whatever="@mdo">Добавить отзыв</span>
+        <span class="object-page__reports__add-report" data-toggle="modal" data-target="#addReport"
+              data-whatever="@mdo">Добавить отзыв</span>
     </div>
 
     <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
@@ -295,5 +310,14 @@ $this->title = 'Ателье Ирина';
         </div>
     </div>
     <?php
-
-?>
+    //
+    //    $ip = '77.222.100.8';
+    //    $query = @unserialize(file_get_contents('http://ip-api.com/php/'.$ip.'?lang=ru'));
+    //    var_dump($query);
+    //
+    //    if($query && $query['status'] == 'success') {
+    //        echo 'Привет, посетитель из '.$query['country'].', '.$query['city'].'!';
+    //        } else {
+    //        echo 'Не удалось определить локацию';
+    //    }
+    ?>

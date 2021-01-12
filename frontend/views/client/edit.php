@@ -1,15 +1,21 @@
 <?php
 
 /* @var $this yii\web\View */
-
-use kartik\tabs\TabsX;
-
-$this->title = 'Настройки личного кабинета';
-$this->params['breadcrumbs'][] = $this->title;
-
-/* @var $this yii\web\View */
 /* @var $model common\models\Client */
 /* @var $form yii\widgets\ActiveForm */
+
+use kartik\tabs\TabsX;
+use yii\helpers\Url;
+
+$this->title = 'Настройка личного кабинета';
+$titleBreadcrumbs = 'Личная старница';
+
+$this->params['breadcrumbs'][] = [
+    'label' => $titleBreadcrumbs,
+    'url' => Url::toRoute(['/client/object/', 'id' => $model->id])
+];
+
+$this->params['breadcrumbs'][] = $this->title;
 ?>
 
 <?php
@@ -19,13 +25,14 @@ $items = [
     [
         'label' => '<i class="fas fa-user"></i> Основаная инфрмация',
         'content' => $this->render('/edit-pages/main', ['model' => $model]),
+        'active' => true,
         // 'url' => '#main'
     ],
 
     [
         'label' => '<i class="fas fa-home"></i> Контактная информация',
         'content' => $this->render('/edit-pages/contacts', ['model' => $model]),
-        'active' => true,
+
     ],
 
 

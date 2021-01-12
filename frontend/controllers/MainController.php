@@ -2,6 +2,7 @@
 
 namespace frontend\controllers;
 
+use common\models\Client;
 use common\models\LoginForm;
 use Yii;
 use yii\web\Controller;
@@ -10,7 +11,8 @@ class MainController extends Controller
 {
     public function actionIndex()
     {
-        return $this->render('index');
+        $model = Client::findAll(['status' => Client::STATUS_ACTIVE]);
+        return $this->render('index', ['model' => $model]);
     }
 
     public function actionOpen()

@@ -35,9 +35,10 @@ return [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
             //'suffix' => '.html',
-            'enableStrictParsing' => false,
+           // 'enableStrictParsing' => false,
             'rules' => [
                 '' => 'layout/main',
+                'client/object/<id:\d+>' => 'client/object'
             ],
         ],
 

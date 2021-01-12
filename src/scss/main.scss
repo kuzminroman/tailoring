@@ -52,7 +52,7 @@ body {
     padding-right: 49px;
   }
 
-  :first-child :before {
+  & .geo-location :before {
     position: absolute;
     width: 32px;
     height: 100%;
@@ -76,6 +76,10 @@ body {
     background-repeat: no-repeat;
     background-size: 25px 35px;
     background-image: url("../img/icons/heart.svg");
+  }
+
+  & .nav-logout {
+    margin-top: 7px;
   }
 }
 

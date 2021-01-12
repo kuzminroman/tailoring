@@ -1,15 +1,15 @@
 <?php
 
-
 namespace frontend\widgets;
 
-
+use common\models\Client;
+use common\modules\tag\models\Tag;
 use yii\base\Widget;
 use yii\helpers\Html;
 
 class ShowTagsWidget extends Widget
 {
-    public $objectId;
+    public $model;
     public $isObject = false;
     private $tag;
 
@@ -23,29 +23,21 @@ class ShowTagsWidget extends Widget
     /**
      * @return string[]
      */
-    public static function getTags()
+    public function getTags()
     {
-        return [
-            'Пошив платья',
-            'Ремонт джинс',
-            'Пошив джинс',
-            'Вышивка бисером',
-            'Ремонт шубы',
-            'Пошив костюма',
-            'Ремонт костюмов',
-            'Раскрой костюмов',
-            'Ремонт рубашек',
-            'Ремонт ромашек',
-            'Пошив букашек',
-        ];
+        foreach ($this->model->tagRelations as $tag) {
+            $tags[] = $tag['name'];
+        }
+
+        return $tags;
     }
 
     public function run()
     {
-        $tags = self::getTags();
+        $tags = $this->getTags();
         $i = 0;
         $emptyTag = Html::tag('span', '...');
-        if ($this->objectId) {
+        if (!empty($this->model)) {
             foreach ($tags as $tag) {
                 $i++;
                 if (!$this->isObject && (int)$i >= 8) {

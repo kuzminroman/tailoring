@@ -35,8 +35,8 @@ use zxbodya\yii2\galleryManager\GalleryBehavior;
 
 class Client extends \yii\db\ActiveRecord
 {
-    public const STATUS_ACTIVE = 0;
-    public const STATUS_DEL = 1;
+    public const STATUS_ACTIVE = 1;
+    public const STATUS_DEL = 0;
 
     public $tags = [];
     public $phones = [];
@@ -151,6 +151,11 @@ class Client extends \yii\db\ActiveRecord
     public function getPhonesRelations()
     {
         return $this->hasMany(Phones::className(), ['client_id' => 'id']);
+    }
+
+    public function getGallery()
+    {
+        return $this->hasMany();
     }
 
 

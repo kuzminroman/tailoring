@@ -95,4 +95,10 @@ class ClientController extends Controller
         throw new NotFoundHttpException('The requested page does not exist.');
     }
 
+    public function actionObject($id)
+    {
+        $model = Client::findOne(['id' => $id]);
+        return $this->render('object', ['model' => $model]);
+    }
+
 }

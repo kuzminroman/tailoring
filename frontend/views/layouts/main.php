@@ -1,21 +1,22 @@
 <?php
 
 /* @var $this \yii\web\View */
+
 /* @var $content string */
 
-use rmrevin\yii\fontawesome\FA;
-use yii\helpers\Html;
+use common\helpers\GeoHelper;
+use common\widgets\Alert;
+use frontend\assets\AppAsset;
+use kartik\icons\FontAwesomeAsset;
 use yii\bootstrap\Nav;
 use yii\bootstrap\NavBar;
+use yii\helpers\Html;
 use yii\widgets\Breadcrumbs;
-use frontend\assets\AppAsset;
-use common\widgets\Alert;
-use kartik\icons\FontAwesomeAsset;
 
 AppAsset::register($this);
 FontAwesomeAsset::register($this);
 Yii::$app->name = 'Tailoring';
-Yii::$app->homeUrl = '/layout/main/'
+Yii::$app->homeUrl = '/main'
 ?>
 <?php $this->beginPage() ?>
 <!DOCTYPE html>
@@ -41,19 +42,19 @@ Yii::$app->homeUrl = '/layout/main/'
         ],
     ]);
     $menuItems = [
-        ['label' => 'Санкт-Петербург', 'url' => ['#']],
+        ['label' => GeoHelper::getCityName(), 'url' => ['/#'], 'options' => ['class' => 'geo-location']],
         ['label' => 'Катлог ателье', 'url' => ['/layout/objects/']],
-        ['label' => 'На карте', 'icon'=> 'cog', 'url' => ['/layout/map/']],
+        ['label' => 'На карте', 'icon' => 'cog', 'url' => ['/layout/map/']],
         ['label' => '', 'url' => ['/layout/wishlist/']],
     ];
     if (Yii::$app->user->isGuest) {
         $menuItems[] = ['label' => 'Вход и регистрация', 'url' => ['/main/open/']];
     } else {
-        $menuItems[] = '<li>'
+        $menuItems[] = '<li class="nav-logout">'
             . Html::beginForm(['/site/logout/'], 'post')
             . Html::submitButton(
-                'Logout (' . Yii::$app->user->identity->username . ')',
-                ['class' => 'btn btn-link logout']
+                'Выйти (' . Yii::$app->user->identity->username . ')',
+                ['class' => 'btn btn-link logout', 'style' => ['color' => '#DDD !important;']]
             )
             . Html::endForm()
             . '</li>';
