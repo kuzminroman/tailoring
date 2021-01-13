@@ -17,7 +17,7 @@ class ClientSearch extends Client
     public function rules()
     {
         return [
-            [['id', 'gender', 'type', 'approve', 'status'], 'integer'],
+            [['id', 'gender', 'type', 'status'], 'integer'],
             [['name', 'desc', 'date_create', 'date_update', 'seo_title', 'seo_keywords', 'seo_description'], 'safe'],
         ];
     }
@@ -63,7 +63,6 @@ class ClientSearch extends Client
             'type' => $this->type,
             'date_create' => $this->date_create,
             'date_update' => $this->date_update,
-            'approve' => $this->approve,
             'status' => $this->status,
         ]);
 

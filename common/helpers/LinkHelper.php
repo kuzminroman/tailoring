@@ -1,27 +1,32 @@
 <?php
 
-
 namespace common\helpers;
 
-
 use common\models\Client;
+use Yii;
 
 class LinkHelper
 {
-    private static $titleObjects = [
-        1 => '',
-        2 => '',
-        3 => '',
+    private static $nameLinkClient = [
+        1 => 'salon',
+        2 => 'master',
+        3 => 'user',
     ];
 
-    public function __construct($clientId)
+    public static function getLinkObject($typeId = null, $id = false)
     {
-        Client::$typeClients[$clientId];
-    }
+        if (empty($typeId)) {
+            $type = Client::find()->select(['id', 'type'])->where(['user_id' => Yii::$app->user->id])->one();
+            var_dump($type);
+            die;
+            if (empty($type)) {
+                return false;
+            }
 
-    public static function getLinkObject($objectId)
-    {
+            return self::$nameLinkClient[$type] . ($id ? '/' . '' : '' );
+        }
 
+        return self::$nameLinkClient[$typeId];
     }
 
 }

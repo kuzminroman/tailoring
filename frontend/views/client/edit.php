@@ -4,6 +4,7 @@
 /* @var $model common\models\Client */
 /* @var $form yii\widgets\ActiveForm */
 
+use common\helpers\LinkHelper;
 use kartik\tabs\TabsX;
 use yii\helpers\Url;
 
@@ -12,7 +13,7 @@ $titleBreadcrumbs = 'Личная старница';
 
 $this->params['breadcrumbs'][] = [
     'label' => $titleBreadcrumbs,
-    'url' => Url::toRoute(['/client/object/', 'id' => $model->id])
+    'url' => Url::to(['/' . LinkHelper::getLinkObject($model->type) . '/', 'id' => $model->id])
 ];
 
 $this->params['breadcrumbs'][] = $this->title;

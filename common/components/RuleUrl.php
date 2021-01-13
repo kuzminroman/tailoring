@@ -12,14 +12,12 @@ use yii\web\UrlRuleInterface;
 
 class RuleUrl implements UrlRuleInterface {
 
-    public static $urlsClients = [
-        'site/logout' => 'jopa',
-    ];
     public function createUrl($manager, $route, $params){
 
        if ($route == 'layout/main') {
            return '/';
        }
+       return false;
     }
     public function parseRequest($manager, $request)
     {

@@ -34,7 +34,6 @@ class m210107_162757_create_table_client_and_other extends Migration
             'seo_description' => $this->text(),
             'address' => $this->string(),
             'city' => $this->integer(),
-            'approve' => $this->integer(),
             'status' => $this->integer(),
         ], $tableOptions);
 

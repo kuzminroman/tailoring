@@ -3,8 +3,9 @@
 /* @var $model common\models\Client */
 
 use common\helpers\GeoHelper;
+use yii\helpers\Url;
 
-$this->title = $model->first_name;
+$this->title = $model->first_name ?: Yii::$app->user->identity->username;
 
 $this->params['breadcrumbs'][] = $this->title;
 
@@ -101,7 +102,7 @@ $this->params['breadcrumbs'][] = $this->title;
             </div>
         </div>
         <?php if (Yii::$app->user->id === $model->user_id) : ?>
-            <div style="text-align: right"><a href="/client/edit">Редактировать</a></div>
+            <div style="text-align: right"><a href="<?= Url::to(['profile/edit'])?>">Редактировать</a></div>
         <?php endif; ?>
     </div>
 

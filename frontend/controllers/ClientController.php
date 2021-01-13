@@ -3,14 +3,15 @@
 
 namespace frontend\controllers;
 
+use common\helpers\LinkHelper;
 use common\models\Client;
 use frontend\models\SignupForm;
 use Yii;
+use yii\filters\AccessControl;
+use yii\filters\VerbFilter;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use zxbodya\yii2\galleryManager\GalleryManagerAction;
-use yii\filters\AccessControl;
-use yii\filters\VerbFilter;
 
 class ClientController extends Controller
 {
@@ -19,10 +20,10 @@ class ClientController extends Controller
         return [
             'access' => [
                 'class' => AccessControl::className(),
-                'only' => ['regist', 'index', 'edit'],
+                'only' => ['edit'],
                 'rules' => [
                     [
-                        'actions' => ['regist', 'index', 'edit'],
+                        'actions' => ['edit'],
                         'allow' => true,
                         'roles' => ['@'],
                     ],
@@ -36,11 +37,11 @@ class ClientController extends Controller
             ],
         ];
     }
-
+/*
     public function actionIndex()
     {
         return $this->render('index');
-    }
+    }*/
 
     public function actions()
     {
@@ -86,9 +87,13 @@ class ClientController extends Controller
         ]);
     }
 
-    protected function findModel($id)
+    protected function findModel($id, $type = 'user_id')
     {
-        if (($model = Client::findOne(['user_id' => $id])) !== null) {
+        $query = [
+            $type => $id,
+        ];
+
+        if (($model = Client::findOne($query)) !== null) {
             return $model;
         }
 
@@ -97,7 +102,18 @@ class ClientController extends Controller
 
     public function actionObject($id)
     {
-        $model = Client::findOne(['id' => $id]);
+        $model = $this->findModel($id, 'id');
+        $typeId = $model->type;
+
+        if (strpos(Yii::$app->request->getUrl(), LinkHelper::getLinkObject($typeId)) === false) {
+            return $this->render('/site/error', ['name' => '404 Error', 'message' => 'This is page not found']);
+        }
+
+        //со стороны пользователя тоже нужно сделать активность... либо зациклиться на имеющихся статусах
+        if ($model->status !== Client::STATUS_ACTIVE && Yii::$app->user !== $model->user_id) {
+            return $this->render('/site/error', ['name' => '404 Error', 'message' => 'This is page not found']);
+        }
+
         return $this->render('object', ['model' => $model]);
     }
 

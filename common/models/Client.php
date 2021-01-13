@@ -26,7 +26,6 @@ use zxbodya\yii2\galleryManager\GalleryBehavior;
  * @property int $user_id
  * @property int $address
  * @property int $status
- * @property int|null $approve
  *
  * @property tagRelations[] $tagRelations
  * @property phonesRelations[] $phonesRelations
@@ -35,17 +34,23 @@ use zxbodya\yii2\galleryManager\GalleryBehavior;
 
 class Client extends \yii\db\ActiveRecord
 {
+    public const STATUS_NEW = 0;
     public const STATUS_ACTIVE = 1;
-    public const STATUS_DEL = 0;
+    public const STATUS_DEACTIVATE = 2;
+    public const STATUS_DEL = 3;
+
+    public const SALON = 1;
+    public const MASTER = 2;
+    public const USER = 3;
 
     public $tags = [];
     public $phones = [];
     public $activities = [];
 
     public static $typeClients = [
-        1 => 'Ателье',
-        2 => 'Самозанятый',
-        3 => 'Заказчик',
+        self::SALON => 'Ателье',
+        self::MASTER => 'Самозанятый',
+        self::USER => 'Заказчик',
     ];
 
     public static $gender = [
@@ -53,10 +58,11 @@ class Client extends \yii\db\ActiveRecord
         2 => 'Мужской'
     ];
 
-   public static $approve = [
-        1 => 'Модерация',
-        2 => 'Опубликован',
-        3 => 'Снят с публикации'
+   public static $status = [
+        self::STATUS_NEW => 'Новый/На модерации',
+        self::STATUS_ACTIVE => 'Опубликован',
+        self::STATUS_DEACTIVATE => 'Снят с публикации',
+        self::STATUS_DEL => 'Удален',
     ];
 
     public function behaviors()
@@ -105,8 +111,9 @@ class Client extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['gender', 'type', 'approve', 'status', 'city', 'user_id'], 'integer'],
+            [['gender', 'type', 'status', 'city', 'user_id'], 'integer'],
             [['date_create', 'date_update', 'phones', 'tags'], 'safe'],
+            ['status', 'default', 'value' => self::STATUS_NEW],
             [['seo_title', 'seo_keywords', 'seo_description'], 'string'],
             [['first_name', 'last_name', 'middle_name', 'description'], 'string', 'max' => 255],
         ];
@@ -162,7 +169,6 @@ class Client extends \yii\db\ActiveRecord
     public function beforeSave($insert)
     {
         if ($this->isNewRecord) {
-            $this->status = self::STATUS_ACTIVE;
             $this->date_create = Yii::$app->formatter->asDate('now', 'php:Y-m-d h:i:s');
         }
 

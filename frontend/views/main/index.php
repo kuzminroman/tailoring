@@ -2,7 +2,9 @@
 /* @var $this yii\web\View */
 /* @var $model \common\models\Client */
 
+use common\helpers\LinkHelper;
 use yii\helpers\Url;
+use common\models\Client;
 
 $this->title = 'Все ателье по пошиву и ремноту в Санкт-Петербурге';
 
@@ -38,29 +40,32 @@ $this->title = 'Все ателье по пошиву и ремноту в Са�
     <div class="studios__wrapper">
         <ul class="studios__wrapper__list">
             <?php foreach ($model as $item) : ?>
-            <li class="studios__wrapper__list__item">
-                <a href="/client/object/<?=$item->id?>">
-                    <div class="studios__wrapper__list__item__image">
-                        <svg class="studios__wrapper__list__item__image__favorite" viewBox="0 0 95 95">
-                            <use xlink:href="/images/icons/favorite.svg#Icons"></use>
-                        </svg>
-                        <img src="/images/preview/2_1.jpg" class="studios__wrapper__list__item__image__preview"/>
-                    </div>
-
-                    <div class="studios__wrapper__list__item__details">
-                        <div class="rating-object">
-                            <svg class="rating-object__icon" viewBox="0 0 95 95">
-                                <use xlink:href="/images/icons/new-star.svg#star_id"></use>
+                <?php if ($item->status !== Client::STATUS_ACTIVE || !in_array($item->type, [Client::SALON, Client::MASTER])) : ?>
+                    <?php continue ?>
+                <?php endif; ?>
+                <li class="studios__wrapper__list__item">
+                    <a href="<?= Url::to([LinkHelper::getLinkObject($item->type) . '/' . $item->id]) ?>">
+                        <div class="studios__wrapper__list__item__image">
+                            <svg class="studios__wrapper__list__item__image__favorite" viewBox="0 0 95 95">
+                                <use xlink:href="/images/icons/favorite.svg#Icons"></use>
                             </svg>
-                            <svg class="rating-object__icon" viewBox="0 0 95 95">
-                                <use xlink:href="/images/icons/new-star.svg#star_id"></use>
-                            </svg>
+                            <img src="/images/preview/2_1.jpg" class="studios__wrapper__list__item__image__preview"/>
+                        </div>
 
-                            <svg class="rating-object__icon" viewBox="0 0 95 95">
-                                <use xlink:href="/images/icons/new-star.svg#star_id"></use>
-                            </svg>
+                        <div class="studios__wrapper__list__item__details">
+                            <div class="rating-object">
+                                <svg class="rating-object__icon" viewBox="0 0 95 95">
+                                    <use xlink:href="/images/icons/new-star.svg#star_id"></use>
+                                </svg>
+                                <svg class="rating-object__icon" viewBox="0 0 95 95">
+                                    <use xlink:href="/images/icons/new-star.svg#star_id"></use>
+                                </svg>
 
-                            <svg class="rating-object__icon" viewBox="0 0 95 95">
+                                <svg class="rating-object__icon" viewBox="0 0 95 95">
+                                    <use xlink:href="/images/icons/new-star.svg#star_id"></use>
+                                </svg>
+
+                                <svg class="rating-object__icon" viewBox="0 0 95 95">
                                 <use xlink:href="/images/icons/new-star.svg#star_id"></use>
                             </svg>
 

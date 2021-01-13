@@ -78,14 +78,7 @@ use common\models\Client;
     <hr/>
     <h1> Раздел подтверждения</h1>
 
-    <?= $form->field($model, 'approve')->dropDownList(Client::$approve) ?>
-
-    <?php $status = [
-        0 => 'Удален',
-        1 => 'Действителен',
-    ] ?>
-
-    <?= $form->field($model, 'status')->dropDownList($status) ?>
+    <?= $form->field($model, 'status')->dropDownList(Client::$status) ?>
     <div class="form-group">
         <?= Html::submitButton('Save', ['class' => 'btn btn-success']) ?>
     </div>

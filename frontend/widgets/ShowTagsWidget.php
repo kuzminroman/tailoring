@@ -17,14 +17,17 @@ class ShowTagsWidget extends Widget
     public function init()
     {
         parent::init();
-
     }
 
-    /**
-     * @return string[]
+    /***
+     * @return array|false
      */
     public function getTags()
     {
+        if (empty($this->model->tagRelations)) {
+            return false;
+        }
+
         foreach ($this->model->tagRelations as $tag) {
             $tags[] = $tag['name'];
         }
@@ -32,9 +35,17 @@ class ShowTagsWidget extends Widget
         return $tags;
     }
 
+    /***
+     * @return array|false
+     */
     public function run()
     {
         $tags = $this->getTags();
+
+        if ($tags === false) {
+            return false;
+        }
+
         $i = 0;
         $emptyTag = Html::tag('span', '...');
         if (!empty($this->model)) {

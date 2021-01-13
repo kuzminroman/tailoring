@@ -16,7 +16,7 @@ use yii\widgets\Breadcrumbs;
 AppAsset::register($this);
 FontAwesomeAsset::register($this);
 Yii::$app->name = 'Tailoring';
-Yii::$app->homeUrl = '/main'
+Yii::$app->homeUrl = '/'
 ?>
 <?php $this->beginPage() ?>
 <!DOCTYPE html>
@@ -50,6 +50,7 @@ Yii::$app->homeUrl = '/main'
     if (Yii::$app->user->isGuest) {
         $menuItems[] = ['label' => 'Вход и регистрация', 'url' => ['/main/open/']];
     } else {
+        $menuItems[] =  ['label' => 'Мой профиль', 'url' => ['/layout/wishlist/']];
         $menuItems[] = '<li class="nav-logout">'
             . Html::beginForm(['/site/logout/'], 'post')
             . Html::submitButton(
