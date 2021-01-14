@@ -218,8 +218,7 @@ class Client extends \yii\db\ActiveRecord
 
             $tags = ArrayHelper::map($this->tagRelations, 'id', 'id');
 
-
-            if (is_array($this->tags) && is_object($this->tags[0])) {
+            if (is_array($this->tags) && empty($this->tags)) {
                 return true;
             }
 

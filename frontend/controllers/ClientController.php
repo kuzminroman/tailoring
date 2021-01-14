@@ -106,11 +106,13 @@ class ClientController extends Controller
         $typeId = $model->type;
 
         if (strpos(Yii::$app->request->getUrl(), LinkHelper::getLinkObject($typeId)) === false) {
+
             return $this->render('/site/error', ['name' => '404 Error', 'message' => 'This is page not found']);
         }
 
         //со стороны пользователя тоже нужно сделать активность... либо зациклиться на имеющихся статусах
-        if ($model->status !== Client::STATUS_ACTIVE && Yii::$app->user !== $model->user_id) {
+        if ($model->status !== Client::STATUS_ACTIVE && Yii::$app->user->id !== $model->user_id) {
+
             return $this->render('/site/error', ['name' => '404 Error', 'message' => 'This is page not found']);
         }
 

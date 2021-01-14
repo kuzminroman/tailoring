@@ -1,0 +1,39 @@
+{
+    "name": "bscheshirwork/yii2-gallery-manager-imaginary",
+    "description": "Extension for yii, that allows to manage image galleries use imaginary",
+    "type": "yii2-extension",
+    "keywords": [
+        "yii2",
+        "extension",
+        "image",
+        "gallery"
+    ],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Bogdan Savluk",
+            "email": "savluk.bogdan@gmail.com"
+        },
+        {
+            "name": "Bogdan Stepanenko",
+            "email": "bscheshir.work@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=7.2.0",
+        "yiisoft/yii2": "~2.0.14",
+        "yiisoft/yii2-jui": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "bscheshirwork\\yii2\\galleryManager\\": "src"
+        }
+    },
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "https://asset-packagist.org"
+        }
+    ]
+}
+

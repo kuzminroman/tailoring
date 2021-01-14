@@ -12,6 +12,7 @@ use yii\bootstrap\Nav;
 use yii\bootstrap\NavBar;
 use yii\helpers\Html;
 use yii\widgets\Breadcrumbs;
+use common\helpers\LinkHelper;
 
 AppAsset::register($this);
 FontAwesomeAsset::register($this);
@@ -50,7 +51,7 @@ Yii::$app->homeUrl = '/'
     if (Yii::$app->user->isGuest) {
         $menuItems[] = ['label' => 'Вход и регистрация', 'url' => ['/main/open/']];
     } else {
-        $menuItems[] =  ['label' => 'Мой профиль', 'url' => ['/layout/wishlist/']];
+        $menuItems[] =  ['label' => 'Мой профиль', 'url' => [LinkHelper::getLinkObject()]];
         $menuItems[] = '<li class="nav-logout">'
             . Html::beginForm(['/site/logout/'], 'post')
             . Html::submitButton(

@@ -13,20 +13,22 @@ class LinkHelper
         3 => 'user',
     ];
 
-    public static function getLinkObject($typeId = null, $id = false)
+    /**
+     * @param null $typeId
+     * @return false|string
+     */
+    public static function getLinkObject($typeId = null)
     {
         if (empty($typeId)) {
-            $type = Client::find()->select(['id', 'type'])->where(['user_id' => Yii::$app->user->id])->one();
-            var_dump($type);
-            die;
-            if (empty($type)) {
+            $clientInfo = Client::find()->select(['id', 'type'])->where(['user_id' => Yii::$app->user->id])->one();
+
+            if (empty($clientInfo)) {
                 return false;
             }
 
-            return self::$nameLinkClient[$type] . ($id ? '/' . '' : '' );
+            return Yii::$app->urlManager->createUrl([self::$nameLinkClient[$clientInfo['type']] . '/' . $clientInfo['id']]);
         }
 
         return self::$nameLinkClient[$typeId];
     }
-
 }
