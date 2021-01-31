@@ -2,7 +2,6 @@
 /* @var $this yii\web\View */
 /* @var $model common\models\Client */
 
-use common\helpers\GeoHelper;
 use yii\helpers\Url;
 
 $this->title = $model->first_name ?: Yii::$app->user->identity->username;
@@ -17,25 +16,18 @@ $this->params['breadcrumbs'][] = $this->title;
             <div class="object-page__header__left-block__slider">
                 <div class="object-page__header__left-block__slider__gallery">
                     <div class="object-page__header__left-block__slider__gallery__list">
-                        <ul id="image-gallery" class="gallery list-unstyled cS-hidden">
-                            <li data-thumb="/images/preview/2_1.jpg">
-                                <img src="/images/preview/2_1.jpg"/>
-                            </li>
-                            <li data-thumb="/images/preview/2_1.jpg">
-                                <img src="/images/preview/2_1.jpg"/>
-                            </li>
-                            <li data-thumb="/images/preview/2_1.jpg">
-                                <img src="/images/preview/2_1.jpg"/>
-                            </li>
-                            <li data-thumb="/images/preview/2_1.jpg">
-                                <img src="/images/preview/2_1.jpg"/>
-                            </li>
-                            <li data-thumb="/images/preview/2_1.jpg">
-                                <img src="/images/preview/2_1.jpg"/>
-                            </li>
-                            <li data-thumb="/images/preview/2_1.jpg">
-                                <img src="/images/preview/2_1.jpg"/>
-                            </li>
+                        <ul id="lightSlider" class="gallery list-unstyled">
+                            <?php foreach ($model->getBehavior('galleryBehavior')->getImages() as $image) : ?>
+                                <?php if (empty($image->getUrl('medium'))) continue ?>
+                                <li class="li-data" data-thumb="<?= $image->getUrl('medium') ?>">
+                                    <a href="<?= $image->getUrl('medium') ?>" data-fancybox="gallery"
+                                        <?= !empty($image->name) ? 'data-caption="' . $image->name . '"' : '' ?>>
+                                        <div style="display: flex; align-items: center; height: 448px; justify-content: center;">
+                                        <img class="img-data" src="<?= $image->getUrl('original') ?>"/>
+                                        </div>
+                                    </a>
+                                </li>
+                            <?php endforeach; ?>
                         </ul>
                     </div>
                 </div>
@@ -186,31 +178,20 @@ $this->params['breadcrumbs'][] = $this->title;
             </div>
             <div class="object-page__photoshoot__item__container">
                 <ul id="content-slider-photoshoot">
-                    <li>
-                        <div class="myslide">
-                            <img style="width: 200px;" src="/images/preview/2_1.jpg"/>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="myslide">
-                            <img style="width: 200px;" src="/images/preview/2_1.jpg"/>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="myslide">
-                            <img style="width: 200px;" src="/images/preview/2_1.jpg"/>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="myslide">
-                            <img style="width: 200px;" src="/images/preview/2_1.jpg"/>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="myslide">
-                            <img style="width: 200px;" src="/images/preview/2_1.jpg"/>
-                        </div>
-                    </li>
+                    <?php foreach ($model->getBehavior('galleryBehavior')->getImages() as $image) : ?>
+                        <?php if (empty($image->getUrl('small'))) continue; ?>
+                        <li class="li-data" data-thumb="<?= $image->getUrl('medium') ?>">
+                            <div class="myslide">
+                                <a href="<?= $image->getUrl('medium') ?>" data-fancybox="gallery"
+                                    <?= !empty($image->name) ? 'data-caption="' . $image->name . '"' : '' ?>>
+                                    <div>
+                                    <img style="width: 200px;" src="<?= $image->getUrl('small') ?>"/>
+                                    </div>
+                                </a>
+                            </div>
+                        </li>
+                    <?php endforeach; ?>
+
                 </ul>
             </div>
         </div>
@@ -310,15 +291,12 @@ $this->params['breadcrumbs'][] = $this->title;
             </div>
         </div>
     </div>
-    <?php
-    //
-    //    $ip = '77.222.100.8';
-    //    $query = @unserialize(file_get_contents('http://ip-api.com/php/'.$ip.'?lang=ru'));
-    //    var_dump($query);
-    //
-    //    if($query && $query['status'] == 'success') {
-    //        echo 'Привет, посетитель из '.$query['country'].', '.$query['city'].'!';
-    //        } else {
-    //        echo 'Не удалось определить локацию';
-    //    }
-    ?>
+
+    <div class="main-wrapper">
+        <div class="demo">
+            <ul id="lightSlider">
+
+            </ul>
+        </div>
+    </div>
+

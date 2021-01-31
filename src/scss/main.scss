@@ -265,6 +265,7 @@ body {
     position: relative;
 
     &__list {
+
       list-style: none;
       overflow: hidden;
 
@@ -750,14 +751,21 @@ body {
       &__slider {
         &__gallery {
           &__list {
+            width:700px;
+
             .gallery {
               list-style: none outside none;
               padding-left: 0;
               margin: 0;
 
               li {
+                display: block;
+                float: left;
+                cursor:pointer;
                 img {
-                  width: 100%;
+                  display: block;
+                  width: 700px;
+                 // height: 520px;
                 }
               }
             }
@@ -1044,7 +1052,9 @@ body {
     text-shadow: 1px 1px goldenrod;
   }
 }
-
+.image-gallery-size {
+  height: 470px !important;
+}
 .tab-content {
   background-color: $white;
 }
@@ -1060,4 +1070,31 @@ footer {
   a {
     color: $colorLink;
   }
+}
+
+/// Фэнсибокс
+.lSSlideOuter .lSPager.lSGallery li {
+  opacity: 0.5;
+}
+
+.lSSlideOuter .lSPager.lSGallery li.active {
+  opacity: 1;
+}
+
+.lSSlideOuter .lSPager.lSGallery li.active, .lSSlideOuter .lSPager.lSGallery li{
+  border-radius: 0;
+}
+
+.lSSlideOuter .lSPager.lSGallery li.active:hover, .lSSlideOuter .lSPager.lSGallery li:hover {
+  border-radius: 0;
+}
+
+.lSSlideOuter .lSPager.lSGallery img {
+  display: block;
+  height: 64px;
+  max-width: 100%;
+}
+
+.lSSlideWrapper {
+  height: 450px;
 }

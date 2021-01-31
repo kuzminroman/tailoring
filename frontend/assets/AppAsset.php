@@ -10,9 +10,11 @@ class AppAsset extends AssetBundle
     public $baseUrl = '@web';
     public $css = [
         'source/dist/main.css',
-        'source/plugins/lightslider/src/css/lightslider.css'
+        'source/plugins/lightslider/src/css/lightslider.css',
+        'source/plugins/fancybox/dist/jquery.fancybox.css?v=2.1.7'
     ];
     public $js = [
+        'source/plugins/fancybox/dist/jquery.fancybox.js?v=2.1.7',
         'source/plugins/lightslider/src/js/lightslider.js',
         'source/dist/bundle.js',
         'https://yastatic.net/share2/share.js'

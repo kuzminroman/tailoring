@@ -92,8 +92,8 @@ class Client extends \yii\db\ActiveRecord
                             ->copy()
                             ->resize($dstSize);
                     },
-                ]
-            ]
+                ],
+            ],
         ];
     }
 

@@ -30,7 +30,10 @@
         "rmrevin/yii2-fontawesome": "*",
         "ext-intl": "*",
         "kartik-v/yii2-tabs-x": "dev-master",
-        "kartik-v/yii2-icons": "@dev"
+        "kartik-v/yii2-icons": "@dev",
+        "ext-gd": "*",
+        "costa-rico/yii2-images": "*"
+
     },
     "require-dev": {
         "yiisoft/yii2-debug": "~2.1.0",
